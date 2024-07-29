@@ -992,6 +992,9 @@ padding-left: 20px;
     .hero{
         width: 440px;
     }
+    .about-us #p1{
+        margin-top: 600px;
+    }
     .faqs{
         position: fixed;
         margin-left: 40px;
@@ -1007,6 +1010,10 @@ padding-left: 20px;
     .over{
         height: 950px;
         width: 440px;
+    }
+
+    .footer{
+        width: 450px;
     }
     /* .four-boxes{
         margin-left: 60px;
