@@ -598,12 +598,294 @@ padding-left: 20px;
 
 
 
-
+@media (max-width: 200px){
+    body{
+        display: none;
+    }
+}
 
 
 @media (max-width: 300px){
-    body{
+    .navbar{
+        width: 450px;
+    }
+    .ham{
         display: block;
+        margin-left: 350px;
+        margin-top: -270px;
+        position: relative;
+    }
+
+    .ham img{
+        width: 30px;
+        display: block;
+    }
+    #open{
+        margin-top: 260px;
+    }
+    #open.active{
+        display: none;
+    }
+    .ham #closee{
+        display: none;
+    }
+    #closee.active{
+        display: block;
+    }
+    .navbar .logo{
+        margin-left: 20px;
+    }
+ 
+
+
+
+    .navbar .navlinks{
+        margin-left: 200px;
+        display: none;
+        background-color: #00000049;
+        transition: 0.5s all;
+    }
+    .navlinks.active{
+        display: block;
+    }
+    .navbar .navlinks ul{
+        padding-top: 10px;
+        display: block;
+        margin-top: 30px;
+    }
+    .navbar .navlinks ul li{
+        display: block;
+        padding-bottom: 30px;
+        color: #fff;
+    }
+
+
+    .hero{
+        width: 450px;
+        height: 750px;
+    }
+    .hero .text{
+        margin-left: 50px;
+    }
+    .hero .text h1{
+        font-size: 40px;
+    }
+    .hero .text #p1{
+        font-size: 20px;
+        margin-top: -30px;
+    }
+    .hero .text #p2{
+        margin-top: -15px;
+    }
+
+
+    .hero .image{
+        margin-top: 200px;
+        margin-left: 50px;
+        width: 300px;
+        height: 400px;
+        
+    }
+
+    
+@keyframes slide{
+    0%{
+        margin-left: 0;
+    }
+    25%{
+        margin-left: -450px;
+    }
+    50%{
+        margin-left: -850px;
+    }
+    75%{
+        margin-left: -1300px;
+    }
+    100%{
+        margin-left: 0;
+    }
+}
+
+    .image img{
+        width: 100px;
+        height: 200px;
+    }
+
+    .hero .two-buttons{
+        margin-top: -550px;
+        margin-left: 50px;
+    }
+    .hero .two-buttons #but1{
+        font-size: 12px;
+        width: 120px;
+        height: 40px;
+    }
+    .hero .two-buttons #but1 img{
+        display: none;
+    }
+
+
+    .hero .two-buttons .play{
+        margin-top: -40px;
+        margin-left: 150px;
+    }
+
+    .hero .two-buttons .play .o{
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero .two-buttons .play img{
+        width: 15px;
+        margin-left: 13px;
+        margin-top: 13px;
+    }
+
+    .hero .two-buttons .play p{
+        margin-top: -25px;
+        font-size: 13px;
+    }
+
+    .four-boxes{
+        margin-left: 70px;
+    }
+    .four-boxes div{
+        margin-bottom: 50px;
+    }
+
+
+    .over{
+        width: 400px;
+        margin-top: -1250px;
+    }
+    .popup{
+        margin-left: 10px;
+        width: 350px;
+        height: 500px;
+    }
+    #overp{
+        transition: 0.01ms;
+        margin-left: 290px;
+    }
+    .faqs{
+        position: fixed;
+        margin-top: -650px;
+        margin-left: 300px;
+    }
+    .faqs.active{
+        margin-top: -700px;
+    }
+
+    .about-us{
+        margin-left: 20px;
+    }
+    .about-us #p1{
+        font-size: 30px;
+        margin-left: 150px;
+    }
+    .about-us img{
+        margin-left: 30px;
+        width: 330px;
+    }
+    .about-us #p2{
+        margin-left: 50px;
+        width: 300px;
+        margin-top: 10px;
+    }
+    .about-us #p3{
+        width: 300px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+    .about-us button{
+        margin-left: 100px;
+    }
+    
+
+
+
+
+
+    .in-touch #header{
+        font-size: 30px;
+        margin-left: 100px;
+    }
+    .two-buts{
+        margin-left: -200px;
+    }
+    .two-buts .second-butt{
+        margin-top: 200px;
+        margin-left: -150px;
+    }
+
+    .footer{
+        margin-top: 500px;
+        width: 350px;
+    }
+    .footer .services{
+        margin-left: 20px;
+    }
+    .footer .social-links{
+        margin-left: 150px;
+        margin-top: -100px;
+    }
+    .footer .social-links a{
+        display: flex;
+        float: left;
+        margin-left: -10px;
+    }
+    .footer .social-links a img{
+        width: 23px;
+    }
+    .footer .subcribe{
+        margin-left: 10px;
+        margin-top: 200px;
+    }
+    .footer .subcribe input{
+        width: 220px;
+    }
+    .footer hr{
+        width: 340px;
+        margin-left: 10px;
+    }
+
+    .undertins{
+        width: 100px;
+        margin-left: 20px;
+    }
+    .undertins p{
+        font-size: 10px;
+    }
+    .undertins img{
+        width: 20px;
+        display: none;
+    }
+    .tin1{
+        margin-top: -10px;
+    }
+    .tin2 p{
+        margin-top: -40px;
+        margin-left: 540px;
+    }
+    .undertins .tin1,
+    .undertins .tin2{
+        margin-right: 40px;
+    }
+    .undertins .tin2,
+    .undertins .tin3{
+        margin-top: 15px;
+        transform: translateX(-20px);
+        margin-left: 300px;
+    }
+    .ooooo{
+        transform: translateX(70px);
+    }
+    .undertins .tin2{
+        transform: translateY(10px);
+        margin-left: 20px;
+    }
+    .undertins .tin3{
+        margin-left: -100px;
     }
 }
 
