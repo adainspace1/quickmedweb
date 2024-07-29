@@ -614,7 +614,7 @@ padding-left: 20px;
 @media (min-width: 300px){
   
     .navbar{
-        width: 400px;
+        width: 500px;
     }
     .ham{
         display: block;
@@ -668,7 +668,7 @@ padding-left: 20px;
 
 
     .hero{
-        width: 450px;
+        width: 500px;
         height: 750px;
     }
     .hero .text{
