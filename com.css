@@ -17,6 +17,7 @@ body{
     margin: 0px;
     padding: 0px;
 }
+
 body.active{
     position: fixed;
 }
@@ -362,6 +363,7 @@ body.active{
 
 /* start faq */
 .faqs{
+    display: none;
     position: fixed;
     margin-top: -500px;
 margin-left: 1280px;
@@ -1232,6 +1234,44 @@ padding-left: 20px;
  
 } */
 
+@media (width: 560px){
+    .navbar{
+        width: 590px;
+    }
+    .hero{
+        width: 590px;
+    }
+     
+}
+
+@media (width: 570px){
+    .navbar{
+        width: 600px;
+    }
+    .hero{
+        width: 590px;
+    }
+     
+}
+@media (min-width: 575px){
+    .navbar{
+        width: 600px;
+    }
+    .hero{
+        width: 590px;
+    }
+     
+}
+@media (width: 580px){
+    .navbar{
+        width: 610px;
+    }
+    .hero{
+        width: 590px;
+    }
+     
+}
+
 @media (min-width: 600px){
   .navbar{
     width: 700px;
@@ -2056,7 +2096,7 @@ padding-left: 20px;
         font-size: 15px;
         font-style: italic;
         color: var(--red);
-        margin-top: -30px;
+        margin-top: 20px;
         font-weight: 500;
     }
     .hero .image{
