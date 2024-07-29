@@ -1,3 +1,8 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 :root{
     --black: #000;
     --white: #fff;
@@ -12,6 +17,9 @@ body{
     margin: 0px;
     padding: 0px;
 }
+body.active{
+    position: fixed;
+}
 /* start NavBar  */
 .navbar{
     position: fixed;
@@ -23,6 +31,7 @@ body{
     box-shadow: 1px 2px 20px -8px;
 }
 
+/* hamburger */
 .ham{
     display: none;
 }
@@ -52,6 +61,12 @@ body{
 .navbar .navlinks ul{
     list-style: none;
     margin-top: -30px;
+}
+#ul.active{
+    margin-top: -20px;
+}
+.top.active{
+    margin-top: 100px;
 }
 .navbar .navlinks ul li{
     display: inline;
@@ -130,7 +145,7 @@ body{
 }
 .imgs{
     display: flex;
-    animation: slide 15s infinite;
+    animation: slide 15s infinite ;
     transition: 0.5s;
 }
 .imgs.active{
@@ -188,9 +203,10 @@ body{
 .hero .image img{
     width: 500px;
     margin-left:  100px;
-    cursor: pointer;
+    
 }
 .hero .two-buttons{
+    cursor: pointer;
     margin-top: -250px;
     margin-left: 100px;
     animation: fade;
@@ -248,7 +264,7 @@ body{
 
 
 
-
+/* .four-boxes */
 .four-boxes{
     margin-top: -70px;
     margin-left: 150px;
@@ -263,8 +279,6 @@ body{
     background-color: var(--white);
     border-radius: 20px;
     transition: 0.3s;
-}
-.four-boxes div:hover{
     box-shadow: 0px 5px 10px -6px;
 }
 .four-boxes img{
@@ -300,6 +314,101 @@ body{
 
 /* end four-boxes */
 
+/* popout */
+.over{
+    background-color: #0000009c;
+    width: 1340px;
+    position: relative;
+    margin-top: -1100px;
+    height: 800px;
+    display: none;
+    animation: fade 0.6s;
+}
+.over.active{
+    display: block;
+    animation: fade 0.6s;
+}
+.popup{
+    display: none;
+    background-color: #fff;
+    width: 1000px;
+    position: absolute;
+    margin-left: 170px;
+    margin-top: -700px;
+    height: 600px;
+    
+    animation: fade2 1s;
+}
+.popup.active{
+    display: block;
+    animation: fade 0.6s;
+}
+#overp{
+    width: 25px;
+    padding-left: 15px;
+    background-color: #ff9000;
+    margin-left: 950px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 22px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+#overp:hover{
+    background-color: red;
+}
+
+/* end popout */
+
+
+/* start faq */
+.faqs{
+    position: fixed;
+    margin-top: -500px;
+margin-left: 1280px;
+background-color: red;
+width: 60px;
+height: 70px;
+padding-left: 20px;
+
+}
+
+.faqs.active{
+    padding-top: 50px;
+    margin-top: -550px;
+}
+.faqs #faqimg{
+    width: 30px;
+
+    display: none;
+
+    margin-top: -170px;
+}
+#faqimg.active{
+    display: block;
+}
+.faqs #faqp{
+   transform: translateY(-30px);
+   font-size: 40px;
+   color: #fff;
+   display: none;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   cursor: pointer;
+}
+#faqp.active{
+    display: block;
+}
+
+.faqs #faqham{
+    display: block;
+    width: 30px;
+    transform: translateY(20px);
+    cursor: pointer;
+}
+#faqham.active{
+    transform: translateY(-110px);
+    display: none;
+}
+/* end faq */
 /* start about */
 
 .about-us #p1{
@@ -490,329 +599,71 @@ body{
 
 
 
-
-@media (width: 375px){
-
-    
-        body{
-            padding: 0;
-            margin: 0;
-        }
-        .navbar{
-            width: 385px;
-        }
-    
-        .navbar .logo{
-            margin-top: 15px;
-            margin-left: 30px;
-        }
-        .navbar .logo p{
-            margin-top: -50px;
-        }
-        .navbar .logo img{
-            width: 80px;
-        }
-        .navbar .navlinks{
-            margin-left: 205px;
-            width: 150px;
-            background-color: var(--bg);
-            padding-bottom: 10px;
-            display: none;
-        }
-        .navbar .navlinks.active{
-            display: block;
-        }
-        .navbar .navlinks ul li a{
-            display: block;
-        }
-        .ham{
-            display: flex;
-            background: none;
-            margin-left: 350px;
-            margin-top: -30px;
-            position: relative;
-        }
-        .ham.active{
-            margin-left: 300px;
-            margin-top: -200px;
-        }
-        #open.active{
-            margin-left: 300px;
-            margin-top: -200px;
-            display: none;
-        }
-        .ham img{
-            width: 30px;
-        }
-        .ham #closee{
-            position: relative;
-            display: none;
-    
-        }
-        #closee.active{
-            display: block;
-        }
-    
-    
-        .hero{
-            width: 385px;
-        }
-        .hero .text{
-            margin-left: 50px;
-        }
-        .hero .text h1{
-            font-size: 40px;
-        }
-        .hero .text #p1{
-            font-size: 20px;
-        }
-        .hero .text #p2{
-            margin-top: -10px;
-        }
-    
-        .hero .image{
-            margin-left: -60px;
-            margin-top: 300px;
-            width: 400px;
-        }
-        .hero .image img{
-            width: 250px;
-        }
-    
-    
-        @keyframes slide{
-            0%{
-                margin-left: 0;
-            }
-            25%{
-                margin-left: -400px;
-            }
-            50%{
-                margin-left: -850px;
-            }
-            75%{
-                margin-left: -1300px;
-            }
-            100%{
-                margin-left: 0;
-            }
-        }
-    
-        .hero .two-buttons{
-            margin-left: 50px;
-            margin-top: 200px;
-        }
-       
-     
-        .hero .two-buttons #but1{
-            width: 90px;
-            height: 30px;
-        }
-        .hero .two-buttons #but1 p{
-            font-size: 10px;
-            margin-left: 1pc;
-        }
-        .hero .two-buttons #but1 .move1{
-            display: none;
-        }
-    
-    
-        .hero .two-buttons .play{
-            margin-left: 120px;
-            margin-top: -30px;
-        }
-        .hero .two-buttons .play .o{
-            width: 30px;
-            height: 30px;
-        }
-        .hero .two-buttons .play img{
-            width: 15px;
-            margin-left: 8px;
-            margin-top: 8px;
-        }
-        .hero .two-buttons .play p{
-            font-size: 12px;
-            margin-left: 40px;
-            margin-top: -20px;
-        }
-    
-    
-        .four-boxes{
-            margin-top: 50px;
-            margin-left: 30px;
-        }
-        .four-boxes div{
-            margin-bottom: 40px;
-        }
-    
-    
-        .about-us #p1{
-            margin-top: 600px;
-            margin-left: 50px;
-        }
-        .about-us img{
-            margin-top: -20px;
-            width: 300px;
-            margin-left: 20px;
-        }
-        .about-us #p2{
-            font-size: 12px;
-            margin-left: 20px;
-            margin-top: 30px;
-            width: 300px;
-        }
-        .about-us #p3{
-            margin-left: 20px;
-            margin-top: 30px;
-            width: 300px;
-        }
-        .about-us button{
-            margin-left: 100px;
-        }
-    
-    
-        .in-touch #header{
-            margin-left: 50px;
-            font-size: 50px;
-        }
-        
-    
-        .two-buts{
-            margin-left: 20px;
-        }
-        .two-buts a{
-            margin-left: 60px;
-        }
-        .two-buts .second-butt{
-            margin-left: 90px;
-        }
-        .two-buts .first-butt img{
-            margin-left: 70px;
-        }
-        .two-buts .second-butt img{
-            margin-left: 40px;
-        }
-        .two-buts img{
-            width: 60px;
-        }
-    
-    
-        .footer{
-            margin-top: 400px;
-            width: 385px;
-        }
-        .footer .services{
-            margin-left: 160px;
-        }
-        .footer .social-links{
-            margin-left: 15px;
-            margin-top: 50px;
-        }
-    
-        .footer .subcribe{
-            margin-left: 20px;
-            margin-top: 70px;
-        }
-        .footer .subcribe input{
-            width: 200px;
-        }
-        .footer .subcribe button{
-            width: 100px;
-        }
-    
-       .footer hr{
-        width: 330px;
-        margin-left: 10px;
-       }
-    
-       .undertins{
-        margin-left: 30px;
-        font-size: 12px;
-       }
-    
-       .undertins .tin1,
-    .undertins .tin2{
-        margin-right: 0px;
+@media (max-width: 300px){
+    body{
+        display: block;
     }
-    
-    .undertins .tin2{
-        margin-left: 70px;
-    }
-    .undertins .tin2 p{
-        margin-top: -30px;
-        margin-left: 50px;
-    }
-    
-    
 }
 
-
-
-
-@media (max-width: 400px){
-    body{
-        padding: 0;
-        margin: 0;
-    }
+@media (min-width: 300px){
+  
     .navbar{
         width: 385px;
     }
-
-    .navbar .logo{
-        margin-top: 15px;
-        margin-left: 30px;
-    }
-    .navbar .logo p{
-        margin-top: -50px;
-    }
-    .navbar .logo img{
-        width: 80px;
-    }
-    .navbar .navlinks{
-        margin-left: 235px;
-        width: 150px;
-        background-color: var(--bg);
-        padding-bottom: 10px;
-        display: none;
-    }
-    .navbar .navlinks.active{
-        display: block;
-    }
-    .navbar .navlinks ul li a{
-        display: block;
-    }
     .ham{
-        display: flex;
-        background: none;
+        display: block;
         margin-left: 300px;
-        margin-top: -30px;
+        margin-top: -270px;
         position: relative;
     }
-    .ham.active{
-        margin-left: 300px;
-        margin-top: -200px;
-    }
-    #open.active{
-        margin-left: 300px;
-        margin-top: -200px;
-        display: none;
-    }
+
     .ham img{
         width: 30px;
+        display: block;
+    }
+    #open{
+        margin-top: 260px;
+    }
+    #open.active{
+        display: none;
     }
     .ham #closee{
-        position: relative;
         display: none;
-
     }
     #closee.active{
         display: block;
+    }
+    .navbar .logo{
+        margin-left: 20px;
+    }
+ 
+
+
+
+    .navbar .navlinks{
+        margin-left: 200px;
+        display: none;
+        background-color: #00000049;
+        transition: 0.5s all;
+    }
+    .navlinks.active{
+        display: block;
+    }
+    .navbar .navlinks ul{
+        padding-top: 10px;
+        display: block;
+        margin-top: 30px;
+    }
+    .navbar .navlinks ul li{
+        display: block;
+        padding-bottom: 30px;
+        color: #fff;
     }
 
 
     .hero{
         width: 385px;
-        height: 600px;
+        height: 750px;
     }
     .hero .text{
         margin-left: 50px;
@@ -822,184 +673,973 @@ body{
     }
     .hero .text #p1{
         font-size: 20px;
+        margin-top: -30px;
     }
     .hero .text #p2{
+        margin-top: -15px;
+    }
+
+
+    .hero .image{
+        margin-top: 200px;
+        margin-left: 50px;
+        width: 300px;
+        height: 400px;
+        
+    }
+
+    
+@keyframes slide{
+    0%{
+        margin-left: 0;
+    }
+    25%{
+        margin-left: -450px;
+    }
+    50%{
+        margin-left: -850px;
+    }
+    75%{
+        margin-left: -1300px;
+    }
+    100%{
+        margin-left: 0;
+    }
+}
+
+    .image img{
+        width: 100px;
+        height: 200px;
+    }
+
+    .hero .two-buttons{
+        margin-top: -550px;
+        margin-left: 50px;
+    }
+    .hero .two-buttons #but1{
+        font-size: 12px;
+        width: 120px;
+        height: 40px;
+    }
+    .hero .two-buttons #but1 img{
+        display: none;
+    }
+
+
+    .hero .two-buttons .play{
+        margin-top: -40px;
+        margin-left: 150px;
+    }
+
+    .hero .two-buttons .play .o{
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero .two-buttons .play img{
+        width: 15px;
+        margin-left: 13px;
+        margin-top: 13px;
+    }
+
+    .hero .two-buttons .play p{
+        margin-top: -25px;
+        font-size: 13px;
+    }
+
+    .four-boxes{
+        margin-left: 40px;
+    }
+    .four-boxes div{
+        margin-bottom: 50px;
+    }
+
+
+    .over{
+        width: 400px;
+        margin-top: -1250px;
+    }
+    .popup{
+        margin-left: 10px;
+        width: 350px;
+        height: 500px;
+    }
+    #overp{
+        transition: 0.01ms;
+        margin-left: 290px;
+    }
+    .faqs{
+        position: fixed;
+        margin-top: -650px;
+        margin-left: 300px;
+    }
+    .faqs.active{
+        margin-top: -700px;
+    }
+
+    .about-us #p1{
+        margin-left: 70px;
+    }
+    .about-us img{
+        margin-left: 30px;
+        width: 330px;
+    }
+    .about-us #p2{
+        margin-left: 50px;
+        width: 300px;
+        margin-top: 10px;
+    }
+    .about-us #p3{
+        width: 300px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+    .about-us button{
+        margin-left: 100px;
+    }
+    
+
+
+
+
+
+    .in-touch #header{
+        margin-left: 30px;
+    }
+    .two-buts{
+        margin-left: -200px;
+    }
+    .two-buts .second-butt{
+        margin-top: 200px;
+        margin-left: -150px;
+    }
+
+    .footer{
+        margin-top: 500px;
+        width: 350px;
+    }
+    .footer .services{
+        margin-left: 20px;
+    }
+    .footer .social-links{
+        margin-left: 150px;
+        margin-top: -100px;
+    }
+    .footer .social-links a{
+        display: flex;
+        float: left;
+        margin-left: -10px;
+    }
+    .footer .social-links a img{
+        width: 23px;
+    }
+    .footer .subcribe{
+        margin-left: 10px;
+        margin-top: 200px;
+    }
+    .footer .subcribe input{
+        width: 220px;
+    }
+    .footer hr{
+        width: 340px;
+        margin-left: 10px;
+    }
+
+    .undertins{
+        width: 100px;
+        margin-left: 20px;
+    }
+    .undertins p{
+        font-size: 10px;
+    }
+    .undertins img{
+        width: 20px;
+        display: none;
+    }
+    .tin1{
+        margin-top: -10px;
+    }
+    .tin2 p{
+        margin-left: 340px;
+        display: no;
+    }
+    .undertins .tin1,
+    .undertins .tin2{
+        margin-right: 40px;
+    }
+    .undertins .tin2,
+    .undertins .tin3{
+        margin-top: 15px;
+        transform: translateX(-20px);
+        margin-left: 300px;
+    }
+    .ooooo{
+        transform: translateX(70px);
+    }
+    .undertins .tin2{
+        transform: translateY(10px);
+        margin-left: 20px;
+    }
+    .undertins .tin3{
+        margin-left: -100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media(width: 360px){
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .navbar{
+        width: 340px;
+
+    }
+    .hero{
+        width: 340px;
+    }
+    .hero .two-buttons .play{
+        margin-left: 150px;
+    }
+    .hero .two-buttons .play p{
+        font-size: 11px;
+        margin-left: 45px;
+    }
+    .hero .image{
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .about-us #p1{
+        font-size: 40px;
+    }
+    .about-us img{
+        width: 300px;
+        margin-left: 20px;
+    }
+    .about-us #p2{
+        margin-left: 20px;
+    }
+    .about-us #p3{
+        margin-left: 20px;
+    }
+    .in-touch #header{
+        font-size: 40px;
+    }
+    .faqs{
+        margin-left: 200px;
+    }
+    .footer{
+        width: 300px;
+    }
+    .footer hr{
+        width: 300px;
+    }
+    
+}
+
+@media (width: 390px){
+    body{
+        display: block;
+    }
+    .navbar{
+        width: 405px;
+    }
+    .hero{
+        width: 405px;
+    }
+    .over{
+        height: 900px;
+    }
+    .popup{
+        margin-top: -670px;
+        margin-left: 20px;
+    }
+    .faqs{
+        margin-left: 320px;
+        margin-top: -100px;
+    }
+    .faqs.active{
+        margin-top: -150px;
+    }
+}
+
+@media (min-width: 400px){
+    body{
+        display: block;
+    }
+    .navbar{
+        width: 522px;
+    }
+    .hero{
+        width: 440px;
+    }
+    .faqs{
+        position: fixed;
+        margin-left: 40px;
+        margin-top: -100px;
+    }
+    .faqs.active{
+        margin-top: -150px;
+    }
+    .popup{
+        margin-top: -690px;
+        margin-left: 30px;
+    }
+    .over{
+        height: 950px;
+        width: 440px;
+    }
+    /* .four-boxes{
+        margin-left: 60px;
+    }
+
+    .about-us button{
+        margin-left: 200px;
+    }
+
+    .in-touch #header{
+        margin-left: 100px;
+    }
+    .in-touch .two-buts{
+        margin-left: -160px;
+    }
+    .footer{
+        width: 530px;
+    }
+    .footer .social-links{
+        margin-left: 200px;
+    }
+    .footer .social-links a{
+        margin-left: 10px;
+    }
+    .footer .subcribe input{
+        width: 400px;
+    } */
+}
+
+@media (min-width: 490px){
+    body{
+        display: block;
+    }
+    .navbar{
+        width: 522px;
+    }
+    .hero{
+        width: 500px;
+    }
+    .faqs{
+        margin-left: 340px;
+        margin-top: -100px;
+    }
+    .faqs.active{
+        margin-top: -150px;
+    }
+    .popup{
+        margin-top: -690px;
+        margin-left: 30px;
+    }
+    .over{
+        height: 950px;
+        width: 440px;
+    }
+    /* .four-boxes{
+        margin-left: 60px;
+    }
+
+    .about-us button{
+        margin-left: 200px;
+    }
+
+    .in-touch #header{
+        margin-left: 100px;
+    }
+    .in-touch .two-buts{
+        margin-left: -160px;
+    }
+    .footer{
+        width: 530px;
+    }
+    .footer .social-links{
+        margin-left: 200px;
+    }
+    .footer .social-links a{
+        margin-left: 10px;
+    }
+    .footer .subcribe input{
+        width: 400px;
+    } */
+}
+
+
+
+@media (min-width: 500px){
+
+    .navbar{
+        width: 550px;
+    }
+    .ham{
+        margin-left: 450px;
+    }
+    .navbar .navlinks{
+        margin-left: 350px;
+    }
+
+    .hero {
+        width: 550px;
+    }
+    .hero .text{
+        margin-left: 100px;
+    }
+    .hero .text h1{
+        font-size: 60px;
+    }
+
+    .hero .text #p1{
+        font-size: 30px;
+        margin-top: -50px;
+    }
+    .hero .text #p2{
+        margin-top: -25px;
+    }
+    .hero .two-buttons{
+        margin-left: 100px;
+    }
+
+    .hero .image{
+        margin-left: 100px;
+        width: 400px;
+    }
+
+    .over{
+        width: 550px;
+    }
+    .popup{
+        margin-top: -850px;
+        width: 480px;
+        height: 600px;
+    }
+    #overp{
+        margin-left: 400px;
+    }
+    .faqs{
+        margin-left: 460px;
+        margin-top: -600px;
+    }
+
+    .four-boxes{
+        margin-left: 130px;
+    }
+    .four-boxes div {
+        margin-left: 50px;
+    }
+    .about-us #p1{
+        margin-top: 600px;
+        margin-left: 150px;
+    }
+    .about-us img{
+        width: 460px;
+    }
+    .about-us #p2{
+        width: 450px;
+    }
+    .about-us #p3{
+        width: 450px;
+    }
+
+    .about-us button{
+        margin-left: 200px;
+    }
+
+    .in-touch #header{
+        margin-left: 120px;
+    }
+    .two-buts{
+        margin-left: -110px;
+    }
+
+    .footer{
+        width: 520px;
+    }
+    .footer .social-links{
+        margin-left: 170px;
+    }
+    .footer .social-links a img{
+        width: 35px;
+    }
+    .footer .subcribe input{
+        width: 360px;
+    }
+
+    .footer hr{
+        width: 500px;
+    }
+
+    .undertins .tin1{
+        margin-left: 10px;
+    }
+    .ooooo{
+        margin-left: 200px;
+    }
+    .undertins .tin3{
+        transform: translateX(-50px);
+        width: 200px;
+    }
+    .undertins .tin3{
+        margin-top: 10px;
+    }
+    .undertins a{
+        display: block;
+    }
+}
+/* 
+@media (max-width: 600px){
+   
+    .navbar{
+        width: 600px;
+    }
+    .hero{
+        width: 600px;
+    }
+
+    .faqs{
+        margin-left: 500px;
+        margin-top: -250px;
+    }
+    .faqs.active{
+        margin-top: -300px;
+    }
+    .four-boxes{
+        margin-left: 170px;
+    }
+    .about-us #p1{
+        margin-left: 200px;
+    }
+    .about-us img{
+        width: 500px;
+    }
+    .about-us #p2,
+    .about-us #p3{
+        width: 500px;
+    }
+ 
+} */
+
+@media (min-width: 600px){
+  .navbar{
+    width: 700px;
+  }
+  .ham{
+    margin-left: 550px;
+  }
+  .navbar .navlinks{
+    margin-left: 450px;
+  }
+  .hero{
+    width: 700px;
+    height: 800px;
+  }
+  .hero .text h1{
+    font-size: 70px;
+  }
+  .hero .text #p1{
+    font-size: 40px;
+  }
+  .over{
+    width: 600px;
+  }
+  .popup{
+    margin-top: -800px;
+    width: 530px;
+  }
+  #overp{
+    margin-left: 460px;
+  }
+  .faqs{
+    margin-left: 620px;
+    margin-top: -530px;
+  }
+  .faqs.active{
+    margin-top: -580px;
+  }
+  .four-boxes{
+    margin-left: 50px;
+  }
+  .over{
+    margin-top: -1300px;
+    width: 700px;
+  }
+  .popup{
+    width: 600px;
+  }
+  #overp{
+    margin-left: 550px;
+  }
+  .about-us{
+    margin-top: -400px;
+  }
+  .about-us #p1{
+    margin-left: 230px;
+  }
+  .about-us img{
+    margin-left: 50px;
+    width: 600px;
+  }
+  .about-us #p2{
+    font-size: 17px;
+    width: 600px;
+  }
+  .about-us #p3{
+    font-size: 20px;
+    width: 600px;
+  }
+  .about-us button{
+    margin-left: 250px;
+  }
+  .in-touch #header{
+    margin-left: 150px;
+  }
+  .footer{
+    width: 600px;
+  }
+  .footer .social-links{
+    margin-left: 200px;
+  }
+  .footer .social-links a{
+    margin-left: 10px;
+  }
+  .footer .subcribe input{
+    width: 470px;
+  }
+  .footer hr{
+    width: 550px;
+  }
+  .undertins p{
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 700px){
+    .navbar{
+        width: 800px;
+    }
+    .ham{
+        margin-left: 650px;
+    }
+    #closee{
+        margin-top: -50px;
+        transform: translateY(-50px);
+    }
+    .navbar .navlinks {
+        margin-left: 530px;
+    }
+    .navbar .navlinks ul li a{
+        font-size: 25px;
+    }
+      /* .faqs{
+    margin-left: -320px;
+    margin-top: -230px;
+    width: 20000px;
+  }
+  .faqs.active{
+    margin-top: -580px;
+  } */
+    .hero{
+        width: 800px;
+        height: 1000px;
+    }
+    .hero .text h1{
+        font-size: 90px;
+    }
+    .hero .text #p1{
+        font-size: 50px;
+        margin-top: -70px;
+    }
+    .hero .text #p2{
+        font-size: 20px;
+        margin-top: -50px;
+    }
+    .hero .two-buttons #but1{
+        width: 200px;
+        height: 60px;
+        font-size: 20px;
+    }
+    .hero .two-buttons #but1 img{
+        display: block;
+        margin-top: -45px;
+        margin-left: 30px;
+    }
+    .hero .two-buttons #but1 p{
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    .hero .two-buttons .play{
+        margin-left: 250px;
+        margin-top: -60px;
+    }
+    .hero .two-buttons .play .o{
+        width: 60px;
+        height: 60px;
+    }
+    .hero .two-buttons .play img{
+        width: 30px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .hero .two-buttons .play p{
+        margin-left: 80px;
+        font-size: 20px;
+        margin-top: -35px;
+    }
+    .hero .image{
+        width: 600px;
+    }
+    .image .imgs img{
+        width: 500px;
+        height: 400px;
+    }
+    @keyframes slide{
+        0%{
+            margin-left: 0;
+        }
+        25%{
+            margin-left: -680px;
+        }
+        50%{
+            margin-left: -1300px;
+        }
+        75%{
+            margin-left: -2000px;
+        }
+        100%{
+            margin-left: 0;
+        }
+    }
+    .four-boxes{
+        margin-left: 130px;
+    }
+
+    .over{
+        margin-top: -1500px;
+        width: 800px;
+    }
+    .popup{
+        width: 650px;
+        height: 700px;
+    }
+    #overp{
+        margin-left: 600px;
+    }
+
+    .about-us #p1{
+        font-size: 60px;
+        margin-left: 270px;
+    }
+    .about-us img{
+        width: 700px;
+    }
+    .about-us #p2{
+        width: 700px;
+    }
+    .about-us #p3{
+        width: 700px;
+    }
+    .about-us button{
+        width: 250px;
+        height: 70px;
+        font-size: 20px;
+        margin-left: 250px;
+    }
+
+    .in-touch #header{
+        margin-left: 250px;
+    }
+    .in-touch .two-buts{
+        margin-left: -0px;
+    }
+    .faqs{
+        margin-left: 7010px;
+    }
+
+    .footer {
+        width: 740px;
+    }
+    .footer .services{
+        margin-left: 70px;
+    }
+    .footer .services #serve{
+        font-size: 30px;
+    }
+    .footer .services a{
+        font-size: 20px;
+    }
+    .footer .social-links {
+        margin-left: 250px;
+    }
+
+    .footer .subcribe {
+        margin-left: 50px;
+    }
+    .footer .subcribe input{
+        width: 550px;
+    }
+    .footer hr{
+        width: 700px;
+    }
+    .undertins .tin2{
+        margin-left: 220px;
+        transform: translateY(10px);
+    }
+    .undertins .tin3{
+        transform: translateX(50px);
+    }
+}
+
+@media (min-width: 800px) {
+    
+    .navbar{
+        width: 900px;
+    }
+    .ham{
+        margin-left: 750px;
+    }
+    .over{
+        margin-top: -1500px;
+        width: 900px;
+    }
+    .popup{
+        width: 700px;
+        height: 700px;
+    }
+    #overp{
+        margin-left: 650px;
+    }
+
+    .four-boxes{
+        width: 600px;
+        margin-left: 150px;
+    }
+    .four-boxes div{
+        margin-left: 60px;
+    }
+    .hero{
+        width: 900px;
+    }
+    .footer{
+        margin-left: 60px;
+    }
+}
+
+
+
+@media (min-width: 900px) {
+    
+    .navbar{
+        width: 1000px;
+    }
+    .navbar .navlinks{
+        display: inline;
+    }
+    .navbar .navlinks ul{
+        margin-top: -40px;
+        margin-left: 350px;
+    }
+    .navbar .navlinks ul li{
+        display: inline;
+    }
+    .navbar .navlinks ul li a{
+        font-size: 20px;
+    }
+    .ham{
+        display: none;
+    }
+    .hero{
+        width: 1000px;
+    }
+
+    .hero .text{
+        margin-left: 200px;
+    }
+    .hero .two-buttons{
+        margin-left: 200px;
+    }
+    .hero .image{
+        margin-left: 200px;
+    }
+    .over{
+        margin-top: -1500px;
+        width: 1000px;
+    }
+    .popup{
+        width: 850px;
+        height: 700px;
+    }
+    #overp{
+        margin-left: 780px;
+    }
+    
+    .four-boxes{
+        width: 900px;
+        margin-left: 25px;
+    }
+    .four-boxes div{
+        margin-left: 25px;
+    }
+    .about-us{
+        margin-top: -700px;
+    }
+    .about-us #p1{
+        margin-left: 400px;
+    }
+    .about-us img{
+        width: 800px;
+        margin-left: 100px;
+    }
+    .about-us #p2,
+    .about-us #p3{
+        width: 800px;
+        margin-left: 100px;
+    }
+    .about-us button{
+        margin-left: 400px;
+    }
+
+    .in-touch #header{
+        margin-left: 350px;
+    }
+
+    .in-touch .two-buts{
+        margin-left: -130px;
+        margin-top: 100px;
+    }
+    .in-touch .two-buts .second-butt{
+        margin-left: 350px;
         margin-top: -10px;
     }
 
-    .hero .image{
-        margin-left: -60px;
-        margin-top: 500px;
-        width: 400px;
-    }
-    .hero .image img{
-        width: 250px;
-    }
 
-
-    @keyframes slide{
-        0%{
-            margin-left: 0;
-        }
-        25%{
-            margin-left: -400px;
-        }
-        50%{
-            margin-left: -850px;
-        }
-        75%{
-            margin-left: -1300px;
-        }
-        100%{
-            margin-left: 0;
-        }
-    }
-
-    .hero .two-buttons{
-        margin-left: 50px;
-        margin-top: -200000px;
-        position: relative;
-        display: none;
-    }
-
-    .hero .two-buttons #but1{
-        width: 90px;
-        height: 30px;
-    }
-    .hero .two-buttons #but1 p{
-        font-size: 10px;
-        margin-left: 1pc;
-    }
-    .hero .two-buttons #but1 .move1{
-        display: none;
-    }
-
-
-    .hero .two-buttons .play{
-        margin-left: 120px;
-        margin-top: -30px;
-    }
-    .hero .two-buttons .play .o{
-        width: 30px;
-        height: 30px;
-    }
-    .hero .two-buttons .play img{
-        width: 15px;
-        margin-left: 8px;
-        margin-top: 8px;
-    }
-    .hero .two-buttons .play p{
-        font-size: 12px;
-        margin-left: 40px;
-        margin-top: -20px;
-    }
-
-
-    .four-boxes{
-        margin-top: 50px;
-        margin-left: 30px;
-    }
-    .four-boxes div{
-        margin-bottom: 40px;
-    }
-
-
-    .about-us #p1{
-        margin-top: 600px;
-        margin-left: 50px;
-    }
-    .about-us img{
-        margin-top: -20px;
-        width: 300px;
-        margin-left: 20px;
-    }
-    .about-us #p2{
-        font-size: 12px;
-        margin-left: 20px;
-        margin-top: 30px;
-        width: 300px;
-    }
-    .about-us #p3{
-        margin-left: 20px;
-        margin-top: 30px;
-        width: 300px;
-    }
-    .about-us button{
+    .footer{
         margin-left: 100px;
     }
-
-
-    .in-touch #header{
-        margin-left: 50px;
-        font-size: 50px;
-    }
-    
-
-    .two-buts{
-        margin-left: 20px;
-    }
-    .two-buts a{
-        margin-left: 60px;
-    }
-    .two-buts .second-butt{
-        margin-left: 90px;
-    }
-    .two-buts .first-butt img{
-        margin-left: 70px;
-    }
-    .two-buts .second-butt img{
-        margin-left: 40px;
-    }
-    .two-buts img{
-        width: 60px;
-    }
-
-
-    .footer{
-        margin-top: 400px;
-        width: 385px;
-    }
-    .footer .services{
-        margin-left: 160px;
-    }
-    .footer .social-links{
-        margin-left: 15px;
-        margin-top: 50px;
-    }
-
-    .footer .subcribe{
-        margin-left: 20px;
-        margin-top: 70px;
-    }
-    .footer .subcribe input{
-        width: 200px;
-    }
-    .footer .subcribe button{
-        width: 100px;
-    }
-
-   .footer hr{
-    width: 330px;
-    margin-left: 10px;
-   }
-
-   .undertins{
-    margin-left: 30px;
-    font-size: 12px;
-   }
-
-   .undertins .tin1,
-.undertins .tin2{
-    margin-right: 0px;
-}
-
-.undertins .tin2{
-    margin-left: 70px;
-}
-.undertins .tin2 p{
-    margin-top: -30px;
-    margin-left: 50px;
-}
 }
 
 
@@ -1007,390 +1647,122 @@ body{
 
 
 
-
-/* @media (width: 412px){
-
-    .two-buts a{
-        
-        mar-bottom: 50px;
-    }
-
-    .footer{
-        margin-top: 900px;
-    }
-
-} */
-
-
-
-
-
-@media (max-width: 500px){
-    body{
-        padding: 0;
-        margin: 0;
-    }
+@media (min-width: 1000px){
     .navbar{
-        width: 440px;
-    }
-
-    .navbar .logo{
-        margin-top: 15px;
-        margin-left: 30px;
-    }
-    .navbar .logo p{
-        margin-top: -50px;
-    }
-    .navbar .logo img{
-        width: 80px;
+        width: 1100px;
     }
     .navbar .navlinks{
-        margin-left: 300px;
-        width: 150px;
-        background-color: var(--bg);
-        padding-bottom: 10px;
-        display: none;
-        animation-name: ooo;
-        animation-duration: 3s;
+        display: inline;
     }
-    .navbar .navlinks.active{
-        display: block;
+    .navbar .navlinks ul{
+        margin-top: -55px;
+        margin-left: 450px;
     }
-    /* @keyframe ooo{
-        from{
-            margin-left: 400px;
-        }
-        to{
-            margin-left: 300px;
-        }
-    } */
-    .navbar .navlinks ul li a{
-        display: block;
+    .navbar .navlinks ul li{
+        display: inline;
     }
+
     .ham{
-        display: flex;
-        background: none;
-        margin-left: 350px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .ham.active{
-        margin-left: 350px;
-        margin-top: -200px;
-    }
-    #open.active{
-        margin-left: 300px;
-        margin-top: -200px;
         display: none;
     }
-    .ham img{
-        width: 30px;
-    }
-    .ham #closee{
-        position: relative;
-        display: none;
-
-    }
-    #closee.active{
-        display: block;
-    }
-
-
     .hero{
-        width: 440px;
-        height: 600px;
-    }
-    .hero .text{
-        margin-left: 50px;
+        width: 1100px;
+        height: 1100px;
     }
     .hero .text h1{
-        font-size: 50px;
+        font-size: 110px;
     }
     .hero .text #p1{
-        font-size: 28px;
+        font-size: 60px;
+        margin-top: -100px;
     }
     .hero .text #p2{
-        margin-top: -20px;
+        font-size: 25px;
+        margin-top: -70px;
     }
-
-    .hero .image{
-        margin-left: -60px;
-        margin-top: 100px;
-        width: 500px;
+    .over{
+        width: 1100px;
     }
-    .hero .image img{
-        width: 300px;
+    .popup{
+        width: 1000px;
     }
-
-    @keyframes slide{
-        0%{
-            margin-left: 0;
-        }
-        25%{
-            margin-left: -400px;
-        }
-        50%{
-            margin-left: -850px;
-        }
-        75%{
-            margin-left: -1300px;
-        }
-        100%{
-            margin-left: 0;
-        }
+    #overp{
+        margin-left: 950px;
     }
-
-    .hero .two-buttons{
-        margin-left: 50px;
-        margin-top: -300px;
-        display: none;
-    }
-    .hero .two-buttons #but1{
-        width: 90px;
-        height: 30px;
-    }
-    .hero .two-buttons #but1 p{
-        font-size: 10px;
-        margin-left: 1pc;
-    }
-    .hero .two-buttons #but1 .move1{
-        display: none;
-    }
-
-
-    .hero .two-buttons .play{
-        margin-left: 120px;
-        margin-top: -30px;
-    }
-    .hero .two-buttons .play .o{
-        width: 30px;
-        height: 30px;
-    }
-    .hero .two-buttons .play img{
-        width: 15px;
-        margin-left: 8px;
-        margin-top: 8px;
-    }
-    .hero .two-buttons .play p{
-        font-size: 12px;
-        margin-left: 40px;
-        margin-top: -20px;
-    }
-
 
     .four-boxes{
-        margin-top: 50px;
-        margin-left: 50px;
+        margin-left: 80px;
     }
-    .four-boxes div{
-        margin-bottom: 40px;
-    }
-
 
     .about-us #p1{
-        margin-top: 600px;
-        margin-left: 70px;
+        margin-left: 450px;
     }
     .about-us img{
-        margin-top: -20px;
-        width: 300px;
-        margin-left: 50px;
-    }
-    .about-us #p2{
-        font-size: 12px;
-        margin-left: 50px;
-        margin-top: 30px;
-        width: 300px;
-    }
-    .about-us #p3{
-        margin-left: 50px;
-        margin-top: 30px;
-        width: 300px;
-    }
-    .about-us button{
-        margin-left: 100px;
-    }
-
-
-    .in-touch #header{
-        margin-left: 50px;
-        font-size: 50px;
-    }
-    
-
-    .two-buts{
-        margin-left: 20px;
-    }
-    .two-buts a{
-        margin-left: 60px;
-    }
-    .two-buts .second-butt{
-        margin-left: 90px;
-    }
-    .two-buts .first-butt img{
-        margin-left: 70px;
-    }
-    .two-buts .second-butt img{
-        margin-left: 40px;
-    }
-    .two-buts img{
-        width: 60px;
-    }
-
-
-    .footer{
-        margin-top: 400px;
-        width: 385px;
-    }
-    .footer .services{
-        margin-left: 160px;
-    }
-    .footer .social-links{
-        margin-left: 15px;
-        margin-top: 50px;
-    }
-
-    .footer .subcribe{
-        margin-left: 20px;
-        margin-top: 70px;
-    }
-    .footer .subcribe input{
-        width: 200px;
-    }
-    .footer .subcribe button{
-        width: 100px;
-    }
-
-   .footer hr{
-    width: 330px;
-    margin-left: 10px;
-   }
-
-   .undertins{
-    margin-left: 30px;
-    font-size: 12px;
-   }
-
-   .undertins .tin1,
-.undertins .tin2{
-    margin-right: 0px;
-}
-
-.undertins .tin2{
-    margin-left: 70px;
-}
-.undertins .tin2 p{
-    margin-top: -30px;
-    margin-left: 50px;
-}
-}
-
-
-
-
-@media (max-width: 540px){
-    body{
-        padding: 0;
-        margin: 0;
-    }
-    .navbar{
-        width: 560px;
-    }
-
-    .navbar .logo{
-        margin-top: 15px;
-        margin-left: 30px;
-    }
-    .navbar .logo p{
-        margin-top: -50px;
-    }
-    .navbar .logo img{
-        width: 80px;
-    }
-    .navbar .navlinks{
-        margin-left: 450px;
-        width: 150px;
-        background-color: var(--bg);
-        padding-bottom: 10px;
-        display: none;
-        animation-name: ooo;
-        animation-duration: 3s;
-    }
-    .navbar .navlinks.active{
-        display: block;
-    }
-    /* @keyframe ooo{
-        from{
-            margin-left: 400px;
-        }
-        to{
-            margin-left: 300px;
-        }
-    } */
-    .navbar .navlinks ul li a{
-        display: block;
-    }
-    .ham{
-        display: flex;
-        background: none;
-        margin-left: 450px;
-        margin-top: -30px;
-        position: relative;
-    }
-    .ham.active{
-        margin-left: 450px;
-        margin-top: -200px;
-    }
-    #open.active{
-        margin-left: 420px;
-        margin-top: -200px;
-        display: none;
-    }
-    .ham img{
-        width: 30px;
-    }
-    .ham #closee{
-        position: relative;
-        display: none;
-
-    }
-    #closee.active{
-        display: block;
-    }
-
-
-    .hero{
-        width: 560px;
-        height: 600px;
-    }
-    .hero .text{
         margin-left: 150px;
     }
+    .about-us #p2,
+    .about-us #p3{
+        margin-left: 150px;
+    }
+
+    .footer{
+        width: 900px;
+    }
+    .footer .social-links{
+        margin-left: 500px;
+    }
+    .footer .subcribe input{
+        width: 700px;
+    }
+    .footer hr{
+        width: 850px;
+    }
+    .undertins .tin2{
+        margin-left: 400px;
+    }
+    .undertins .tin3{
+        margin-left: -10px;
+    }
+}
+
+
+@media (min-width: 1100px){
+    .navbar{
+        width: 1150px;
+    }
+    .navbar .navlinks ul{
+        margin-top: -35px;
+        margin-left: 650px;
+    }
+    .hero{
+        width: 1150px;
+        height: 600px;
+    }
+    .hero .text{
+        margin-left: 50px;
+    }
     .hero .text h1{
-        font-size: 50px;
+        font-size: 80px;
     }
     .hero .text #p1{
-        font-size: 28px;
+        margin-top: -70px;
+        font-size: 40px;
     }
     .hero .text #p2{
-        margin-top: -20px;
+        margin-top: -45px;
+        font-size: 15px;
     }
-
     .hero .image{
-        margin-left: 100px;
-        margin-top: 100px;
         width: 400px;
+        margin-left: 700px;
+        margin-top: -200px;
     }
-    .hero .image img{
-        width: 300px;
-    }
-
     @keyframes slide{
         0%{
             margin-left: 0;
         }
         25%{
-            margin-left: -500px;
+            margin-left: -450px;
         }
         50%{
             margin-left: -900px;
@@ -1402,719 +1774,96 @@ body{
             margin-left: 0;
         }
     }
-
+    .hero .image .imgs img{
+        height: 300px;
+        width: 300px;
+    }
     .hero .two-buttons{
-        margin-left: 150px;
-        margin-top: -550px;
+        margin-top: -180px;
+        margin-left: 50px;
     }
-    .hero .two-buttons #but1{
-        width: 90px;
-        height: 30px;
+    .over{
+        height: 1080px;
+        margin-top: -1200px;
+        width: 1200px;
     }
-    .hero .two-buttons #but1 p{
-        font-size: 10px;
-        margin-left: 1pc;
+    .popup{
+        width: 1100px;
+        height: 750px;
+        margin-top: -900px;
     }
-    .hero .two-buttons #but1 .move1{
-        display: none;
+    #overp{
+        margin-left: 1050px;
     }
-
-
-    .hero .two-buttons .play{
-        margin-left: 120px;
-        margin-top: -30px;
-    }
-    .hero .two-buttons .play .o{
-        width: 30px;
-        height: 30px;
-    }
-    .hero .two-buttons .play img{
-        width: 15px;
-        margin-left: 8px;
-        margin-top: 8px;
-    }
-    .hero .two-buttons .play p{
-        font-size: 12px;
-        margin-left: 40px;
-        margin-top: -20px;
-    }
-
-
     .four-boxes{
-        margin-top: 50px;
-        margin-left:150px;
+        margin-left: 150px;
     }
     .four-boxes div{
-        margin-bottom: 40px;
-    }
-
-
-    .about-us #p1{
-        margin-top: 600px;
-        margin-left: 150px;
-    }
-    .about-us img{
-        margin-top: -20px;
-        width: 400px;
-        margin-left: 80px;
-    }
-    .about-us #p2{
-        font-size: 14px;
-        margin-left: 80px;
-        margin-top: 30px;
-        width: 400px;
-    }
-    .about-us #p3{
-        margin-left: 80px;
-        margin-top: 30px;
-        width: 400px;
-    }
-    .about-us button{
-        margin-left: 210px;
-    }
-
-
-    .in-touch #header{
-        margin-left: 150px;
-        font-size: 50px;
-    }
-    
-
-    .two-buts{
-        margin-left: -10px;
-    }
-    .two-buts a{
-        margin-left: 60px;
-    }
-    .two-buts .second-butt{
-        margin-left: 90px;
-    }
-    .two-buts .first-butt img{
-        margin-left: 70px;
-    }
-    .two-buts .second-butt img{
-        margin-left: 40px;
-    }
-    .two-buts img{
-        width: 60px;
-    }
-
-
-    .footer{
-        margin-top: 300px;
-        width: 520px;
-    }
-    .footer .services{
-        margin-left: 70px;
-    }
-    .footer .social-links{
-        margin-left: 170px;
-        margin-top: -100px;
-    }
-
-    .footer .subcribe{
-        margin-left: 50px;
-        margin-top: 120px;
-    }
-    .footer .subcribe input{
-        width: 350px;
-    }
-    .footer .subcribe button{
-        width: 100px;
-    }
-
-   .footer hr{
-    width: 500px;
-    margin-left: 10px;
-   }
-
-   .undertins{
-    margin-left: 30px;
-    font-size: 12px;
-   }
-
-   .undertins .tin1,
-.undertins .tin2{
-    margin-right: 0px;
-}
-
-.undertins .tin2{
-    margin-left: 70px;
-}
-.undertins .tin2 p{
-    margin-top: -30px;
-    margin-left: 50px;
-}
-}
-
-
-@media (min-width: 700px){
-
-    body{
-        padding: 0%;
-        margin: 0;
-    }
-    .navbar{
-        width: 830px;
-    }
-    .navbar .navlinks{
-        margin-top: 20px;
-        margin-left: 350px;
-    }
-    .navbar .navlinks.active{
-        display: block;
-    }
-    .navbar .navlinks ul {
-        display: flex;
-        width: 500px;
-    }
-    .navbar .navlinks ul li{
-        width: 90px;
-        margin-left: 15px;
-    }
-    .ham{
-        margin-left: 700px;
-        display: none;
-    }
-
-    .hero{
-        width: 820px;
-        height: 1100px;
-    }
-    .hero .text{
-        margin-left: 250px;
-    }
-
-    .hero .image{
-        margin-left: 150px;
-        margin-top: 300px;
-        width: 500px;
-    }
-    
-
-    .hero .two-buttons{
-        margin-left: 200px;
-        margin-top: -700px;
-    }
-
-
-
-    .about-us #p1{
-        margin-top: 100px;
-        margin-left: 300px;
-    }
-
-    .about-us #p2{
-        font-size: 12px;
-        margin-left: 100px;
-        margin-top: 30px;
-        width: 600px;
-    }
-
-    .about-us #p3{
-        margin-left: 100px;
-        margin-top: 30px;
-        width: 600px;
-    }
-
-    .about-us button{
-        margin-left: 300px;
-    }
-
-
-    .in-touch{
-        
-        margin-top: 100px;
-    }
-    .in-touch #header{
-        margin-left: 250px;
-        font-size: 50px;
-    }
-
-    .two-buts{
         margin-left: 20px;
     }
 
-
-    .footer{
-        margin-top: 400px;
-        width: 780px;
-    }
-
-    .footer .subcribe{
-        margin-left: 200px;
-        margin-top: 150px;
-    }
-
-    .footer hr{
-        width: 780px;
-        margin-left: 10px;
-       }
-
-       .undertins .tin1,
-       .undertins .tin2{
-           margin-right: 20px;
-       }
-       .undertins .tin2{
-        margin-left: 80px;
-    }
-    .undertins .tin2 p{
-        margin-top: -30px;
-        margin-left: 50px;
-    }
-}
-
-
-@media (min-width: 853px){
-    
-    body{
-        padding: 0%;
-        margin: 0;
-    }
-
-    .navbar{
-        width: 844px;
-    }
-
-    .navbar .navlinks{
-        margin-top: 20px;
-        margin-left: 350px;
-    }
-
-    .hero{
-        width: 850px;
-        height: 1200px;
-    }
-    .hero .text{
-        margin-left: 170px;
-    }
-    .hero .text h1{
-        font-size: 100px;
-    }
-    .hero .text #p1{
-        margin-top: -70px;
-        font-size: 50px;
-    }
-    .hero .text #p2{
-        font-size: 30px;
-    }
-
-    .hero .image{
-        margin-left: 100px;
-        margin-top: 300px;
-        width: 700px;
-    }
-    .hero .image img{
-        width: 600px;
-    }
-
-    @keyframes slide{
-        0%{
-            margin-left: 0;
-        }
-        25%{
-            margin-left: -750px;
-        }
-        50%{
-            margin-left: -1450px;
-        }
-        75%{
-            margin-left: -2300px;
-        }
-        100%{
-            margin-left: 0;
-        }
-    }
-
-
-
-
-    .hero .two-buttons{
-        margin-left: 250px;
-        margin-top: -700px;
-    }
-
-
-    .four-boxes{
-        margin-left: 150px;
-    }
-    .four-boxes div{
-        margin-left: 55px;
-        margin-bottom: 30px;
-    }
-
-
-
     .about-us #p1{
-        margin-top: 100px;
-        margin-left: 300px;
-        font-size: 70px;
+        margin-left: 550px;
     }
-
     .about-us img{
         margin-left: 50px;
-        width: 750px;
+        width: 500px;
     }
-
     .about-us #p2{
-        font-size: 20px;
-        margin-left: 50px;
-        margin-top: 30px;
-        width: 750px;
+        margin-top: -230px;
+        margin-left: 600px;
+        width: 500px;
     }
-
     .about-us #p3{
+        width: 1100px;
         margin-left: 50px;
-        margin-top: 30px;
-        width: 750px;
-        font-size: 24px;
+        margin-top: 100px;
     }
-
     .about-us button{
-        margin-left: 340px;
-    }
-
-
-    .in-touch{
-        
-        margin-top: 150px;
-    }
-
-    .in-touch #header{
-        margin-left: 300px;
-        font-size: 50px;
-    }
-
-    .two-buts{
-        margin-left: -200px;
-    }
-
-
-    .footer{
-        margin-top: 400px;
-        width: 830px;
-    }
-
-    .footer .subcribe{
-        margin-left: 330px;
-        margin-top: 100px;
-    }
-
-
-    .footer hr{
-        width: 800px;
-        margin-left: 10px;
-       }
-
-       .undertins .tin1,
-       .undertins .tin2{
-           margin-right: 70px;
-       }
-       .undertins .tin2{
-        margin-left: 60px;
-    }
-
-}
-
-@media (min-width: 912px){
-    
-    body{
-        padding: 0%;
-        margin: 0;
-    }
-
-    .navbar{
-        width: 920px;
-    }
-
-    .navbar .navlinks{
-        margin-top: 20px;
-        margin-left: 400px;
-    }
-
-    .hero{
-        width: 920px;
-        height: 1200px;
-    }
-    .hero .text{
-        margin-left: 230px;
-    }
-    .hero .text h1{
-        font-size: 100px;
-    }
-    .hero .text #p1{
-        margin-top: -70px;
-        font-size: 50px;
-    }
-    .hero .text #p2{
-        font-size: 30px;
-    }
-
-    .hero .image{
-        margin-left: 150px;
-        margin-top: 300px;
-        width: 700px;
-    }
-    .hero .image img{
-        width: 600px;
-    }
-
-    @keyframes slide{
-        0%{
-            margin-left: 0;
-        }
-        25%{
-            margin-left: -750px;
-        }
-        50%{
-            margin-left: -1450px;
-        }
-        75%{
-            margin-left: -2300px;
-        }
-        100%{
-            margin-left: 0;
-        }
-    }
-
-
-
-
-    .hero .two-buttons{
-        margin-left: 300px;
-        margin-top: -700px;
-    }
-
-
-    .four-boxes{
-        margin-left: 200px;
-    }
-    .four-boxes div{
-        margin-left: 55px;
-        margin-bottom: 30px;
-    }
-
-
-
-    .about-us #p1{
-        margin-top: 100px;
-        margin-left: 350px;
-        font-size: 70px;
-    }
-
-    .about-us img{
-        margin-left: 50px;
-        width: 800px;
-    }
-
-    .about-us #p2{
-        font-size: 20px;
-        margin-left: 50px;
-        margin-top: 30px;
-        width: 800px;
-    }
-
-    .about-us #p3{
-        margin-left: 50px;
-        margin-top: 30px;
-        width: 800px;
-        font-size: 24px;
-    }
-
-    .about-us button{
-        margin-left: 360px;
-    }
-
-
-    .in-touch{
-        
-        margin-top: 150px;
-    }
-
-    .in-touch #header{
-        margin-left: 330px;
-        font-size: 50px;
-    }
-
-    .two-buts{
-        margin-left: -150px;
-    }
-
-
-    .footer{
-        margin-top: 400px;
-        width: 890px;
-    }
-
-    .footer .subcribe{
-        margin-left: 380px;
-        margin-top: 100px;
-    }
-
-
-    .footer hr{
-        width: 850px;
-        margin-left: 10px;
-       }
-
-       .undertins .tin1,
-       .undertins .tin2{
-           margin-right: 110px;
-       }
-       .undertins .tin2{
-        margin-left: 60px;
-    }
-
-}
-
-
-@media (min-width: 1024px){
-    
-    body{
-        padding: 0%;
-        margin: 0;
-    }
-
-    .navbar{
-        width: 1020px;
-    }
-
-    .navbar .navlinks{
-        margin-top: 20px;
         margin-left: 500px;
     }
 
-    .hero{
-        width: 1020px;
-        height: 1200px;
-    }
-    .hero .text{
-        margin-left: 250px;
-    }
-    .hero .text h1{
-        font-size: 100px;
-    }
-    .hero .text #p1{
-        margin-top: -70px;
-        font-size: 50px;
-    }
-    .hero .text #p2{
-        font-size: 30px;
-    }
-
-    .hero .image{
-        margin-left: 200px;
-        margin-top: 300px;
-        width: 700px;
-    }
-    .hero .image img{
-        width: 600px;
-    }
-
-    @keyframes slide{
-        0%{
-            margin-left: 0;
-        }
-        25%{
-            margin-left: -750px;
-        }
-        50%{
-            margin-left: -1450px;
-        }
-        75%{
-            margin-left: -2300px;
-        }
-        100%{
-            margin-left: 0;
-        }
-    }
-
-
-
-
-    .hero .two-buttons{
-        margin-left: 350px;
-        margin-top: -700px;
-    }
-
-
-    .four-boxes{
-        margin-left: 20px;
-    }
-    .four-boxes div{
-        margin-left: 35px;
-    }
-
-
-
-    .about-us #p1{
-        margin-top: 100px;
-        margin-left: 400px;
-        font-size: 70px;
-    }
-
-    .about-us img{
-        width: 800px;
-    }
-
-    .about-us #p2{
-        font-size: 20px;
-        margin-left: 100px;
-        margin-top: 30px;
-        width: 800px;
-    }
-
-    .about-us #p3{
-        margin-left: 100px;
-        margin-top: 30px;
-        width: 800px;
-        font-size: 24px;
-    }
-
-    .about-us button{
-        margin-left: 430px;
-    }
-
-
-    .in-touch{
-        
-        margin-top: 150px;
-    }
-
     .in-touch #header{
-        margin-left: 400px;
-        font-size: 50px;
+        margin-left: 460px;
     }
-
-    .two-buts{
-        margin-left: -90px;
+    .in-touch .two-buts{
+        margin-left: -40px;
     }
-
-
     .footer{
-        margin-top: 400px;
-        width: 1020px;
-    }
-
-    .footer .subcribe{
-        margin-left: 400px;
-        margin-top: 100px;
-    }
-
-
-    .footer hr{
         width: 1000px;
-        margin-left: 10px;
-       }
-
-       .undertins .tin1,
-       .undertins .tin2{
-           margin-right: 110px;
-       }
-       .undertins .tin2{
-        margin-left: 60px;
+    }
+    .footer .social-links{
+        margin-left: 600px;
+    }
+    .footer .subcribe input{
+        width: 800px;
+    }
+    .footer hr{
+        width: 950px;
+    }
+    .undertins img{
+        display: inline;
+    }
+    .undertins .tin2{
+        margin-top: 0px;
+        margin-left: 450px;
     }
 
+    .undertins .tin3{
+        margin-top: -20px;
+        margin-left: 50px;
+    }
+}
+
+
+@media (min-width: 1200px){
+
+    .navbar{
+        width: 1300px;
+    }
+    .hero{
+        width: 1300px;
+    }
 }
 
 
@@ -2188,7 +1937,16 @@ body{
 
 
 
-@media (min-width: 1300px){
+
+
+
+
+
+
+
+
+
+@media (min-width: 1300px) {
     :root{
         --black: #000;
         --white: #fff;
@@ -2199,9 +1957,9 @@ body{
     a{
         text-decoration: none;
     }
-    body{
-        margin: 0px;
-        padding: 0px;
+
+    body.active{
+        position: fixed;
     }
     /* start NavBar  */
     .navbar{
@@ -2210,10 +1968,11 @@ body{
         height: 100px;
         margin-top: -100px;
         margin-left: -10px;
-        width: 1360px;
+        width: 1600px;
         box-shadow: 1px 2px 20px -8px;
     }
     
+    /* hamburger */
     .ham{
         display: none;
     }
@@ -2238,11 +1997,20 @@ body{
     
     /* Navbar  */
     .navbar .navlinks{
-        margin-left: 800px;
+        background: none;
+        display: block;
+        margin-top: -50px;
+        margin-left: 100px;
     }
     .navbar .navlinks ul{
         list-style: none;
-        margin-top: -30px;
+        margin-top: 30px;
+    }
+    #ul.active{
+        margin-top: -20px;
+    }
+    .top.active{
+        margin-top: 100px;
     }
     .navbar .navlinks ul li{
         display: inline;
@@ -2296,7 +2064,7 @@ body{
         margin-left: 700px;
         padding-left: -100px;
         transition: 0.03ms;
-        width: 600px;
+        width: 500px;
         height: 500px;
         overflow: hidden;
     
@@ -2307,13 +2075,13 @@ body{
             margin-left: 0;
         }
         25%{
-            margin-left: -700px;
+            margin-left: -480px;
         }
         50%{
-            margin-left: -1300px;
+            margin-left: -800px;
         }
         75%{
-            margin-left: -2000px;
+            margin-left: -1300px;
         }
         100%{
             margin-left: 0;
@@ -2321,8 +2089,11 @@ body{
     }
     .imgs{
         display: flex;
-        animation: slide 15s infinite;
+        animation: slide 15s infinite ;
+        animation-delay: 1.5s;
         transition: 0.5s;
+        height: 600px;
+        width: 700px;
     }
     .imgs.active{
         margin-left: -1300px;
@@ -2379,9 +2150,10 @@ body{
     .hero .image img{
         width: 500px;
         margin-left:  100px;
-        cursor: pointer;
+        
     }
     .hero .two-buttons{
+        cursor: pointer;
         margin-top: -250px;
         margin-left: 100px;
         animation: fade;
@@ -2402,11 +2174,13 @@ body{
         box-shadow: 0px 4px 10px -4px;
     }
     .hero .two-buttons #but1 p{
+        margin-top: 15px;
         margin-left: 20px;
+        font-size: 18px;
     }
     .hero .two-buttons #but1 .move1{
-        margin-top: -39px;
-        margin-left: 130px;
+        margin-top: 20px;
+        margin-left: 105px;
     }
     .hero .two-buttons #but1 img{
         width: 30px;
@@ -2439,11 +2213,12 @@ body{
     
     
     
-    
+    /* .four-boxes */
     .four-boxes{
         margin-top: -70px;
-        margin-left: 150px;
+        margin-left: 120px;
         height: 400px;
+        width: 1200px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .four-boxes div{
@@ -2454,8 +2229,6 @@ body{
         background-color: var(--white);
         border-radius: 20px;
         transition: 0.3s;
-    }
-    .four-boxes div:hover{
         box-shadow: 0px 5px 10px -6px;
     }
     .four-boxes img{
@@ -2491,6 +2264,101 @@ body{
     
     /* end four-boxes */
     
+    /* popout */
+    .over{
+        background-color: #0000009c;
+        width: 1340px;
+        position: relative;
+        margin-top: -1050px;
+        height: 850px;
+        display: none;
+        animation: fade 0.6s;
+    }
+    .over.active{
+        display: block;
+        animation: fade 0.6s;
+    }
+    .popup{
+        display: none;
+        background-color: #fff;
+        width: 1000px;
+        position: absolute;
+        margin-left: 170px;
+        margin-top: -700px;
+        height: 600px;
+        
+        animation: fade2 1s;
+    }
+    .popup.active{
+        display: block;
+        animation: fade 0.6s;
+    }
+    #overp{
+        width: 25px;
+        padding-left: 15px;
+        background-color: #ff9000;
+        margin-left: 950px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        height: 22px;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+    #overp:hover{
+        background-color: red;
+    }
+    
+    /* end popout */
+    
+    
+    /* start faq */
+    .faqs{
+        position: fixed;
+        margin-top: -500px;
+    margin-left: 1180px;
+    background-color: red;
+    width: 60px;
+    height: 70px;
+    padding-left: 20px;
+    
+    }
+    
+    .faqs.active{
+        padding-top: 50px;
+        margin-top: -550px;
+    }
+    .faqs #faqimg{
+        width: 30px;
+    
+        display: none;
+    
+        margin-top: -170px;
+    }
+    #faqimg.active{
+        display: block;
+    }
+    .faqs #faqp{
+       transform: translateY(-30px);
+       font-size: 40px;
+       color: #fff;
+       display: none;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       cursor: pointer;
+    }
+    #faqp.active{
+        display: block;
+    }
+    
+    .faqs #faqham{
+        display: block;
+        width: 30px;
+        transform: translateY(20px);
+        cursor: pointer;
+    }
+    #faqham.active{
+        transform: translateY(-110px);
+        display: none;
+    }
+    /* end faq */
     /* start about */
     
     .about-us #p1{
@@ -2498,25 +2366,24 @@ body{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 300;
         margin-left: 550px;
-        margin-top: -100px;
+        margin-top: 600px;
     }
     
     .about-us img{
+        width: 550px;
         margin-top: 50px;
-        margin-left: 80px;
-        width: 700px;
+        margin-left: 100px;
     }
     .about-us #p2{
         font-size: 15px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         width: 500px;
-        margin-left: 800px;
+        margin-left: 700px;
         margin-top: -200px;
     }
     .about-us #p3{
         margin-top: 70px;
         width: 1100px;
-        font-size: 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-left: 100px;
     }
@@ -2525,6 +2392,7 @@ body{
         width: 150px;
         margin-top: 50px;
         height: 50px;
+        font-size: 15px;
         border-radius: 50px;
         border: none;
         background-color: var(--main-color);
@@ -2544,6 +2412,13 @@ body{
     .two-buts{
         margin-left: 50px;
         margin-top: 50px;
+        width: 1200px;
+    }
+
+  
+    .two-buts .second-butt{
+        margin-left: 400px;
+        margin-top: -0px;
     }
     .two-buts img{
         width: 100px;
@@ -2570,7 +2445,7 @@ body{
     .footer{
         background-color: var(--white);
         border-top: 1px solid var(--black);
-        width: 1330px;
+        width: 1200px;
         margin-left: 10px;
         height: 400px;
         margin-top: 300px;
@@ -2595,7 +2470,7 @@ body{
     }
     
     .footer .social-links{
-        margin-left: 400px;
+        margin-left: 300px;
         margin-top: -100px;
     }
     .footer .social-links a{
@@ -2604,12 +2479,12 @@ body{
     }
     .footer .social-links img{
         width: 30px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     
     
     .footer .subcribe {
-        margin-left: 850px;
+        margin-left: 700px;
         margin-top: -30px;
     }
     .footer .subcribe input{
@@ -2647,20 +2522,25 @@ body{
         text-decoration: none;
         float: left;
     }
+    .undertins .tin1{
+        transform: translateY(50px);
+    }
     .undertins .tin1,
     .undertins .tin2{
         margin-right: 250px;
     }
     
     .undertins .tin2{
-        margin-left: 170px;
+        margin-top: -15px;
+        margin-left: 670px;
     }
     .undertins .tin2 p{
         margin-top: -30px;
         margin-left: 50px;
     }
     .undertins .tin3{
-        margin-left: 50px;
+        margin-top: -10px;
+        margin-left: 100px;
         padding-left: -100px;
     }
     .undertins .tin3 p{
@@ -2668,4 +2548,117 @@ body{
         margin-left: 50px;
     }
     
+}
+
+
+
+
+
+@media (min-width: 1400px){
+
+    .hero{
+        width: 1400px;
+    }
+    .hero .image{
+        margin-left: 800px;
+    }
+    .four-boxes{
+        margin-left: 200px;
+    }
+    .about-us #p1{
+        margin-left: 600px;
+    }
+    .in-touch #header{
+        margin-left: 550px;
+    }
+    .in-touch .two-buts{
+        margin-left: 50px;
+    }
+    
+    .faqs{
+        margin-left: 1300px;
+    }
+    .footer{
+        margin-left: 100px;
+    }
+    .undertins{
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 1500px){
+
+    .navbar .navlinks{
+        margin-left: 250px;
+    }
+    .hero{
+        width: 1500px;
+    }
+    .hero .image{
+        margin-left: 850px;
+    }
+    .four-boxes{
+        margin-left: 250px;
+    }
+    .about-us{
+        margin-left: 100px;
+    }
+    .about-us #p1{
+        margin-left: 600px;
+    }
+    .in-touch #header{
+        margin-left: 600px;
+    }
+    .in-touch .two-buts{
+        margin-left: 50px;
+    }
+    
+    .faqs{
+        margin-left: 1400px;
+    }
+    .footer{
+        margin-left: 100px;
+    }
+    .undertins{
+        margin-left: 30px;
+    }
+}
+
+
+@media (min-width: 1600px){
+
+    .navbar .navlinks{
+        margin-left: 400px;
+    }
+    .hero{
+        width: 1600px;
+    }
+    .hero .image{
+        margin-left: 900px;
+    }
+    .four-boxes{
+        margin-left: 300px;
+    }
+    .about-us{
+        margin-left: 150px;
+    }
+    .about-us #p1{
+        margin-left: 600px;
+    }
+    .in-touch #header{
+        margin-left: 650px;
+    }
+    .in-touch .two-buts{
+        margin-left: 150px;
+    }
+    
+    .faqs{
+        margin-left: 1500px;
+    }
+    .footer{
+        margin-left: 150px;
+    }
+    .undertins{
+        margin-left: 30px;
+    }
 }
