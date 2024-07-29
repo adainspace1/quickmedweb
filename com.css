@@ -1320,12 +1320,17 @@ padding-left: 20px;
     } */
 }
 
+@media(width: 510px){
+    body{
+        display: none;
+    }
+}
 @media (min-width: 490px){
     body{
         display: block;
     }
     .navbar{
-        width: 522px;
+        width: 722px;
     }
     .hero{
         width: 500px;
@@ -1526,7 +1531,14 @@ padding-left: 20px;
     }
  
 } */
-
+@media (min-width: 550px){
+    .navbar{
+        width: 600px;
+    }
+    .hero{
+        width: 600px;
+    }
+}
 @media (width: 560px){
     .navbar{
         width: 590px;
