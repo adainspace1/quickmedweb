@@ -1,0 +1,574 @@
+:root{
+    --main-color: rgb(255, 153, 0);
+    --not-main: rgb(255, 214, 154);
+    --white: #fff;
+    --black: #000;
+    --bg: #020508;
+    --ash: #616161;
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+body.active{
+    position: fixed;
+}
+/* start NavBar  */
+.navbar{
+    position: fixed;
+    background-color: var(--white);
+    height: 100px;
+    margin-top: -100px;
+    margin-left: -10px;
+    width: 1360px;
+    box-shadow: 1px 2px 20px -8px;
+}
+
+/* hamburger */
+.ham{
+    display: none;
+}
+
+.navbar .logo{
+    margin-left: 100px;
+    transform: translateY(10px);
+}
+.navbar .logo  img{
+    width: 100px;
+}
+.navbar .logo p{
+    margin-top: -60px;
+    margin-left: 90px;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+}
+.navbar .logo p span{
+    font-weight: 700;
+
+}
+
+/* Navbar  */
+.navbar .navlinks{
+    margin-left: 800px;
+}
+.navbar .navlinks ul{
+    list-style: none;
+    margin-top: -30px;
+}
+#ul.active{
+    margin-top: -20px;
+}
+.top.active{
+    margin-top: 100px;
+}
+.navbar .navlinks ul li{
+    display: inline;
+    margin-left: 30px;
+}
+.navbar  .navlinks ul li a{
+    color: var(--black);
+    font-size: 17px;
+    text-decoration: none;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+/* end navbar */
+
+
+
+.freaskques{
+    padding-top: 100px;
+    background-color: var(--not-main);
+    height: 400px;
+    width: 1000px;
+    margin-left: 170px;
+    margin-top: 100px;
+}
+.freaskques .text3{
+    margin-left: 400px;
+}
+.freaskques .text3 .firstp{
+    font-size: 50px;
+    margin-top: -40px;
+    margin-left: -220px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: black;
+}
+.freaskques .text3 #Firstin{
+    width: 450px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: var(--white);
+    margin-left: -130px;
+    box-shadow: 0px 6px 15px -5px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+/* .freaskques .text3 #Firstin::-moz-list-number{
+    padding-right: -70px;
+} */
+.freaskques .text3 #butt{
+    margin-left: -90px;
+    width: 80px;
+    height: 30px;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    box-shadow: 0px 4px 15px -5px;
+}
+.freaskques .text3 #butt:hover{
+    box-shadow: none;
+}
+
+.freaskques .text3 .orr{
+    margin-left: -95px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: var(--black);
+    font-weight: 800;
+}
+.freaskques .text3 .orr a{
+    color: var(--black);
+}
+
+
+
+
+
+
+.freaskques .fourboxes{
+    margin-left: -300px;
+    margin-top: 100px;
+}
+.freaskques .fourboxes div{
+   float: left; 
+   margin-left: 50px;
+   background-color: var(--white);
+   color: var(--black);
+   width: 150px;
+   border-radius: 10px;
+   border: 2px solid var(--not-main);
+   transition: 0.3s all ease-in-out;
+   cursor: pointer;
+}
+.freaskques .fourboxes div:hover{
+    border: 2px solid var(--main-color);
+}
+.freaskques .fourboxes p{
+    margin-left: 30px;
+}
+.freaskques .fourboxes img{
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+
+.freaskednow{
+    padding-top: 100px;
+    background-color: var(--white);
+    height: 400px;
+    color: var(--black);
+    width: 1000px;
+    margin-left: 170px;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow.active{
+    height: 550px;
+}
+.freaskednow-p{
+    font-size: 50px;
+    margin-top: -40px;
+    margin-left: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: black;
+}
+
+.freaskednow .fb{
+    display: flex;
+    border: 1px solid var(--black);
+    width: 300px;
+    margin-left: 100px;
+    height: 50px;
+    border-radius: 5px;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fb:hover{
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fb.active{
+    height: 180px;
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fb .ol{
+    list-style: none;
+    margin-left: -50px;
+}
+.freaskednow .fb p{
+    margin-left: 200px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 13px;
+}
+.freaskednow .fb #plus{
+    margin-left: 200px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fb #plus.active{
+    display: none;
+}
+.freaskednow .fb #minus{
+    margin-left: 205px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 11px;
+    display: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fb #minus.active{
+    display: flex;
+}
+
+.freaskednow .fb #nootee{
+    width: 300px;
+    margin-left: -260px;
+    margin-top: 60px;
+    display: none;
+    transition: 0.5s all ease-in-out;
+    font-weight: 400;
+    font-size: 16px;
+}
+.freaskednow .fb #nootee.active{
+    display: grid;
+}
+
+
+.freaskednow .fbb{
+    display: flex;
+    border: 1px solid var(--black);
+    width: 300px;
+    margin-left: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbb:hover{
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbb.active{
+    height: 180px;
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbb .oll{
+    list-style: none;
+    margin-left: -50px;
+}
+.freaskednow .fbb .ool2{
+    width: 100px;
+}
+.freaskednow .fbb #add{
+    margin-left: 130px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbb #add.active{
+    display: none;
+}
+.freaskednow .fbb #remove{
+    margin-left: 135px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 11px;
+    display: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbb #remove.active{
+    display: flex;
+}
+
+.freaskednow .fbb #notee{
+    width: 300px;
+    margin-left: -260px;
+    margin-top: 60px;
+    display: none;
+    transition: 0.5s all ease-in-out;
+}
+.freaskednow .fbb #notee.active{
+    display: grid;
+}
+
+
+.freaskednow .fbbb{
+    display: flex;
+    border: 1px solid var(--black);
+    width: 300px;
+    margin-left: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbb:hover{
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbbb.active{
+    height: 180px;
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbbb .olll{
+    list-style: none;
+    margin-left: -50px;
+}
+.freaskednow .fbbb .oool2{
+    width: 100px;
+}
+.freaskednow .fbbb #addd{
+    margin-left: 130px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbb #addd.active{
+    display: none;
+}
+.freaskednow .fbbb #removee{
+    margin-left: 135px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 11px;
+    display: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbb #removee.active{
+    display: flex;
+}
+
+.freaskednow .fbbb #noteee{
+    width: 300px;
+    margin-left: -260px;
+    margin-top: 60px;
+    display: none;
+    transition: 0.5s all ease-in-out;
+}
+.freaskednow .fbbb #noteee.active{
+    display: grid;
+}
+
+
+.freaskednow .fbbbb{
+    display: flex;
+    border: 1px solid var(--black);
+    width: 300px;
+    margin-left: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbbb:hover{
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbbbb.active{
+    height: 180px;
+    border: 1px solid var(--main-color);
+}
+.freaskednow .fbbbb .ollll{
+    list-style: none;
+    margin-left: -50px;
+}
+.freaskednow .fbbbb .ooool2{
+    width: 100px;
+}
+.freaskednow .fbbbb #adddd{
+    margin-left: 130px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbbb #adddd.active{
+    display: none;
+}
+.freaskednow .fbbbb #removeee{
+    margin-left: 135px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 11px;
+    display: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.freaskednow .fbbbb #removeee.active{
+    display: flex;
+}
+
+.freaskednow .fbbbb #noteeee{
+    width: 300px;
+    margin-left: -260px;
+    margin-top: 60px;
+    display: none;
+    transition: 0.5s all ease-in-out;
+}
+.freaskednow .fbbbb #noteeee.active{
+    display: grid;    
+}
+
+
+
+.call{
+    background-color: var(--main-color);
+    color: var(--black);
+    width: 700px;
+    height: 300px;
+    border-radius: 30px;
+    margin-left: 620px;
+    margin-top: -350px;
+}
+.call .inn{
+    margin-left: 50px;
+}
+.call img{
+    width: 50px;
+    margin-left: 110px;
+}
+
+.call .p1{
+    font-size: 25px;
+    margin-left: 150px;
+    padding-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+.call .p2{
+    font-size: 11px;
+    width: 400px;
+    margin-left: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.call .p2 span{
+    margin-left: 60px;
+}
+
+
+.call .two-call {
+    display: flex;
+}
+.call .two-call a{
+    text-decoration: none;
+}
+.call .two-call p{
+    font-size: 15px;
+    color: var(--black);
+}
+
+.call .two-call .call-one-p,
+.call .two-call .call-two-p{
+    margin-left: 25px;
+}
+.call .two-call a{
+    margin-left: 40px;
+}
+
+.call .call-one{
+    background-color: var(--white);
+    width: 250px;
+}
+.call .call-one .call-one-p{
+    margin-left: 70px;
+}
+.call .call-one .call-one-p2{
+    margin-left: 40px;
+}
+.call .call-two{
+    background-color: var(--white);
+    width: 250px;
+}
+.call .call-two .call-two-p{
+    margin-left: 60px;
+}
+.call .call-two .call-two-p2{
+    margin-left: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.FAQ{
+    background-color: var(--white);
+    color: var(--black);
+
+    margin-top: 190px;
+}
+.closee .x1{
+    color: var(--black);
+}
+
+.FAQLink{
+    margin-top: 470px;
+}
+.FAQLink li a{
+    background-color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+.hh{
+    text-decoration: none;
+    position: fixed;
+    margin-top: -350px;
+}
+
+.hh  img{
+    position: fixed;
+    display: none;
+    text-decoration: none;
+    background-color: var(--white);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 1250px;
+    width: 40px;
+    margin-top: 280px;
+    cursor: pointer;
+}
+#ppp.active{
+    display: grid;
+}
