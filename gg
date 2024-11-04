@@ -1,0 +1,129 @@
+
+
+
+
+
+<div class="top-blog-div">
+            <div class="big-div">
+
+                <div class="over">
+
+                <button>Something</button>
+
+                <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                <p class="User">Destty Nelly</p>
+                <p class="date">Aug 20, 2024</p>
+
+            </div>
+            </div>
+
+            <div class="small-divs">
+
+                <div class="first-small-div">
+                    <div class="over">
+
+                    <button>Something</button>
+
+                    <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                    <p class="User">Destty Nelly</p>
+                    <p class="date">Aug 20, 2024</p>
+                </div>
+
+                </div>
+
+                <div class="second-small-div">
+
+                    <div class="over">
+
+                    <button>Something</button>
+
+
+                    <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                    <p class="User">Destty Nelly</p>
+                    <p class="date">Aug 20, 2024</p>
+                </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bottom-blog-div">
+            <div class="big-div">
+
+                <div class="over">
+
+                <button>Something</button>
+
+                <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                <p class="User">Destty Nelly</p>
+                <p class="date">Aug 20, 2024</p>
+
+            </div>
+            </div>
+
+            <div class="small-divs">
+
+                <div class="first-small-div">
+                    <div class="over">
+
+                    <button>Something</button>
+
+                    <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                    <p class="User">Destty Nelly</p>
+                    <p class="date">Aug 20, 2024</p>
+                </div>
+
+                </div>
+
+                <div class="second-small-div">
+
+                    <div class="over">
+
+                    <button>Something</button>
+
+
+                    <p class="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, repellendus molestiae alias ab, tenetur quod dolorum</p>
+
+                    <p class="User">Destty Nelly</p>
+                    <p class="date">Aug 20, 2024</p>
+                </div>
+                    
+                </div>
+
+            </div>
+        </div>
