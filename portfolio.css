@@ -1,0 +1,912 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+:root{
+    --purple: #7A27FF;
+    --white: #fff;
+    --ash: #D8D4D5;
+    --orange: #ff9000;
+    --black: #000;
+    --shadow: 1px 4px 10px -2px black;
+    --slow: all 0.3s ease-in-out;
+    --low-bg: #00000096;
+    --high-bg: #000000c7;
+    --mont: "Montserrat", sans-serif;
+    --poppins: "poppins", sans-serif;
+    --lowhite: #7a7a7a:
+}
+
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+    --poppins: "poppins", sans-serif;
+    --overl: #00000086;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+*{
+    font-family: var(--poppins);
+}
+
+body{
+    font-family: var(--poppins);
+    margin: 0px;
+    padding: 0px;
+}
+
+body.active{
+    position: fixed;
+}
+/* start NavBar  */
+.navbar{
+    position: fixed;
+    background-color: var(--white);
+    height: 100px;
+    margin-top: -150px;
+    width: 100%;
+    box-shadow: 1px 2px 20px -8px;
+}
+
+/* hamburger */
+.ham{
+    display: none;
+}
+
+
+.navbar .logo{
+    margin-left: 100px;
+    transform: translateY(10px);
+}
+.navbar .logo  img{
+    width: 100px;
+}
+.navbar .logo p{
+    margin-top: -60px;
+    margin-left: 90px;
+    font-family: var(--poppins);
+    font-size: 17px;
+    
+}
+.navbar .logo p span{
+    font-weight: 700;
+
+}
+
+/* Navbar  */
+.navbar .navlinks{
+    position: relative;
+    margin-left: -30px;
+}
+.navbar .navlinks ul{
+    list-style: none;
+    margin-top: -50px;
+}
+#ul.active{
+    margin-top: -20px;
+}
+.top.active{
+    margin-top: 100px;
+}
+.navbar .navlinks ul li{
+    display: inline;
+    margin-left: 30px;
+}
+.navbar  .navlinks ul li a{
+    color: var(--black);
+    font-size: 17px;
+    text-decoration: none;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Base styling */
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        } */
+
+        .eve{
+            margin-top: 150px;
+            width: 100%;
+        }
+        /* Main container */
+        .contact-container {
+            margin-left: 30%;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Title styling */
+        h1 {
+            color: #ff9000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 12px;
+            background-color: #ff9000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #e67e00;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 15px;
+            }
+        }
+
+
+
+
+
+
+
+
+.footer{
+    background-color: var(--white);
+    border-top: 1px solid var(--black);
+    width: 1330px;
+    margin-left: 10px;
+    height: 400px;
+    margin-top: 100px;
+}
+.footer .services{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.footer .services p{
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+}
+.footer .services a{
+    color: var(--black);
+    display: block;
+    padding-bottom: 10px;
+    width: 100px;
+    font-family: "poppins", sans-serif;
+}
+.footer .services #serve{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.footer .social-links{
+    margin-left: 400px;
+    margin-top: -100px;
+}
+.footer .social-links a{
+    text-decoration: none;
+    color: #000;
+}
+.footer .social-links img{
+    width: 30px;
+    margin-left: 20px;
+}
+
+
+.footer .subcribe {
+    margin-left: 850px;
+    margin-top: -30px;
+}
+.footer .subcribe input{
+    width: 350px;
+    background-color: var(--bg);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 10px;
+    height: 40px;
+    outline: none;
+    padding: 3px;
+}
+.footer .subcribe button{
+    width: 100px;
+    height: 60px;
+    background-color: var(--main-color);
+    border-radius: 2px;
+    border: none;
+}
+.footer hr{
+    width: 900px;
+    margin-left: 220px;
+    margin-top: 120px;
+}
+
+
+.undertins{
+    margin-left: 100px;
+    margin-top: 50px;
+    font-family: "poppins", sans-serif;
+}
+.undertins img{
+    width: 30px;
+}
+.undertins a{
+    color: var(--black);
+    text-decoration: none;
+    float: left;
+}
+.undertins .tin1,
+.undertins .tin2{
+    margin-right: 250px;
+}
+
+.undertins .tin2{
+    margin-left: 170px;
+}
+.undertins .tin2 p{
+    margin-top: -30px;
+    margin-left: 50px;
+}
+.undertins .tin3{
+    margin-left: 50px;
+    padding-left: -100px;
+}
+.undertins .tin3 p{
+    margin-top: -30px;
+    margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 200px){
+
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .navbar{
+        width: 100%;
+    }
+    .navbar .logo{
+        width: 30%;
+        margin-left: 0px;
+    }
+    .navbar .logo img{
+        width: 60px;
+        height: 50px;
+    }
+    .navbar .logo p{
+        margin-top: -45px;
+        margin-left: 55px;
+        font-size: 13px;
+    }
+    .ham{
+        display: block;
+        margin-left: 80%;
+    }
+    .ham img{
+        width: 20px;
+    }
+    .ham #open{
+        display: block;
+    }
+    .ham #open.active{
+        display: none;
+    }
+    .ham #closee{
+        position: relative;
+        display: none;
+    }
+    .ham #closee.active{
+        display: block;
+        margin-top: -270px;
+    }
+    
+    .navbar .navlinks{
+        box-shadow: var(--shadow);
+        background-color: var(--white);
+        display: none; 
+    }
+    .navbar .navlinks.active{
+        display: block; 
+    }
+    .navbar .navlinks ul{
+        margin-top: 50px;
+        margin-left: 0px;
+        transform: none;
+    }
+    .navbar .navlinks ul li{
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+
+
+    .eve{
+        width: 85%;
+    }
+
+    .contact-container{
+        margin-left: 1%;
+    }
+
+
+    .footer{
+        background-color: var(--white);
+        border-top: 1px solid var(--black);
+        width: 100%;
+        margin-left: -5px;
+        height: 400px;
+        margin-top: 50px;
+    }
+    .footer .services{
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    .footer .services p{
+        font-family: "poppins", sans-serif;
+        font-size: 5px;
+    }
+    .footer .services a{
+        color: var(--black);
+        display: block;
+        padding-bottom: 10px;
+        font-size: 13px;
+        width: 100px;
+        font-family: "poppins", sans-serif;
+    }
+    .footer .services #serve{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .footer .social-links{
+        margin-left: 70%;
+        margin-top: -150px;
+    }
+    .footer .social-links a{
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .footer .social-links img{
+        width: 15px;
+        margin-left: 20px;
+    }
+    
+    .footer .subcribe {
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .footer .subcribe input{
+        width: 50%;
+        background-color: var(--bg);
+        border: 1px solid black;
+        border-radius: 4px;
+        padding-left: 10px;
+        height: 30px;
+        outline: none;
+    }
+    .footer .subcribe button{
+        width: 70px;
+        height: 35px;
+        font-size: 10px;
+        background-color: var(--main-color);
+        border-radius: 2px;
+        border: none;
+    }
+    
+    .footer hr{
+        width: 80%;
+        margin-left: 20px;
+        margin-top: 80px;
+    }
+    
+    
+    .undertins{
+        margin-left: 15%;
+        margin-top: 10px;
+        font-family: "poppins", sans-serif;
+    }
+    .undertins img{
+        width: 30px;
+        display: none;
+    }
+    .undertins a{
+        color: var(--black);
+        text-decoration: none;
+        font-size: 8px;
+        float: left;
+        margin-left: -20px;
+    }
+    .undertins .tin1{
+        margin-right: -250px;
+    }
+    .undertins .tin2{
+        margin-top: 30px;
+        transform: translateX(-150%);
+        margin-right: -50px;
+    }
+    .undertins .tin3{
+        margin-top: 45px;
+        width: 110px;
+        transform: translateX(-100%);
+    }
+    .undertins .tin3 p{
+        margin-left: 0px;
+    }
+
+}
+
+
+
+
+
+
+
+
+@media (min-width: 250px){
+
+    
+
+
+    .contact{
+        margin-left: 5px;
+        margin-top: 30px;
+    }
+    .contact h1{
+        transform: none;
+        margin-left: 50px;
+        font-size: 20px;
+        width: 140px;
+    }
+
+    .contact .two-btn button{
+        font-size: 5px;
+        height: 25px;
+        width: 105px;
+        padding-left: 10px;
+        border-radius: 5px;
+        padding-right: 10px;
+        cursor: pointer;
+        color: var(--white);
+        font-weight: 600;
+        background-color: var(--low-bg);
+        border: 1px solid var(--orange);
+    }
+
+
+
+    .contact form{
+        margin-top: 20px;
+    }
+    .contact form label{
+        font-size: 11px;
+        margin-bottom: 40px;
+    }
+
+    .contact form input{
+        outline: none;
+        width: 200px;
+        padding-left: 10px;
+        border-radius: 5px;
+        height: 25px;
+        border: none;
+        font-size: 8px;
+        margin-bottom: 5px;
+    }
+    .contact form textarea{
+        outline: none;
+        font-size: 8px;
+        width: 200px;
+        padding-left: 10px;
+        border-radius: 5px;
+        height: 80px;
+        border: none;
+        margin-bottom: 10px;
+    }
+
+    .contact form button{
+        margin-left: 30px;
+        width: 150px;
+        height: 25px;
+        border: none;
+        font-size: 8px;
+        border-radius: 5px;
+        background-color: var(--orange);
+        box-shadow: var(--shadow);
+    }
+
+
+    .contact .big-con{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 40px;
+    }
+    .contact .big-con li a i{
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 300px){
+
+  
+    .navbar .logo img{
+        width: 100px;
+        height: 70px;
+    }
+    .navbar .logo p{
+        margin-top: -55px;
+        font-size: 16px;
+        margin-left: 90px;
+    }
+
+    .ham{
+        margin-top: -30px;
+    }
+    .ham #closee.active{
+        margin-top: -295px;
+    }
+
+    .contact{
+        margin-left: 5px;
+        margin-top: 30px;
+    }
+    .contact h1{
+        transform: none;
+        margin-left: 70px;
+        font-size: 20px;
+        width: 140px;
+    }
+
+    .contact .two-btn button{
+        font-size: 5px;
+        height: 30px;
+        width: 127px;
+        padding-left: 10px;
+        border-radius: 5px;
+        padding-right: 10px;
+        cursor: pointer;
+        color: var(--white);
+        font-weight: 600;
+        background-color: var(--low-bg);
+        border: 1px solid var(--orange);
+    }
+
+    .contact form label{
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .contact form input{
+        outline: none;
+        width: 245px;
+        padding-left: 10px;
+        border-radius: 5px;
+        height: 25px;
+        border: none;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .contact form textarea{
+        outline: none;
+        font-size: 10px;
+        width: 245px;
+        padding-left: 10px;
+        border-radius: 5px;
+        height: 90px;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+
+
+    .contact form button{
+        margin-left: 50px;
+        width: 150px;
+        height: 25px;
+        border: none;
+        font-size: 8px;
+        border-radius: 5px;
+        background-color: var(--orange);
+        box-shadow: var(--shadow);
+    }
+
+
+    .contact .big-con{
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-bottom: 40px;
+    }
+
+
+
+
+    .footer .subcribe{
+        width: 90%;
+        margin-left: 3%;
+    }
+    .footer .subcribe input{
+        width: 65%;
+    }
+
+}
+
+
+
+
+
+
+
+
+@media (min-width: 350px){
+    .contact-container{
+        margin-left: 5%;
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 500px){
+    .footer .subcribe{
+        margin-left: 10%;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 620px){
+    .contact-container{
+        margin-left: 7%;
+    }
+
+}
+
+
+@media (min-width: 640px){
+    .contact-container{
+        margin-left: 10%;
+    }
+}
+
+@media (min-width: 700px){
+    .contact-container{
+        margin-left: 15%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 800px){
+    .navbar{
+        width: 100%;
+    }
+    .navbar .logo{
+        width: 30%;
+    }
+
+
+   
+    .ham{
+        display: none;
+    }
+    .navbar .navlinks{
+        display: block;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 70%;
+        padding-left: 0px;
+        margin-left: 30%;
+        text-align: start;
+    }
+    .navbar .navlinks ul{
+        margin-left: 0px;
+        margin-top: -30px;
+        position: relative;
+        text-align: start;
+        box-shadow: none;
+    }
+    .navbar .navlinks ul li{
+        display: inline;
+        margin-right: 30px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+
+    .contact-container{
+        margin-left: 20%;
+    }
+
+
+    .footer .services{
+        margin-left: 5%;
+    }
+    .footer .social-links{
+        margin-left: 20%;
+        margin-top: -60px;
+    }
+    .footer .social-links a img{
+        float: left;
+        width: 25px;
+    }
+    .footer .subcribe{
+        margin-top: -30px;
+        margin-left: 60%;
+        width: 40%;
+    }
+    .footer hr{
+        margin-left: 10%;
+    }
+    .undertins{
+        margin-left: 15%;
+    }
+    .undertins .tin1{
+        transform: none;
+    }
+}
+
+
+@media (min-width: 900px){
+    .navbar .navlinks{
+        display: block;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 70%;
+        padding-left: 0px;
+        margin-left: 40%;
+        text-align: start;
+    }
+}
+
+
+@media (min-width: 1000px){
+    .eve{
+        padding-left: 13%;
+    }
+    .contact-container{
+        margin-left: 20%;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1100px){
+    .navbar .navlinks{
+        display: block;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 70%;
+        padding-left: 0px;
+        margin-left: 50%;
+        text-align: start;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1100px){
+    .navbar .navlinks{
+        display: block;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 70%;
+        padding-left: 0px;
+        margin-left: 55%;
+        text-align: start;
+    }
+}
