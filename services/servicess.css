@@ -174,12 +174,13 @@ body{
         margin-left: 5%;
         width: 90%;
         margin-top: 150px;
+        margin-bottom: 100px;
     }
 
     .footer{
         margin-left: -300px;
         width: 50%;
-        display: none;
+        margin-top: 600px;
     }
 }
 
