@@ -53,6 +53,7 @@ document.querySelector(".play").addEventListener("click", function(){
 
 document.getElementById("overp").addEventListener("click", function(){
     // window.alert("kkkk")
+    window.location = "index.html"
     document.querySelector(".over").classList.remove("active")
     document.querySelector(".popup").classList.remove("active")
     document.querySelector("body").classList.remove("active")
