@@ -490,17 +490,18 @@ body.active{
         margin-left: -20px;
     }
     .undertins .tin1{
-        margin-right: -250px;
+        margin-right: 0px;
     }
     .undertins .tin2{
-        margin-top: 30px;
-        transform: translateX(-150%);
-        margin-right: -50px;
+        background-color: red;
+        margin-left: 20%;
+        transform: none;
+        margin-top: 15px;
     }
     .undertins .tin3{
-        margin-top: 45px;
+        margin-top: 20px;
         width: 110px;
-        transform: translateX(-100%);
+        margin-left: 20%;
     }
     .undertins .tin3 p{
         margin-left: 0px;
@@ -713,6 +714,17 @@ body.active{
         width: 65%;
     }
 
+    .undertins{
+
+    }
+    .undertins .tin2{
+        margin-top: 10px;
+        margin-left: -5%;
+    }
+    .undertins .tin3{
+        margin-top: 0px;
+        margin-left: 55%;
+    }
 }
 
 
@@ -725,6 +737,14 @@ body.active{
 @media (min-width: 350px){
     .contact-container{
         margin-left: 5%;
+    }
+    .undertins .tin2{
+        margin-top: 10px;
+        margin-left: 10%;
+    }
+    .undertins .tin3{
+        margin-top: 0px;
+        margin-left: 60%;
     }
 }
 
@@ -745,12 +765,33 @@ body.active{
 
 
 
+@media (min-width: 537px){
+    .footer .subcribe{
+        margin-left: 10%;
+    }
+
+    .undertins .tin2{
+        margin-top: 40px;
+        margin-left: 10%;
+    }
+    .undertins .tin3{
+        margin-top: 0px;
+        margin-left: 60%;
+    }
+}
+
 
 @media (min-width: 620px){
     .contact-container{
         margin-left: 7%;
     }
 
+
+
+    .undertins .tin2{
+        margin-top: 40px;
+        margin-left: 10%;
+    }
 }
 
 
@@ -762,6 +803,11 @@ body.active{
 
 @media (min-width: 700px){
     .contact-container{
+        margin-left: 15%;
+    }
+
+    .undertins .tin2{
+        margin-top: 40px;
         margin-left: 15%;
     }
 }

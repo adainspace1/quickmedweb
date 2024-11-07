@@ -245,6 +245,7 @@ body{
         display: block;
     }
     .advert4{
+        background-color: red;
         display: none;
     }
     .adtop{
@@ -307,6 +308,21 @@ body{
         text-decoration: underline;
     }
     
+
+
+
+    
+   
+    .undertins a{
+        float: left;
+    }
+    .undertins .tin2{
+        margin-top: -500px;
+        margin-right: 0px;
+    }
+    .undertins .tin3{
+        transform: translateX(300px);
+    }
 }
 
 
