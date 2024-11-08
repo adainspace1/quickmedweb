@@ -237,21 +237,20 @@ body{
     }
     .advert2,
     .advert3{
-        width: 200px;
+        width: 170px;
     }
     .advert3{
-        margin-left: 92%;
+        margin-left: 90%;
         margin-top: -350px;
         display: block;
     }
     .advert4{
-        background-color: red;
         display: none;
     }
     .adtop{
         display: block;
         text-align: center;
-        font-size: 16px;
+        font-size: 10px;
         font-weight: 600;
         border-bottom: 1px solid var(--main-color);
     }
@@ -264,12 +263,12 @@ body{
         margin-left: 5%;
         padding-top: 20%;
         margin-top: -1px;
-        font-size: 60px;
+        font-size: 30px;
         font-weight: 500;
-        line-height: 25px;
+        line-height: 20px;
     }
     .d-add .d-addp span{
-        font-size: 23px;
+        font-size: 13px;
     }
     
     
@@ -299,7 +298,7 @@ body{
     }
     .d-text .bodyy{
         margin-top: -350px;
-        margin-left: 25%;
+        margin-left: 20%;
         font-size: 14px;
         width: 65%;
     }
@@ -309,19 +308,25 @@ body{
     }
     
 
-
-
+    
     
    
     .undertins a{
         float: left;
     }
-    .undertins .tin2{
-        margin-top: -500px;
+    .undertins .tin1{
         margin-right: 0px;
     }
-    .undertins .tin3{
+    .undertins .tin2{
+        margin-left: 50px;
+        margin-top: -500px;
+        margin-right: 0px;
         transform: translateX(300px);
+    }
+    .undertins .tin3{
+        margin-left: 50%;
+        transform: translateY(-30px);
+        margin-top: -30px;
     }
 }
 
@@ -432,6 +437,28 @@ body{
     .d-text .bodyy a{
         color: var(--main-color);
         text-decoration: underline;
+    }
+
+
+
+
+
+    .undertins a{
+        float: left;
+    }
+    .undertins .tin1{
+        margin-right: 0px;
+    }
+    .undertins .tin2{
+        margin-left: 100px;
+        margin-top: -500px;
+        margin-right: 0px;
+        transform: translateX(-0px);
+    }
+    .undertins .tin3{
+        margin-left: 50%;
+        transform: translateY(5px);
+        margin-top: 30px;
     }
     
 }
