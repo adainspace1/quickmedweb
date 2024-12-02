@@ -1,0 +1,114 @@
+
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --poppins: "poppins", sans-serif;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+}
+
+.navbar{
+    margin-top: -150px;
+}
+
+.investment{
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+.investment .inhep{
+    margin-left: 35%;
+    font-size: 40px;
+}
+.investment .inbyp{
+    margin-left: 5%;
+    width: 90%;
+}
+.investment .inbyp a{
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 200px){
+
+    .investment .inhep{
+        font-size: 20px;
+        margin-left: 5%;
+    }
+    .investment .inbyp{
+        margin-left: 5%;
+        width: 90%;
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 300px){
+
+    .investment .inhep{
+        font-size: 20px;
+        margin-left: 10%;
+    }
+}
+
+
+
+
+@media (min-width: 400px){
+
+    .investment .inhep{
+        font-size: 20px;
+        margin-left: 20%;
+    }
+}
+
+
+@media (min-width: 500px){
+
+    .investment .inhep{
+        font-size: 30px;
+        margin-left: 20%;
+    }
+    .investment .inbyp{
+        margin-left: 5%;
+        width: 90%;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+@media (min-width: 700px){
+
+    .investment .inhep{
+        font-size: 40px;
+        margin-left: 15%;
+    }
+}
+
+
+
+@media (min-width: 900px){
+
+    .investment .inhep{
+        font-size: 40px;
+        margin-left: 30%;
+    }
+}

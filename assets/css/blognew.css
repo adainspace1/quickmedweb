@@ -1,0 +1,662 @@
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+    --poppins: "poppins", sans-serif;
+    --overl: #00000086;
+}
+
+@media (min-width: 200px){
+
+*{
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+
+    .all-text{
+        padding-bottom: 100px;
+        overflow: hidden;
+        margin-left: 3px;
+    }
+
+
+    .advert3,
+    .advert4{
+        margin-left: 0%;
+        align-self: center;
+        justify-self: center;
+        width: 90%;
+        height: 130px;
+        background-color: var(--main-color);
+    }
+    
+    .advert3 .d-addp span,
+    .advert4 .d-addp span{
+        margin-top: -200%;
+    }
+    .advert3{
+        margin-bottom: 50px;
+    }
+    .advert4{
+        margin-top: -00px;
+    }
+    
+    .advert2{
+        display: none;
+        margin-top: 4350px;
+    }
+    .adtop{
+        display: none;
+    }
+    .d-add{
+        width: 100%;
+        height: 70px;
+    }
+    .d-add .d-addp{
+        padding-top: 10px;
+        font-size: 40px;
+        text-align: center;
+    }
+    .d-add .d-addp span{
+        font-size: 17px
+    }
+
+
+
+    .all-text .profile{
+        width: 50%;
+    }
+    .all-text .profile .pro-p{
+        font-size: 10px;
+        margin-left: 20px;
+    }
+    .all-text .profile .follow{
+        width: 40%;
+        margin-left: 100px;
+    }
+    .all-text .profile .follow .follow-bnt{
+        margin-left: 0px;
+    }
+
+    .all-text .head-text{
+        width: 90%;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .all-text .little-pees{
+        margin-left: 3%;
+        width: 90%;
+        font-size: 11px;
+    }
+    
+    .advert{
+        width: 90%;
+    }
+    .advert .adp{
+        font-size: 20px;
+    }
+
+
+    .commentsec{
+        margin-left: 30px;
+    }
+    .commentsec .comhead{
+        font-size: 30px;
+    }
+    .commentsec .d-coment{
+        width: 90%;
+    }
+    .commentsec .d-coment textarea{
+        width: 100%;
+        height: 150px;
+        padding-left: 10px;
+    }
+    .commentsec .d-coment input{
+        width: 99%;
+        margin-bottom: 10px;
+        height: 40px;
+        margin-left: 2.5px;
+        padding-left: 10px;
+    }
+    .commentsec .d-coment button{
+        width: 150px;
+        max-width: 150px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 0px;
+        background-color: var(--main-color);
+        border: none;
+        cursor: pointer;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .footer{
+        background-color: var(--white);
+        border-top: 1px solid var(--black);
+        width: 100%;
+        margin-left: -5px;
+        height: 400px;
+        margin-top: 50px;
+    }
+    .footer .services{
+        margin-top: 50px;
+        margin-left: 20px;
+        width: 45%;
+    }
+    .footer .services p{
+        font-family: "poppins", sans-serif;
+        font-size: 5px;
+    }
+    .footer .services a{
+        color: var(--black);
+        display: block;
+        padding-bottom: 10px;
+        font-size: 13px;
+        width: 100px;
+        font-family: "poppins", sans-serif;
+    }
+    .footer .services #serve{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .footer .social-links{
+        width: 20%;
+        margin-left: 70%;
+        margin-top: -150px;
+    }
+    .footer .social-links a{
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .footer .social-links img{
+        width: 15px;
+        margin-left: 20px;
+    }
+    
+    .footer .subcribe {
+        margin-left: 10px;
+        width: 96%;
+        margin-top: 30px;
+    }
+    .footer .subcribe input{
+        width: 60%;
+        background-color: var(--bg);
+        border: 1px solid black;
+        border-radius: 4px;
+        padding-left: 10px;
+        height: 30px;
+        outline: none;
+    }
+    .footer .subcribe button{
+        width: 70px;
+        height: 35px;
+        font-size: 10px;
+        background-color: var(--main-color);
+        border-radius: 2px;
+        border: none;
+    }
+    
+    .footer hr{
+        width: 80%;
+        margin-left: 20px;
+        margin-top: 80px;
+    }
+    
+    
+    .undertins{
+        margin-left: 20%;
+        margin-top: 10px;
+        font-family: "poppins", sans-serif;
+    }
+    .undertins img{
+        width: 30px;
+        display: none;
+    }
+    .undertins a{
+        color: var(--black);
+        text-decoration: none;
+        font-size: 8px;
+        float: left;
+        margin-left: -20px;
+    }
+    .undertins .tin1{
+        margin-right: 0px;
+    }
+    .undertins .tin2{
+        margin-top: -5px;
+        margin-left: -40%;
+        margin-right: 0px;
+    }
+    .undertins .tin3{
+        margin-top: 35px;
+        width: 110px;
+        margin-left: -30px;
+    }
+    .undertins .tin3 p{
+        margin-left: 0px;
+    }
+}
+
+
+
+
+@media (min-width: 400px){
+  
+    
+    .footer{
+        width: 100%;
+    }
+
+    
+    .footer .social-links{
+        margin-left: 150px;
+        margin-top: -80px;
+        width: 60%;
+    }
+    .footer .social-links a{
+        margin-left: 0px;
+    }
+    .footer .social-links a img{
+        float: left;
+
+    }
+    .footer .subcribe{
+        margin-top: 120px;
+        margin-left: 20px;
+        width: 90%;
+    }
+    .footer .subcribe input{
+        width: 75%;
+    } 
+
+    .footer hr{
+        width: 80%;
+    }
+
+    
+    
+    .undertins{
+        height: 30px;
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 10px;
+        font-family: "poppins", sans-serif;
+    }
+    .undertins img{
+        width: 30px;
+        display: none;
+    }
+    .undertins a{
+        color: var(--black);
+        text-decoration: none;
+        font-size: 8px;
+        float: left;
+        margin-left: -20px;
+    }
+    .undertins .tin1{
+        margin-top: 0px;
+        width: 100px;
+        margin-right: -250px;
+    }
+    .undertins .tin2{
+        width: 120px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 30%;
+        overflow: hidden;
+    }
+    .undertins .tin2 p{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .undertins .tin3{
+        margin-top: 0px;
+        width: 110px;
+        margin-left: 82%;
+    }
+    .undertins .tin3 p{
+        margin-left: 0px;
+    }
+}
+
+
+
+
+
+@media (min-width: 500px){
+
+
+    .d-text{
+        margin-left: 50%;
+    }
+    .all-text{
+        padding-bottom: 100px;
+        overflow: hidden;
+        width: 80%;
+        margin-left: 0px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .advert2,
+    .advert3,
+    .advert4{
+        width: 70%;
+    }
+
+    .d-text .headd,
+    .d-text .headdd{
+        font-size: 30px;
+        margin-left: 6%;
+        margin-top: 150px;
+        width: 90%;
+    }
+
+    
+    .footer{
+        margin-top: 550px;
+    }
+    .footer .social-links{
+        margin-left: 40%;
+    }
+    .footer .social-links a img{
+        width: 25px;
+    }
+    .footer .subcribe{
+        margin-left: 10%;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 700px){
+
+    .footer{
+        margin-top: 300px;
+        height: 300px;
+    }
+    .footer .social-links{
+        margin-left: 20%;
+    }
+    .footer .social-links a img{
+        width: 25px;
+        margin-left: 10px;
+    }
+
+    .footer .subcribe{
+        width: 45%;
+        height: 30px;
+        margin-left: 53%;
+        margin-top: -90px;
+    }
+    .footer .subcribe input{
+        width: 72%;
+        margin-top: 0px;
+    }
+    .footer hr{
+        margin-left: 11%;
+        margin-top: 80px;
+    }
+    .undertins{
+        margin-left: 18%;
+    }
+}
+
+
+
+
+@media (min-width: 1000px){
+
+
+
+
+
+.advert2,
+.advert3,
+.advert4{
+    width: 70%;
+    display: none;
+}
+
+
+.all-text {
+    margin-top: 100px;
+    margin-left: 15%;
+}
+.all-text .profile{
+    display: inline;
+    margin-left: 20px;
+}
+.all-text .profile .pro-p{
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.all-text .profile .follow{
+    margin-top: -35px;
+}
+.all-text .profile .follow .follow-bnt{
+    background-color: var(--white);
+    cursor: pointer;
+    border: none;
+    margin-left: 100px;
+    /* margin-top: -200px; */
+    font-family: var(--poppins);
+    width: 80px;
+    box-shadow: 3px 2px 10px -6px black;
+}
+.all-text .head-text{
+    font-size: 30px;
+    font-weight: 600;
+}
+.all-text .little-pees{
+    width: 60%;
+    font-size: 16px;
+}
+
+
+.advert{
+    display: block;
+    width: 60%;
+    background-color: var(--main-color);
+    height: 100px;
+    margin-left: 3%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.advert .adp{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: var(--poppins);
+    text-align: center;
+    padding-top: 30px;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+
+.advert2{
+    display: block;
+    margin-left: 70%;
+    margin-top: -400px;
+    width: 200px;
+    margin-bottom: 180px;
+}
+.advert2 .adtop{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--main-color);
+}
+.advert2 .d-add{
+    width: 100%;
+    height: 300px;
+    background-color: var(--main-color);
+}
+.advert2 .d-add .d-addp{
+    margin-left: 5%;
+    padding-top: 20%;
+    margin-top: -1px;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 25px;
+}
+.advert2 .d-add .d-addp span{
+    font-size: 23px;
+}
+
+
+.commentsec{
+    margin-left: 30px;
+}
+.commentsec .comhead{
+    font-size: 30px;
+}
+.commentsec .d-coment{
+    width: 60%;
+}
+.commentsec .d-coment textarea{
+    width: 95%;
+    height: 150px;
+    padding-left: 10px;
+}
+.commentsec .d-coment input{
+    width: 45%;
+    height: 40px;
+    margin-left: 2.5px;
+    padding-left: 10px;
+}
+.commentsec .d-coment button{
+    width: 150px;
+    max-width: 150px;
+    height: 40px;
+    margin-left: 0%;
+    margin-top: 10px;
+    background-color: var(--main-color);
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.footer{
+    background-color: var(--white);
+    border-top: 1px solid var(--black);
+    width: 98%;
+    margin-left: 10px;
+    height: 400px;
+    margin-top: 150px;
+}
+.footer .services{
+    margin-top: 50px;
+    margin-left: 5%;
+}
+.footer .services p{
+    font-family: var(--poppins);
+    font-size: 16px;
+}
+.footer .services a{
+    color: var(--black);
+    display: block;
+    padding-bottom: 10px;
+    font-family: var(--poppins);
+}
+.footer .services #serve{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.footer .social-links{
+    margin-left: 20%;
+    margin-top: -100px;
+}
+.footer .social-links a{
+    text-decoration: none;
+    color: #000;
+}
+.footer .social-links a img{
+    width: 30px;
+    margin-left: 20px;
+}
+
+
+.footer .subcribe {
+    margin-left: 55%;
+    margin-top: -30px;
+    width: 40%;
+}
+.footer .subcribe input{
+    width: 70%;
+    background-color: var(--white);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 10px;
+    height: 30px;
+}
+.footer .subcribe button{
+    width: 25%;
+    height: 35px;
+    background-color: var(--main-color);
+    border-radius: 2px;
+    border: none;
+    font-size: 15px;
+}
+.footer hr{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 120px;
+}
+
+
+.undertins{
+    width: 80%;
+    margin-left: 12%;
+    margin-top: 50px;
+    font-family: var(--poppins);
+}
+.undertins img{
+    width: 30px;
+}
+.undertins a{
+    color: var(--black);
+    font-size: 15px;
+    text-decoration: none;
+    float: left;
+}
+.undertins .tin1,
+.undertins .tin2{
+    margin-right: 20%;
+}
+
+.undertins .tin2{
+    width: 180px;
+    margin-left: 10%;
+}
+.undertins .tin2 p{
+    margin-top: -0px;
+    margin-left: 0%;
+}
+.undertins .tin3{
+    width: 160px;
+    margin-left: 8%;
+    padding-left: -0px;
+    margin-top: 0px;
+}
+.undertins .tin3 p{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+}

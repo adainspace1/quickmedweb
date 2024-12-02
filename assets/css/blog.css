@@ -1,0 +1,436 @@
+
+
+
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --poppins: "poppins", sans-serif;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+}
+.navbar{
+    margin-top: -150px;
+    z-index: 2;
+}
+
+/* .bloge{
+    width: 100%;
+    margin-top: 100px;
+}
+.bloge .topblogd{
+    width: 100%;
+    height: 600px;
+}
+
+.bloge .topblogd div{
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+    background-color: red
+}
+.bloge .topblogd div .img{
+    width: 100%;
+    height: 100%;
+}
+.bloge .topblogd div .img img{
+    width: 100%;
+    height: 100%;
+}
+.bloge .topblogd div .blogbody{
+    width: 95%;
+    background-color: var(--black);
+    height: 100%;
+    margin-top: -300px;
+    margin-left: 5%;
+} */
+
+
+/* Basic Reset */
+.eveblog{
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+  
+
+  
+  
+  
+  .carousel-content {
+    position: relative;
+    color: white;
+    margin-left: 10%;
+    max-width: 60%;
+  }
+  
+  .carousel-content .featured {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  
+  .carousel-content h1 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .carousel-content p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+  
+  /* Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.7;
+  }
+  
+
+  /* Dot Navigation */
+  .dot-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+   input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+  }
+   input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: 50%;
+  }
+  /* .colordot[type="radio"]{
+    background-color: var(--main-color);
+  }
+  .colordot[type="radio"].active{
+    background: none;
+  } */
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  .miniblog{
+    width: 100%;
+  }
+  .miniblog .minibp{
+    margin-left: 5%;
+    font-size: 30px;
+    font-weight: 200;
+    padding-bottom: 0px;
+  }
+
+  .miniblog .d-blogs{
+    margin-top: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    display: flex;
+    margin-top: -100px;
+  }
+  .miniblog .d-blogs div{
+    max-width: 300px;
+    padding: 1%;
+    margin-bottom: 0px;
+    margin-left: 1%;
+  }
+  .miniblog .d-blogs div img{
+    width: 100%;
+    height: 200px;
+  }
+  .miniblog .d-blogs div .blogtitle{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .miniblog .d-blogs div span .blogdescrip{
+    font-size: 13px;
+    height: 57px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    color: var(--black);
+  }
+  .miniblog .d-blogs div span a{
+    font-size: 13px;
+    color: var(--main-color);
+  }
+
+  .miniblog .d-blogs div .blogabout{
+    margin-top: 30px;
+  }
+  .miniblog .d-blogs div .blogabout p{
+    font-size: 13px;
+    display: inline;
+    margin-left: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 200px){
+
+   
+
+   
+
+    .carousel-content {
+      position: relative;
+      color: white;
+      margin-left: 5%;
+      max-width: 90%;
+    }
+
+    .carousel-content .featured {
+      font-size: 10px;
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    .carousel-content h1 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    
+    .carousel-content p {
+      font-size: 13px;
+      opacity: 0.9;
+      height: 100px;
+      overflow: hidden;
+    }
+
+
+
+
+    .miniblog{
+      width: 100%;
+      margin-top: 100px;
+    }
+    .miniblog .minibp{
+      margin-left: 0px;
+      align-self: center;
+      font-size: 25px;
+      justify-self: center;
+    }
+    .miniblog .d-blogs{
+      align-self: center;
+      justify-self: center;
+      margin-top: 0px;
+      padding-left: 5%;
+      padding-right: 5%;
+      width: 90%;
+      max-width: 330px;
+      display: block;
+      margin-top: -0px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 600px){
+
+
+    .carousel-content {
+      position: relative;
+      color: white;
+      margin-left: 5%;
+      max-width: 60%;
+    }
+    .carousel-content .featured {
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    .carousel-content h1 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .carousel-content p {
+      font-size: 16px;
+      opacity: 0.9;
+      height: 140px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 800px){
+
+
+    .miniblog{
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .miniblog .minibp{
+      margin-left: 0px;
+      align-self: center;
+      font-size: 30px;
+      justify-self: center;
+    }
+
+    .miniblog .d-blogs{
+      align-self: center;
+      justify-self: center;
+      margin-top: 0px;
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 90%;
+      max-width: 90%;
+      display: flex;
+      margin-top: -0px;
+    }
+    .miniblog .d-blogs div{
+      float: left;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 1000px){
+
+
+    .miniblog{
+      width: 100%;
+    }
+    .miniblog .minibp{
+      margin-left: 5%;
+      font-size: 30px;
+      font-weight: 200;
+      padding-bottom: 0px;
+    }
+  
+    .miniblog .d-blogs{
+      margin-top: 0px;
+      padding-left: 5%;
+      padding-right: 5%;
+      width: 90%;
+      display: flex;
+      margin-top: 0px;
+    }
+    .miniblog .d-blogs div{
+      max-width: 300px;
+      padding: 1%;
+      margin-bottom: 0px;
+      margin-left: 1%;
+    }
+    .miniblog .d-blogs div img{
+      width: 100%;
+      height: 200px;
+    }
+    .miniblog .d-blogs div .blogtitle{
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .miniblog .d-blogs div span .blogdescrip{
+      font-size: 13px;
+      height: 57px;
+      overflow: hidden;
+      margin-bottom: 0px;
+      color: var(--black);
+    }
+    .miniblog .d-blogs div span a{
+      font-size: 13px;
+      color: var(--main-color);
+    }
+  
+    .miniblog .d-blogs div .blogabout{
+      margin-top: 30px;
+    }
+    .miniblog .d-blogs div .blogabout p{
+      font-size: 13px;
+      display: inline;
+      margin-left: 10px;
+    }
+
+  }

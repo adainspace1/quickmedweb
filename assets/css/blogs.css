@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+    --poppins: "poppins", sans-serif;
+    --overl: #00000086;
+}
+body{
+    font-family: var(--poppins);
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+
+
+.all-text {
+    margin-top: 100px;
+    margin-left: 15%;
+}
+.all-text .profile{
+    display: inline;
+    margin-left: 20px;
+}
+.all-text .profile .pro-p{
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.all-text .profile .follow{
+    margin-top: -35px;
+}
+.all-text .profile .follow .follow-bnt{
+    background-color: var(--white);
+    cursor: pointer;
+    border: none;
+    margin-left: 100px;
+    /* margin-top: -200px; */
+    font-family: var(--poppins);
+    width: 80px;
+    box-shadow: 3px 2px 10px -6px black;
+}
+.all-text .head-text{
+    font-size: 30px;
+    font-weight: 600;
+}
+.all-text .little-pees{
+    width: 60%;
+    height: auto;
+}
+
+
+.advert{
+    width: 40%;
+    background-color: var(--main-color);
+    height: 100px;
+    margin-left: 3%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.advert .adp{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: var(--poppins);
+    text-align: center;
+    padding-top: 30px;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+
+.advert2{
+    margin-left: 70%;
+    margin-top: -650px;
+    width: 200px;
+    margin-bottom: 350px;
+}
+.advert2 .adtop{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--main-color);
+}
+.advert2 .d-add{
+    width: 100%;
+    height: 300px;
+    background-color: var(--main-color);
+}
+.advert2 .d-add .d-addp{
+    margin-left: 5%;
+    padding-top: 20%;
+    margin-top: -1px;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 25px;
+}
+.advert2 .d-add .d-addp span{
+    font-size: 23px;
+}
+
+
+
+.commentsec{
+    margin-left: 30px;
+}
+.commentsec .comhead{
+    font-size: 30px;
+}
+.commentsec .d-coment{
+    width: 60%;
+}
+.commentsec .d-coment textarea{
+    width: 100%;
+    height: 150px;
+    padding-left: 10px;
+}
+.commentsec .d-coment input{
+    width: 47%;
+    height: 40px;
+    margin-left: 2.5px;
+    padding-left: 10px;
+}
+.commentsec .d-coment button{
+    width: 150px;
+    max-width: 150px;
+    height: 40px;
+    margin-left: 76%;
+    margin-top: 10px;
+    background-color: var(--main-color);
+    border: none;
+    align-content: flex-end;
+    cursor: pointer;
+    justify-self: end;
+}

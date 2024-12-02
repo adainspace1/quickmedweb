@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMed</title>
+    <link rel="icon" href="/images/quickmedlogo.PNG">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/investment.css">
+</head>
+<body>
+
+
+   <!-- start NavBar -->
+   <div class="navbar">
+
+    <div class="logo">
+        <img src="/images/quickmedlogo.PNG" alt="QuickMed Logo" class="top">
+        <p class="top"><span>QUICK</span>MED</p>
+    </div>
+
+    <div class="ham">
+        <img id="open" src="/images/hamburger-svgrepo-com (1).png" alt="hamburger icon">
+        <img id="closee" src="/images/close-circle-svgrepo-com.png" alt="close icon">
+    </div>
+    <div class="navlinks">
+
+
+        <div class="navclose">
+            <p id="clop">X</p>
+        </div>
+      
+        <ul id="ul">
+            <li><a href="/">Home</a></li>
+            <li><a class="aboutl">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboimg"></a></li>
+            <div class="aboutdrop">
+            <li class="donts1"><a href="/about/aboutus">About Us</a></li>
+            <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
+        </div>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a class="joinl">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joinimg"></a></li>
+            <div class="joindrop">
+            <li class="donts2"><a href="/invest/investment">Investment</a></li>
+            <li class="donts2"><a href="/invest/partnership">Partnership</a></li>
+        </div>
+        </ul>
+
+        
+    </div>
+
+   
+
+    <div class="navpop">
+    <div class="aboutpop">
+        <ul>
+            <li><a href="/about/aboutus">About Us</a></li>
+            <li><a href="/about/aboutdteam">About the team</a></li>
+        </ul>
+    </div>
+    <div class="joinpop">
+        <ul>
+            <li><a href="/invest/investment">Investment</a></li>
+            <li><a href="/invest/partnership">Partnership</a></li>
+        </ul>
+    </div>
+
+</div>
+
+  
+
+</div>
+<!-- 08062812376 -->
+<!-- end navbar -->
+
+
+
+    
+
+    <div class="investform">
+    <h2>Partner with QuickMed: Driving Healthcare Innovation Together</h2>
+    <p>At QuickMed, we believe that collaboration is key to advancing healthcare solutions. If you're interested in exploring partnership opportunities with us, please fill out the form below, and we will get in touch to discuss how we can work together to make an impact.</p>
+
+    <form action="https://www.quickmedng.com/api/auth/invest/partnership" method="post">
+
+        <!-- Full Name -->
+        <label for="full-name">Full Name (Required)</label>
+        <input type="text" id="full-name" name="fullname" required>
+
+        <!-- Email Address -->
+        <label for="email">Email Address (Required)</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number (Optional)</label>
+        <input type="tel" id="phone" name="phoneNumber" placeholder="e.g., +1234567890">
+
+        <!-- Company/Organization Name -->
+        <label for="company">Company/Organization Name (Required)</label>
+        <input type="text" id="company" name="company" required>
+
+        <!-- Position/Title -->
+        <label for="position">Position/Title (Required)</label>
+        <input type="text" id="position" name="position" required>
+
+        <!-- Partnership Type -->
+        <label for="partnership-type">Partnership Type (Select One)</label>
+        <select id="partnership-type" name="partnershiptype" required>
+            <option value="" disabled selected>Select partnership type</option>
+            <option value="healthcare-provider">Healthcare Provider</option>
+            <option value="technology-partner">Technology Partner</option>
+            <option value="research-collaboration">Research Collaboration</option>
+            <option value="corporate-sponsor">Corporate Sponsor</option>
+            <option value="policy-maker">Policy Maker</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- Area of Interest -->
+        <label for="area-of-interest">Area of Interest (Required)</label>
+        <textarea id="area-of-interest" name="areaofinterest" rows="4" required placeholder="Please describe the nature of the partnership you're interested in."></textarea>
+
+        <!-- How Can We Help Your Organization? -->
+        <label for="organization-help">How Can We Help Your Organization? (Optional)</label>
+        <textarea id="organization-help" name="organizationhelp" rows="4" placeholder="Please explain how QuickMed can support your organization's goals through this partnership."></textarea>
+
+        <!-- Potential Impact of Collaboration -->
+        <label for="impact">What Do You See as the Potential Impact of Our Collaboration? (Optional)</label>
+        <textarea id="impact" name="impact" rows="4" placeholder="Please provide your thoughts on how this partnership can positively impact the healthcare space."></textarea>
+
+        <!-- How did you hear about QuickMed? -->
+        <label for="referral">How did you hear about QuickMed? (Optional)</label>
+        <select id="referral" name="referral">
+            <option value="" disabled selected>Select an option</option>
+            <option value="referral">Referral</option>
+            <option value="online-search">Online Search</option>
+            <option value="social-media">Social Media</option>
+            <option value="event">Event</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- Preferred Method of Contact -->
+        <label for="contact-method">Preferred Method of Contact (Select One)</label>
+        <select id="contact-method" name="contactmethod" required>
+            <option value="" disabled selected>Select preferred method</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="both">Both</option>
+        </select>
+
+        <!-- Consent to Terms & Conditions -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions and privacy policy of QuickMed.</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Submit Partnership Inquiry</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="footer">
+
+    <div class="firstlogo">
+        <div class="logo">
+        <img src="/images/quickmedlogo.PNG" alt="">
+            <p class="logop">Quick<span>Med</span></p>
+    </div>
+
+        <p class="smallp">QuickMed Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    
+
+    <div class="downlinks">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+    </div>
+</div>
+
+
+<div class="Quick-Links">
+
+    <p class="quicklinkheadp">Quick links</p>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="aboutll">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboiimg"></a></li>
+        <div class="aboutdropp">
+        <li class="dons1"><a href="About Us.html">About Us</a></li>
+        <li class="dons1"><a href="About the team.html">About the team</a></li>
+    </div>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a class="joinll">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joiniimg"></a></li>
+        <div class="joindropp">
+        <li class="dons2"><a href="contact.html">Investment</a></li>
+        <li class="dons2"><a href="contact.html">Partnership</a></li>
+    </ul>
+
+</div>
+
+
+<div class="sevices">
+
+    <p class="serviceheadp">Services</p>
+
+    <ul>
+        <li><a href="">Ambulance</a></li>
+        <li><a href="">Hospital</a></li>
+        <li><a href="">E-Consult</a></li>
+        <li><a href="">Quick-Call</a></li>
+    </ul>
+</div>
+
+
+<div class="support">
+
+    <p class="suportheadp">Help & Support</p>
+
+    <ul>
+        <li><a href="">09403993939</a></li>
+        <li><a href="">quickmed@gmail.com</a></li>
+        <li><a href="">Terms and condition</a></li>
+    </ul>
+</div>
+
+
+<hr>
+
+<div class="under">
+    <p>&copy;copywright QuickMed</p>
+</div>
+
+ </div>
+
+
+ 
+
+
+
+<script src="/js/general.js"></script>
+
+
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+
+
+
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1;
+    margin-left: 13%;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    position: relative;
+    background-image: url(/images/microsoft-365-7mBictB_urk-unsplash.jpg); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
+  .why1{
+    display: none;
+  }
+  .carousel-slide2 {
+    display: none;
+    position: relative;
+    background-image: url(/images/family2.jpg); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
+  .why2{
+    display: flex;
+  }
+
+
+
+  .carousel-slide3 {
+    display: none;
+    position: relative;
+    background-image: url(/images/family1.jpg); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    /* animation: caro 0.2s 1; */
+  }
+  .why3{
+    display: flex;
+  }
+
+  @keyframes caro{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+  
+  .carousel-slide::before,
+  .carousel-slide2::before,
+  .carousel-slide3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    border-radius: 10px;
+  }
+
+
+  .left-arrow,
+  .right-arrow3{
+    display: none;
+  }
+
+  .left-arrow,
+  .left-arrow2,
+  .left-arrow3 {
+    left: 10px;
+  }
+  
+  .right-arrow,
+  .right-arrow2,
+  .right-arrow3 {
+    right: 10px;
+  }
+  
+
+  /* Hide all slides initially */
+.carousel-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Display the active slide */
+.carousel-slide.active,
+.carousel-slide2.active,
+.carousel-slide3.active {
+    display: flex;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 200px){
+
+  .carousel-container {
+    margin-left: 0%;
+    justify-self: center;
+  }
+}
+
+
+
+@media (min-width: 1200px){
+
+  .carousel-container {
+    margin-left: 0%;
+    justify-self: center;
+  }
+}
