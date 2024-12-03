@@ -3,7 +3,8 @@ const router = express.Router();
 const 
 {
   invest,
-  partnership
+  partnership,
+  comments
 
    
 } = require("../controller/usercontroller")
@@ -18,6 +19,7 @@ router.get("/invest/partnership", (req, res)=>{
   res.render('invest/partnership')
 })
 
+router.post('/blogs/blog1', comments);
 router.post('/invest/investment', invest);
 router.post('/invest/partnership', partnership)
 

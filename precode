@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMed</title>
+    <link rel="icon" href="/assets/quickmedlogo.PNG">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="all.css">
+</head>
+<body>
+
+
+    <!-- start NavBar -->
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="/assets/quickmedlogo.PNG" alt="QuickMed Logo" class="top">
+            <p class="top"><span>QUICK</span>MED</p>
+        </div>
+        <div class="navlinks">
+          
+            <ul id="ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="aboutl">About <img src="/assets/arrow-prev-small-svgrepo-com black.png" alt="" class="aboimg"></a></li>
+                <div class="aboutdrop">
+                <li class="donts1"><a href="about us.html">About Us</a></li>
+                <li class="donts1"><a href="About the team.html">About the team</a></li>
+            </div>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a class="joinl">Join Us <img src="/assets/arrow-prev-small-svgrepo-com black.png" alt="" class="joinimg"></a></li>
+                <div class="joindrop">
+                <li class="donts2"><a href="contact.html">Investment</a></li>
+                <li class="donts2"><a href="contact.html">Partnership</a></li>
+            </div>
+            </ul>
+        </div>
+
+        <div class="navpop">
+        <div class="aboutpop">
+            <ul>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="aboutdteam.html">About the team</a></li>
+            </ul>
+        </div>
+        <div class="joinpop">
+            <ul>
+                <li><a href="/invest/Investment.html">Investment</a></li>
+                <li><a href="/invest/partnership.html">Partnership</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+        <div class="ham">
+            <img id="open" src="/assets/hamburger-svgrepo-com (1).png" alt="hamburger icon">
+            <img id="closee" src="/assets/close-circle-svgrepo-com.png" alt="close icon">
+        </div>
+
+    </div>
+    <!-- 08062812376 -->
+<!-- end navbar -->
+
+
+
+
+
+
+
+<div class="footer">
+
+    <div class="firstlogo">
+        <div class="logo">
+        <img src="/assets/quickmedlogo.PNG" alt="">
+            <p class="logop">Quick<span>Med</span></p>
+    </div>
+
+        <p class="smallp">QuickMed Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    
+
+    <div class="downlinks">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+    </div>
+</div>
+
+
+<div class="Quick-Links">
+
+    <p class="quicklinkheadp">Quick links</p>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="aboutll">About <img src="/assets/arrow-prev-small-svgrepo-com black.png" alt="" class="aboiimg"></a></li>
+        <div class="aboutdropp">
+        <li class="dons1"><a href="About Us.html">About Us</a></li>
+        <li class="dons1"><a href="About the team.html">About the team</a></li>
+    </div>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a class="joinll">Join Us <img src="/assets/arrow-prev-small-svgrepo-com black.png" alt="" class="joiniimg"></a></li>
+        <div class="joindropp">
+        <li class="dons2"><a href="contact.html">Investment</a></li>
+        <li class="dons2"><a href="contact.html">Partnership</a></li>
+    </ul>
+
+</div>
+
+
+<div class="sevices">
+
+    <p class="serviceheadp">Services</p>
+
+    <ul>
+        <li><a href="">Ambulance</a></li>
+        <li><a href="">Hospital</a></li>
+        <li><a href="">E-Consult</a></li>
+        <li><a href="">Quick-Call</a></li>
+    </ul>
+</div>
+
+
+<div class="support">
+
+    <p class="suportheadp">Help & Support</p>
+
+    <ul>
+        <li><a href="">09403993939</a></li>
+        <li><a href="">quickmed@gmail.com</a></li>
+        <li><a href="">Terms and condition</a></li>
+    </ul>
+</div>
+
+
+<hr>
+
+<div class="under">
+    <p>&copy;copywright QuickMed</p>
+</div>
+
+ </div>
+
+
+ 
+
+
+
+<script src="general.js"></script>
+
+
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

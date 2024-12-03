@@ -1,5 +1,7 @@
 const User = require("../model/usermodel");
+const Pathner = require("../model/pathnermodel");
 const nodemailer = require("nodemailer");
+const Comments = require("../model/usercomments")
 const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
@@ -80,7 +82,7 @@ const invest = async (req, res) => {
                 
                 // Add other fields as needed
             };
-            res.render("/invest/investment", {user: req.session.user})
+            res.render("invest/Investment", {user: req.session.user})
             // res.status(200).json({
             //     status: "Success",
             //     message: "Login successful",
@@ -163,7 +165,7 @@ const partnership = async (req, res) => {
     async function createuser(){
 
        // Create a new user with the provided data and the image URL if available
-    const user = new User({
+    const user = new Pathner({
       fullname,
       phoneNumber,
       company,
@@ -200,7 +202,7 @@ const partnership = async (req, res) => {
               
               // Add other fields as needed
           };
-          res.render("/invest/partnership", {user: req.session.user})
+          res.render("invest/partnership", {user: req.session.user})
           // res.status(200).json({
           //     status: "Success",
           //     message: "Login successful",
@@ -245,12 +247,75 @@ const partnership = async (req, res) => {
 
 };
 
+const comments = async (req, res) => {
+  try {
+    const { fullname, comments, email} = req.body;
+
+    if (!fullname || !email || !comments ) {
+      return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
+    }
+
+   
+
+    
+
+       // Create a new user with the provided data and the image URL if available
+    const user = new Comments({
+      fullname,
+      comments,
+      email,
+    });
+
+
+      try {
+          await user.save();
+          // Generate a JWT token
+          const token = jwt.sign({ id: user._id}, 'Adain', { expiresIn: '1h' });
+
+          req.session.user = {
+              id: user._id,
+              comments: user.comments,
+              email: user.email,
+              fullname: user.fullname,
+             
+              
+              // Add other fields as needed
+          };
+          res.status(200).send("comment saved successfully")
+          
+          
+      } catch (error) {
+          console.error('Error saving product:', error);
+              res.status(500).send('Error saving product');
+      }
+    
+
+   
+
+    
+
+   
+  } catch (error) {
+    console.error("Error during signup:", error);
+
+    // Handle errors and ensure only one response
+    if (!res.headersSent) {
+      res.status(500).json({ status: "Failed", message: error.message });
+    }
+  }
+
+  
+
+
+};
+
 
 
 module.exports =
 {
 
   invest,
-  partnership
+  partnership,
+  comments
  
 };
