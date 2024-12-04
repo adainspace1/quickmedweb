@@ -38,6 +38,7 @@ button{
 }
 /* start NavBar  */
 .navbar{
+    user-select: none;
     position: fixed;
     background-color: var(--white);
     height: 100px;
@@ -240,10 +241,12 @@ button{
 .footer{
     border-top: 1px solid rgba(0, 0, 0, 0.534);
     width: 100%;
+    user-select: none;
   }
   .footer .firstlogo{
     padding-top: 30px;
     margin-left: 3%;
+    margin-bottom: 50px;
   }
   .footer .firstlogo img{
     width: 100px;
@@ -293,6 +296,9 @@ button{
     padding-left: 0px;
     width: 150px;
   }
+  .footer .Quick-Links ul li{
+    margin-bottom: 10px;
+  }
   .footer .Quick-Links ul li img{
     width: 7px;
     margin: 0px;
@@ -335,7 +341,10 @@ button{
 
 .footer .sevices{
     margin-left: 55%;
-    margin-top: -230px;
+    margin-top: -305px;
+}
+.footer .sevices.active{
+    margin-top: -377px;
 }
 .footer .sevices .serviceheadp{
     font-size: 20px;
@@ -359,6 +368,9 @@ button{
 .footer .support{
     margin-left: 75%;
     margin-top: -200px;
+}
+.footer .support.active{
+    padding-bottom: 50px;
 }
 .footer .support .suportheadp{
     font-size: 20px;
@@ -560,10 +572,16 @@ button{
         margin-top: -0px;
         margin-bottom: 100px;
     }
+    .footer .sevices.active{
+        margin-top: -0px;
+    }
 
     .footer .support{
         margin-left: 5%;
         margin-top: -00px;
+    }
+    .footer .support.active{
+        padding-bottom: 0px;
     }
 }
 
@@ -609,8 +627,12 @@ button{
 
       .footer .sevices{
         margin-left: 50%;
-        margin-top: -225px;
+        margin-top: -275px;
         margin-bottom: 100px;
+    }
+    .footer .sevices.active{
+        margin-top: -347px;
+        padding-bottom: 50px;
     }
 }
 
@@ -739,7 +761,7 @@ button{
 
       .footer .sevices{
         margin-left: 55%;
-        margin-top: -230px;
+        margin-top: -275px;
         margin-bottom: 100px;
     }
 
@@ -784,6 +806,10 @@ button{
         margin-left: 5%;
         margin-top: -30px;
         margin-bottom: 100px;
+    }
+    .footer .sevices.active{
+        margin-top: 0px;
+        padding-bottom: 0px;
     }
 
     .footer .support{
@@ -1028,12 +1054,18 @@ button{
 
       .footer .sevices{
         margin-left: 50%;
-        margin-top: -255px;
+        margin-top: -305px;
         margin-bottom: 100px;
+    }
+    .footer .sevices.active{
+        margin-top: -377px;
     }
 
     .footer .support{
         margin-left: 70%;
         margin-top: -280px;
+    }
+    .footer .support.active{
+        padding-bottom: 50px;
     }
 }

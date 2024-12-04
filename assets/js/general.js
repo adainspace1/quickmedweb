@@ -46,6 +46,11 @@ document.querySelector(".aboutl").addEventListener("click", function(){
             // window.alert("kkkkk")
             document.querySelector(".aboiimg").classList.toggle("active");
             document.querySelector(".aboutdropp").classList.toggle("active");
+
+            
+            document.querySelector(".sevices").classList.toggle("active");
+
+            document.querySelector(".support").classList.toggle("active");
     
         })
     

@@ -52,6 +52,10 @@ app.get('/contact',(req,res)=>{
     res.render('contact')
 });
 
+app.get('/Terms',(req,res)=>{
+    res.render('Terms')
+});
+
 app.get('/invest/invest', (req, res) => {
     res.render('invest/invest'); // Render invest.ejs
 });
