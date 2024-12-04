@@ -69,6 +69,31 @@ app.get('/blogs/blog1', (req, res) => {
 });
 
 
+app.get('/invest/investment/404', (req, res) => {
+    res.render('invest/Investment/404'); // Render investment.ejs
+});
+
+app.get('/invest/investment/200', (req, res) => {
+    res.render('invest/Investment/200'); // Render investment.ejs
+});
+
+
+app.get('/invest/partnership/400', (req, res) => {
+    res.render('invest/partnership/404'); // Render partnership.ejs
+});
+
+app.get('/invest/partnership/200', (req, res) => {
+    res.render('invest/partnership/200'); // Render partnership.ejs
+});
+
+// app.get('/404',(req,res)=>{
+//     res.render('404')
+// });
+
+// app.get('/200',(req,res)=>{
+//     res.render('200')
+// });
+
 app.get('/about/aboutus', (req, res) => {
     res.render('about/aboutus'); // Render investment.ejs
 });

@@ -16,7 +16,8 @@ const invest = async (req, res) => {
       const { fullname, phoneNumber, company, email, position, investmenttype, investmentamount, message, referral, contactmethod} = req.body;
   
       if (!fullname || !phoneNumber || !company || !email || !position || !investmenttype || !investmentamount || !message || !referral || !contactmethod) {
-        return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
+        res.render("invest/Investment/404", {user: req.session.user})
+        // return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
       }
   
       let imageURL = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
@@ -103,8 +104,9 @@ const invest = async (req, res) => {
             // });
             
         } catch (error) {
-            console.error('Error saving product:', error);
-                res.status(500).send('Error saving product');
+          res.render("invest/Investment/404", {user: req.session.user})
+            // console.error('Error saving product:', error);
+            //     res.status(500).send('Error saving product');
         }
       }
   
@@ -134,7 +136,10 @@ const partnership = async (req, res) => {
     const { fullname, phoneNumber, company, email, position, partnershiptype, organizationhelp, areaofinterest, impact, referral, contactmethod} = req.body;
 
     if (!fullname || !phoneNumber || !company || !email || !position || !partnershiptype || !areaofinterest || !impact || !referral || !contactmethod || !organizationhelp) {
-      return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
+
+      res.render("invest/partnership/404", {user: req.session.user})
+
+      // return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
     }
 
     let imageURL = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
@@ -223,8 +228,11 @@ const partnership = async (req, res) => {
           // });
           
       } catch (error) {
-          console.error('Error saving product:', error);
-              res.status(500).send('Error saving product');
+
+        res.render("invest/partnership/404", {user: req.session.user})
+
+          // console.error('Error saving product:', error);
+          //     res.status(500).send('Error saving product');
       }
     }
 
