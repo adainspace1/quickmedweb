@@ -5,6 +5,7 @@ const path = require("path")
 const mongoose = require("mongoose");
 const port = process.env.PORT||3800;
 const authRoutes = require("./routes/userroutes")
+const adminRoutes = require("./routes/adminroutes")
 const bodyparser = require("body-parser")
 const cors = require("cors")
 const session = require("express-session")
@@ -26,10 +27,11 @@ app.use(session({
     secret: 'Dien', // Replace with your own secret
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true } // Set to true if using HTTPS
+    cookie: { secure: false } // Set to true if using HTTPS
   }));
 
 app.use('/api/auth', authRoutes)
+app.use('/api/admin', adminRoutes)
 
 
 
@@ -40,8 +42,15 @@ app.get('/',(req,res)=>{
     res.render('index')
 });
 
-app.get('/blog',(req,res)=>{
-    res.render('blog')
+app.get('/blog', async(req, res)=>{
+    try {
+        const blog = await Blog.find()
+        console.log(blog)
+        res.render('blog',{blog})
+    } catch (error) {
+        
+    }
+    
 });
 
 app.get('/services',(req,res)=>{
@@ -98,6 +107,15 @@ app.get('/invest/partnership/200', (req, res) => {
 //     res.render('200')
 // });
 
+
+app.get('/admin/html/blog', (req, res) => {
+    res.render('admin/html/blog'); // Render investment.ejs
+});
+
+app.get('/admin/html/adminsignin', (req, res) => {
+    res.render('admin/html/adminsignin'); // Render investment.ejs
+});
+
 app.get('/about/aboutus', (req, res) => {
     res.render('about/aboutus'); // Render investment.ejs
 });
@@ -137,6 +155,16 @@ app.get('/services/insurance', (req, res) => {
     res.render('services/insurance'); // Render partnership.ejs
 });
 
+
+app.get('/logout', (req, res)=>{
+    req.session.destroy(err =>{
+        if (err) {
+            return res.status(500).json({status: "failed", message: err.message});
+        }else{
+            res.redirect('/admin/html/adminsignin')
+        }
+    })
+})
 
 app.listen(port,()=>{
 
