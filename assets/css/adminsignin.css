@@ -61,3 +61,11 @@ button {
 button:hover {
     background-color: #e87d00;
 }
+
+
+
+@media (max-width: 300px){
+    .container{
+        margin-left: 5%;
+    }
+}
