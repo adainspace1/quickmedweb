@@ -11,7 +11,8 @@ const
    search,
    registerAdmin,
    getAllUsers,
-   uploadToBlog
+   uploadToBlog,
+   Topblog
 
 } 
 = require("../controller/admincontroller");
@@ -27,6 +28,7 @@ router.get('/getall', getAllUsers);
 router.post('/remove/:id/delete', deleteUser); 
 router.get('/search', search);
 router.post('/upload-blog', upload.single('image'), uploadToBlog);
+router.post('/blog', upload.single('image'), Topblog);
 
 
 

@@ -7,6 +7,8 @@ const port = process.env.PORT||3800;
 const authRoutes = require("./routes/userroutes")
 const adminRoutes = require("./routes/adminroutes")
 const bodyparser = require("body-parser")
+const Blog = require("./model/blog")
+const UploadBlog = require("./model/topblog")
 const cors = require("cors")
 const session = require("express-session")
 
@@ -45,8 +47,9 @@ app.get('/',(req,res)=>{
 app.get('/blog', async(req, res)=>{
     try {
         const blog = await Blog.find()
+        const topblog = await UploadBlog.find()
         console.log(blog)
-        res.render('blog',{blog})
+        res.render('blog',{blog, topblog})
     } catch (error) {
         
     }

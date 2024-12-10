@@ -83,65 +83,37 @@
 
 
 <div class="eveblog">
-
-
+    <% topblog.forEach(function (upblog, admin) { %>
     <div class="carousel-container">
-        <a href="/blogs/blog1"><div class="carousel-slide">
-          <!-- Left arrow -->
-          <div class="carousel-arrow left-arrow">◀</div>
-          
-          <!-- Content Overlay -->
-          <div class="carousel-content">
-            <h3 class="featured">QuickMed</h3>
-            <h1>The 3 Must-Have Professionals: A Perspective on the Current State of Nigeria 
-            </h1>
-            <p>In today's Nigeria, navigating the complexities of daily life requires more than just grit and determination. As the nation grapples with economic instability, fluctuating standards of living, and a politically charged environment, three professionals have become indispensable for every household: the lawyer, the accountant, and the medical professional. These roles not only safeguard our rights and finances but also ensure our well-being amidst uncertainties.
-            </p>
-          </div>
-          
-          <!-- Right arrow -->
-          <div class="carousel-arrow right-arrow">▶</div>
-        </div></a>
-        
-
-
-        <div class="carousel-slide2">
-            <!-- Left arrow -->
-            <div class="carousel-arrow left-arrow2">◀</div>
-            
-            <!-- Content Overlay -->
+      <!-- Slides dynamically generated from the database -->
+        <div class="carousel-slide">
+          <a href="/blogs/blog1">
             <div class="carousel-content">
-              <h3 class="featured">Featured</h3>
-              <h1>Breaking Into Product Design: Advice from Untitled Founder, Frankie</h1>
-              <p>Let’s get one thing out of the way: you don’t need a fancy Bachelor’s Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry.</p>
+              <h3 class="featured"><%= upblog.sefullname %></h3>
+              <h1><%= upblog.setitle %></h1>
+              <p><%= upblog.secontent %></p>
             </div>
-            
-            <!-- Right arrow -->
-            <div class="carousel-arrow right-arrow2">▶</div>
-          </div>
-
-          
-          <div class="carousel-slide3">
-            <!-- Left arrow -->
-            <div class="carousel-arrow left-arrow3">◀</div>
-            
-            <!-- Content Overlay -->
-            <div class="carousel-content">
-              <h3 class="featured">Destty Nelly</h3>
-              <h1>Breaking Into Product Design: Advice from Untitled Founder, Frankie</h1>
-              <p>Let’s get one thing out of the way: you don’t need a fancy Bachelor’s Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry.</p>
-            </div>
-            
-            <!-- Right arrow -->
-            <div class="carousel-arrow right-arrow3">▶</div>
-          </div>
+          </a>
+        </div>
+      <!-- Navigation Arrows -->
+      <div class="carousel-arrow left-arrow">◀</div>
+      <div class="carousel-arrow right-arrow">▶</div>
+    </div>
     
-        <!-- Dot navigation -->
-        <section class="dot-navigation">
-            <input type="radio" class="colordot" id="dotgo">
-            <input type="radio" id="dotgo2">
-            <input type="radio" id="dotgo3">
-        </section>
+    <% }); %>
+    <!-- Dot Navigation -->
+    <div class="dot-navigation">
+      <% topblog.forEach(function (upblog, index) { %>
+        <span class="dot" data-index="<%= index %>"></span>
+      <% }); %>
+    </div>
+  </div>
+  
+</div>
+        </div>
+    
+
+        
       </div>
 
  
@@ -152,128 +124,35 @@
 
         <p class="minibp">Recent blog posts</p>
         <div class="d-blogs">
-
+            <% blog.forEach(function (product, admin) {%>
             <div class="blog">
 
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
+                <!-- <img src="<%= product.image %>" alt=""> -->
+                 <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
 
-                <p class="blogtitle">The 3 Must-Have Professionals: A Perspective on the Current State of Nigeria 
+                <p class="blogtitle"><%= product.title %> 
                 </p>
 
-                <span><p class="blogdescrip">In today's Nigeria, navigating the complexities of daily life requires more than just grit and determination. As the nation grapples with economic instability, fluctuating standards of living, and a politically charged environment, three professionals have become indispensable for every household: the lawyer, the accountant, and the medical professional. These roles not only safeguard our rights and finances but also ensure our well-being amidst uncertainties.
+                <span><p class="blogdescrip"><%= product.content %></p>
                 </p><a href="/blogs/blog1">.....See more</a></span>
 
                 <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
+                    <p class="bloggername"><%= product.fullname %></p>
+                    <p class="bloggedate" data-created-at="<%= product.createdAt %>"></p>
                 </section>
             </div>
 
-            <div class="blog">
+            <% }); %>
 
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="/blogs/blog1">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
-
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="/blogs/blog1">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
+           
 
 
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
+           
         </div>
 
 
     
-        <div class="d-blogs">
-
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
-
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
-
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
-
-
-            <div class="blog">
-
-                <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
-
-                <p class="blogtitle">How to get job easily</p>
-
-                <span><p class="blogdescrip">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis culpa ullam perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptatibus velit aliquid, ut doloribus error veritatis dolor est, non, placeat natus sed? Ipsam saepe, suscipit velit veritatis aliquid nemo?</p><a href="">.....See more</a></span>
-
-                <section class="blogabout">
-                    <p class="bloggername">Matthew chris</p>
-                    <p class="bloggedate">10 jan 2023</p>
-                </section>
-            </div>
-        </div>
+        
 
         </div>
       </div>
@@ -383,7 +262,19 @@
   AOS.init();
 </script>
 
+<script>
+    document.querySelectorAll('.bloggedate').forEach(dateElement => {
+    const rawDate = dateElement.getAttribute('data-created-at');
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+       
+    }).format(new Date(rawDate));
+    dateElement.textContent = formattedDate;
+});
 
+</script>
 
 
 </body>
