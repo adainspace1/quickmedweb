@@ -38,6 +38,14 @@ app.use('/api/admin', adminRoutes)
 
 
 
+const cache = {}; // Example in-memory cache
+exports.handler = async () => {
+  if (cache.data) return cache.data;
+  const data = await fetchData();
+  cache.data = data;
+  return data;
+};
+
 
 
 app.get('/',(req,res)=>{
