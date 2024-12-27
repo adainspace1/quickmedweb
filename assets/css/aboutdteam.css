@@ -12,16 +12,21 @@
 }
 
 .navbar{
-    margin-top: -200px;
+    margin-top: -150px;
 }
 .aboutdteam{
     margin-bottom: 100px;
     width: 100%;
-    margin-top: 200px;
+    padding-top: 50px;
+    margin-top: 150px;
 }
 .aboutdteam img{
     margin-left: 10%;
     width: 30%;
+    padding-bottom: 30px;
+}
+.aboutdteam .fi{
+    margin-bottom: -60px;
 }
 .aboutdteam .aboutdteamp{
     margin-left: 45%;
@@ -35,12 +40,43 @@
 .aboutdteam .aboutdteamp .aboutdbodyp{
     font-size: 16px;
 }
+.aboutdteam .partimg{
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+.aboutdteam .partimg img{
+    width: 100%;
+    margin-left: 0px;
+}
 .aboutdteam .aboutdbodyp2{
     font-size: 16px;
-    width: 90%;
+    width: 50%;
     margin-left: 5%;
+    margin-top: -300px;
 }
-
+.aboutdteam .expertd{
+    width: 100%;
+    margin-top: 100px;
+}
+.aboutdteam .expertd .expert{
+    width: 50%;
+    margin-left: 5%;
+    margin-bottom: -30px;
+}
+.aboutdteam .expertd img{
+    margin-left: 60%;
+    width: 30%;
+    padding-top: -500px;
+    margin-top: -4000px;
+    height: 300px;
+}
+.aboutdteam .expertd .teamm1{
+    display: none;
+}
+.aboutdteam .expertd .teamm2{
+    display: block;
+}
 
 .meetdteam{
     width: 100%;
@@ -142,6 +178,11 @@
 
 @media (min-width: 200px){
 
+    .aboutdteam .aboutdteamp .aboutdheadp{
+        font-size: 30px;
+        font-weight: 200;
+    }
+
     .aboutdteam img{
         justify-self: center;
         margin-left: 10%;
@@ -152,6 +193,35 @@
         margin-top: 0px;
         margin-left: 5%;
     }
+    .aboutdteam .expertd{
+       width: 100%;
+       padding: 0px;
+    }
+    .aboutdteam .expertd .expert{
+        width: 90%;
+        padding: 0px;
+        margin-left: 0px;
+        align-self: center;
+        justify-self: center;
+        font-size: 13px;
+     }
+    .aboutdteam .expertd .teamm1{
+        display: block;
+        width: 100%;
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 40px;
+    }
+    .aboutdteam .expertd .teamm2{
+        display: none;
+    }
+
+    .aboutdteam .partimg{
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
     .aboutdteam .aboutdteamp .aboutdbodyp{
         font-size: 13px;
     }
@@ -159,8 +229,8 @@
         font-size: 13px;
         width: 90%;
         margin-left: 5%;
+        margin-top: 0px;
     }
-
 
     .meetdteam{
         overflow: hidden;
@@ -240,6 +310,31 @@
 
 @media (min-width: 300px){
 
+ 
+    .aboutdteam .aboutdheadp{
+        align-self: center;
+        justify-self: center;
+        font-size: 40px;
+    }
+    .aboutdteam  .partimg{
+        /* width: 60%; */
+        margin-top: 30px;
+        margin-left: 0px;
+        align-self: center;
+        justify-self: center; 
+    }
+
+    .aboutdteam .expertd .teamm1{
+        display: block;
+        /* width: 60%; */
+    }
+
+   .aboutdteam img{
+        padding: 50px 0px;
+        align-self: center;
+        justify-self: center;
+    }
+
     .meetdteam{
         margin-top: 100px;
         width: 100%;
@@ -308,6 +403,31 @@
 
 
 @media (min-width: 450px){
+
+    .aboutdteam .aboutdheadp{
+        align-self: center;
+        justify-self: center;
+        font-size: 40px;
+    }
+    .aboutdteam  .partimg{
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 0px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .aboutdteam .expertd .teamm1{
+        display: block;
+        width: 80%;
+    }
+
+   .aboutdteam img{
+        padding: 50px 0px;
+    }
+
+
+
     .meetdteam{
         width: 100%;
         background-color: var(--bg);
@@ -396,19 +516,28 @@
 
 @media (min-width: 800px){
 
+    .navbar{
+        margin-top: -150px;
+    }
+
     .aboutdteam{
-        width: 100%;
         margin-bottom: 100px;
-        margin-top: 200px;
+        width: 100%;
+        padding-top: 100px;
+        margin-top: 150px;
     }
     .aboutdteam img{
         margin-left: 10%;
         width: 30%;
+        padding-bottom: 30px;
+    }
+    .aboutdteam .fi{
+        margin-bottom: -60px;
     }
     .aboutdteam .aboutdteamp{
         margin-left: 45%;
         width: 50%;
-        margin-top: -350px;
+        margin-top: -300px;
     }
     .aboutdteam .aboutdteamp .aboutdheadp{
         font-size: 40px;
@@ -417,11 +546,52 @@
     .aboutdteam .aboutdteamp .aboutdbodyp{
         font-size: 16px;
     }
+    .aboutdteam .partimg{
+        width: 30%;
+        margin-left: 10%;
+        margin-top: 150px;
+    }
+    .aboutdteam .partimg img{
+        width: 100%;
+        margin-left: 0px;
+    }
     .aboutdteam .aboutdbodyp2{
         font-size: 16px;
-        width: 90%;
-        margin-left: 5%;
+        width: 50%;
+        margin-left: 45%;
+        margin-top: -250px;
     }
+    .aboutdteam .expertd{
+        width: 100%;
+        margin-top: 100px;
+    }
+    .aboutdteam .expertd .expert{
+        width: 50%;
+        margin-left: 60px;
+        margin-bottom: -30px;
+        justify-self: flex-start;
+        align-self: flex-start;
+        font-size: 16px;
+    }
+    .aboutdteam .expertd img{
+        margin-left: 60%;
+        width: 30%;
+        padding-top: -500px;
+        margin-top: -4000px;
+        height: 300px;
+    }
+    .aboutdteam .expertd .teamm1{
+        display: none;
+    }
+    .aboutdteam .expertd .teamm2{
+        display: block;
+        margin-left: 55%;
+        width: 35%;
+        padding-top: -500px;
+        margin-top: -350px;
+        height: 300px;
+    }
+    
 
 
 
@@ -520,6 +690,84 @@
 
 
 @media (min-width: 1000px){
+
+
+
+    .navbar{
+        margin-top: -150px;
+    }
+
+    .aboutdteam{
+        margin-bottom: 100px;
+        width: 100%;
+        padding-top: 100px;
+        margin-top: 150px;
+    }
+    .aboutdteam img{
+        margin-left: 10%;
+        width: 30%;
+        padding-bottom: 30px;
+    }
+    .aboutdteam .fi{
+        margin-bottom: -60px;
+    }
+    .aboutdteam .aboutdteamp{
+        margin-left: 45%;
+        width: 50%;
+        margin-top: -300px;
+    }
+    .aboutdteam .aboutdteamp .aboutdheadp{
+        font-size: 40px;
+        font-weight: 200;
+    }
+    .aboutdteam .aboutdteamp .aboutdbodyp{
+        font-size: 16px;
+    }
+    .aboutdteam .partimg{
+        width: 30%;
+        margin-left: 10%;
+        margin-top: 50px;
+    }
+    .aboutdteam .partimg img{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .aboutdteam .aboutdbodyp2{
+        font-size: 16px;
+        width: 50%;
+        margin-left: 45%;
+        margin-top: -250px;
+    }
+    .aboutdteam .expertd{
+        width: 100%;
+        margin-top: 100px;
+    }
+    .aboutdteam .expertd .expert{
+        width: 45%;
+        margin-left: 110px;
+        margin-bottom: -30px;
+        justify-self: flex-start;
+        align-self: flex-start;
+        font-size: 16px;
+    }
+    .aboutdteam .expertd img{
+        margin-left: 60%;
+        width: 30%;
+        padding-top: -500px;
+        margin-top: -4000px;
+        height: 300px;
+    }
+    .aboutdteam .expertd .teamm1{
+        display: none;
+    }
+    .aboutdteam .expertd .teamm2{
+        display: block;
+        margin-left: 55%;
+        width: 35%;
+        padding-top: -500px;
+        margin-top: -300px;
+        height: 300px;
+    }
 
 
     .meetdteam{

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMed</title>
+    <link rel="icon" href="/images/quickmedlogo.PNG">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" href="/css/blognew.css">
+</head>
+<body>
+
+
+   <!-- start NavBar -->
+<div class="navbar">
+
+    <div class="logo">
+        <img src="/images/quickmedlogo.PNG" alt="QuickMed Logo" class="top">
+        <p class="top"><span>QUICK</span>MED</p>
+    </div>
+
+    <div class="ham">
+        <img id="open" src="/images/hamburger-svgrepo-com (1).png" alt="hamburger icon">
+        <img id="closee" src="/images/close-circle-svgrepo-com.png" alt="close icon">
+    </div>
+    <div class="navlinks">
+
+
+        <div class="navclose">
+            <p id="clop">X</p>
+        </div>
+      
+        <ul id="ul">
+            <li><a href="/">Home</a></li>
+            <li><a class="aboutl">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboimg"></a></li>
+            <div class="aboutdrop">
+            <li class="donts1"><a href="/about/aboutus">About Us</a></li>
+            <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
+        </div>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a class="joinl">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joinimg"></a></li>
+            <div class="joindrop">
+            <li class="donts2"><a href="/invest/investment">Investment</a></li>
+            <li class="donts2"><a href="/invest/partnership">Partnership</a></li>
+        </div>
+        </ul>
+
+        
+    </div>
+
+   
+
+    <div class="navpop">
+    <div class="aboutpop">
+        <ul>
+            <li><a href="/about/aboutus">About Us</a></li>
+            <li><a href="/about/aboutdteam">About the team</a></li>
+        </ul>
+    </div>
+    <div class="joinpop">
+        <ul>
+            <li><a href="/invest/investment">Investment</a></li>
+            <li><a href="/invest/partnership">Partnership</a></li>
+        </ul>
+    </div>
+
+</div>
+
+  
+
+</div>
+<!-- 08062812376 -->
+<!-- end navbar -->
+
+
+
+<div class="all-text">
+    <div class="advert3">
+        <p class="adtop">ADVERTISEMENT</p>
+        <div class="d-add">
+            <p class="d-addp">PLACE <br> <span>ADVERTISEMENT</span></p>
+        </div>
+    </div>
+
+    <div class="profile">
+        <p class="pro-p"><%= topBlog.sefullname %></p>
+        <div class="follow">
+            <button class="follow-bnt">+Follow</button>
+        </div>
+    </div>
+
+    <p class="head-text"><%= topBlog.setitle %></p>
+
+    <% 
+        const longText = `${topBlog.secontent}`;
+        const words = longText.split(' ');
+        const part1Text = words.slice(0, 300).join(' ');
+        const part2Text = words.slice(300).join(' ');
+    %>
+
+    <p class="little-pees" id="part1"><%= part1Text %></p>
+
+    <div class="advert">
+        <p class="adp">ADVERTISEMENT</p>
+    </div>
+
+    <p class="little-pees" id="part2"><%= part2Text %></p>
+
+    <div id="add2" class="advert2">
+        <p class="adtop">ADVERTISEMENT</p>
+        <div class="d-add">
+            <p class="d-addp">PLACE <br> <span>ADVERTISEMENT</span></p>
+        </div>
+    </div> 
+
+    <div class="advert4">
+        <p class="adtop">ADVERTISEMENT</p>
+        <div class="d-add">
+            <p class="d-addp">PLACE <br> <span>ADVERTISEMENT</span></p>
+        </div>
+    </div>
+
+    <div class="commentsec">
+        <p class="comhead">Comments</p>
+        <div class="d-coment">
+            <form action="/topblogs/<%= topBlog.id %>/comments" method="post">
+                <textarea id="commentspace" name="comments" placeholder="What do you think" required></textarea>
+                <div class="commentinp">
+                    <input type="text" placeholder="blogId"  name="blogId" value="<%=topBlog.id  %>" hidden>
+
+                    <input type="text" placeholder="Enter name" name="fullname" required>
+                    <input type="email" placeholder="Enter email" name="email" required>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    <div class="footer">
+
+        <div class="firstlogo">
+            <div class="logo">
+            <img src="/images/quickmedlogo.PNG" alt="">
+                <p class="logop">Quick<span>Med</span></p>
+        </div>
+    
+            <p class="smallp">At QuickMed, we are at the forefront of revolutionizing healthcare through cutting-edge technology.</p>
+        
+    
+        <div class="downlinks">
+            <a href="https://web.facebook.com/profile.php?id=61557942997138" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@QuickMedng" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/quickmed.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/Quick_Med1" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+    
+    
+    <div class="Quick-Links">
+    
+        <p class="quicklinkheadp">Quick links</p>
+    
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a class="aboutll">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboiimg"></a></li>
+            <div class="aboutdropp">
+                <li class="donts1"><a href="/about/aboutus">About Us</a></li>
+                <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
+        </div>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/services">services</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a class="joinll">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joiniimg"></a></li>
+          <div class="joindropp">
+                    <li class="donts2"><a href="/invest/investment">Investment</a></li>
+                    <li class="donts2"><a href="/invest/partnership">Partnership</a></li>
+                </div>
+        
+    
+    </div>
+    
+    
+    <div class="sevices">
+    
+        <p class="serviceheadp">Services</p>
+    
+        <ul>
+            <li><a href="/services/ambulance">Ambulance</a></li>
+            <li><a href="/services/hospital">Hospital</a></li>
+            <li><a href="/services/e-consult">E-Consult</a></li>
+            <li><a href="/services/quick-call">Quick-Call</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="support">
+    
+        <p class="suportheadp">Help & Support</p>
+    
+        <ul>
+            <li><a href="tel:09045585701">09045585701</a></li>
+            <li><a href="mailto:quickmed@gmail.com">quickmed@gmail.com</a></li>
+            <li><a href="/Terms">Terms and condition</a></li>
+        </ul>
+    </div>
+    
+    
+    <hr>
+    
+    <div class="under">
+        <p>&copy;copywright QuickMed</p>
+    </div>
+    
+     </div>
+    
+    
+     
+    
+    
+    <script src="/js/general.js"></script>
+    <script src="/js/blogs.js"></script>
+    
+
+    
+    
+    
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+    
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    
+    </body>
+    </html>

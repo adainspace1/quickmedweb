@@ -1,5 +1,6 @@
 const Blog = require('../model/blog');
 const User = require("../model/usermodel");
+const TopBlog = require('../model/topblog');
 // Create a new notification
 const createBlog = async (req, res) => {
     try {
@@ -48,10 +49,30 @@ const getUserBlog = async (req, res) => {
 };
 
 
+const getTopBlog = async (req, res) => {
+    try {
+        // const userId = req.params.userId;
+    
+        // // Fetch the user details
+        // const user = await User.findById(userId);
+        if (!user) {
+          return res.status(404).render('error', { message: 'User not found' });
+        }
+    
+        // Fetch notifications for the user
+        const notifications = await TopBlog.find().sort({ createdAt: -1 });
+
+        res.render('topblogs/blog1', { notifications });
+    } catch (error) {
+        res.status(500).render('error', { message: error.message });
+    }
+};
+
 
 
 module.exports = 
 {
     createBlog,
     getUserBlog,
+    getTopBlog
 }

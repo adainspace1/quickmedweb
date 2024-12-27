@@ -102,6 +102,7 @@
     margin-top: -60px;
     font-size: 25px;
     font-weight: 600;
+    margin-bottom: 0px;
 }
 .service .d-services .realserve div .bodyp{
     height: 120px;
@@ -472,6 +473,9 @@ a{
         font-size: 14px;
         width: 45%;
         margin-top: -15px;
+    }
+    .service .d-services .realserve div #bodyp{
+        margin-top: -00px;
     }
     .service .sercicestoppage .sertopbigdiv a{
         background-color: var(--bg);

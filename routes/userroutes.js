@@ -4,7 +4,8 @@ const
 {
   invest,
   partnership,
-  comments
+  comments,
+  order
 
    
 } = require("../controller/usercontroller")
@@ -21,6 +22,7 @@ router.get("/invest/partnership", (req, res)=>{
 
 router.post('/blogs/blog1', comments);
 router.post('/invest/investment', invest);
-router.post('/invest/partnership', partnership)
+router.post('/invest/partnership', partnership);
+router.post('/Quota/checkout', order)
 
 module.exports = router

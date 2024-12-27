@@ -87,7 +87,7 @@
     <div class="carousel-container">
       <!-- Slides dynamically generated from the database -->
         <div class="carousel-slide">
-          <a href="/blogs/blog1">
+          <a href="/topblogs/<%= upblog._id%>">
             <div class="carousel-content">
               <h3 class="featured"><%= upblog.sefullname %></h3>
               <h1><%= upblog.setitle %></h1>
@@ -130,11 +130,13 @@
                 <!-- <img src="<%= product.image %>" alt=""> -->
                  <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
 
+                 <!-- <img src="<%= product.seimage %>" alt="" > -->
+
                 <p class="blogtitle"><%= product.title %> 
                 </p>
 
                 <span><p class="blogdescrip"><%= product.content %></p>
-                </p><a href="/blogs/blog1">.....See more</a></span>
+                </p><a href="/blogs/<%= product.id%>">.....See more</a></span>
 
                 <section class="blogabout">
                     <p class="bloggername"><%= product.fullname %></p>

@@ -1,0 +1,248 @@
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --red: #ff0000;
+    --bg: #d9d9d998;
+    --poppins: "poppins", sans-serif;
+    --main-color: #ff9000;
+    --shadow: 1px 2px 20px -8px black;
+}
+
+.navbar{
+    margin-top: -110px;
+    z-index: 999;
+}
+
+.qmain{
+    margin-top: 110px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 400px;
+}
+.qmain .qvid{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    object-fit: cover; 
+}
+.qmain .qoverl{
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 80%;
+    background-color: #000000d7;
+    justify-content: center;
+    align-items: center;
+}
+.qmain .qoverl .qfront{
+    padding-top: 70px;
+    align-items: center;
+    justify-items: center;
+}
+.qmain .qoverl .qfront .threed{
+    width: 200px;
+    height: 200px;
+    animation: quota 12s infinite;
+    background-size: 100% 100%;
+    background-position: center;
+    border: none;
+    outline: none;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+.qmain .qoverl .qfront .threed p{
+    padding-top: 70px;
+    font-size: 40px;
+    font-weight: 600;
+}
+@keyframes quota{
+    0%{
+        color: var(--white);
+        -webkit-text-stroke: 1px var(--black);
+        background-image: url(/images/frontview.png);
+    }
+    25%{
+        color: var(--main-color);
+        -webkit-text-stroke: 0px black;
+        background-image: url(/images/sideview.png);
+    }
+    50%{
+        color: var(--black);
+        -webkit-text-stroke: 1px #ccc;
+        background-image: url(/images/backview.png);
+    }
+    75%{
+        color: var(--main-color);
+        -webkit-text-stroke: 0px black;
+        background-image: url(/images/sideview.png);
+    }
+    100%{
+        color: var(--white);
+        -webkit-text-stroke: 1px var(--black);
+        background-image: url(/images/frontview.png);
+    }
+}
+
+.qmain .qoverl .qfront .p{
+    color: var(--white);
+    width: 450px;
+    text-align: center;
+    font-size: 20px;
+}
+.qmain .qoverl .qfront button{
+    width: 150px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+.qform{
+    width: 100%;
+    margin-top: 100px;
+    background-color: #6b6b6b;
+    padding-bottom: 40px;
+
+}
+.qform .qheadd{
+    font-size: 40px;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+}
+
+.qform .dqform{
+    margin-top: 50px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--white);
+    padding: 0px 50px;
+    padding-bottom: 30px;
+}
+.qform .dqform .mainheadd{
+    font-size: 25px;
+    font-weight: 400;
+    align-self: center;
+    justify-self: center;
+}
+.qform .dqform .miniheadd{
+    font-size: 20px;
+
+}
+
+.qform .dqform .perinfo .perinfod{
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next row */
+    justify-content: space-between; /* Distributes space evenly */
+    gap: 0px; /* Adds space between items */
+    width: 100%;
+    box-sizing: border-box; 
+}
+.qform .dqform .perinfo .perinfod section{
+    flex: 0 0 calc(55% - 00px); /* Each blog takes 25% of width minus gap */
+    max-width: calc(45% - 0px);
+    padding: 10px 0px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.qform .dqform .perinfo .perinfod section input{
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+}
+.qform .dqform .btn{
+    align-self: center;
+    justify-self: center;
+    margin-top: 50px;
+}
+.qform .dqform .btn button{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+
+
+
+
+
+
+.qform .dqform .twoflex{
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next row */
+    justify-content: space-between; /* Distributes space evenly */
+    gap: 0px; /* Adds space between items */
+    width: 100%;
+    box-sizing: border-box; 
+}
+.qform .dqform .twoflex div{
+    flex: 0 0 calc(55% - 00px); /* Each blog takes 25% of width minus gap */
+    max-width: calc(45% - 0px);
+    padding: 10px 0px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.qform .dqform .twoflex div input{
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+.quifea{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.quifea .headd{
+    font-size: 30px;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+}
+
+.quifea .qfdivs{
+    padding: 0px 150px;
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next row */
+    justify-content: space-around; /* Distributes space evenly */
+    gap: 20px 20px; /* Adds space between items */
+    width: 100%;
+    box-sizing: border-box; 
+}
+.quifea .qfdivs section{
+    background-color: #ff9000;
+    width: 250px;
+    padding: 10px 0px;
+    align-items: center;
+    justify-items: center;
+    /* box-sizing: border-box; */
+}
+.quifea .qfdivs section .featheadd{
+    font-size: 17px;
+    font-weight: 500;
+}
+.quifea .qfdivs section .featboddy{
+    font-size: 12px;
+    width: 220px;
+    text-align: center;
+}

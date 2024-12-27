@@ -2,6 +2,7 @@ const express = require("express");
 require('dotenv').config();
 const app = express();
 const path = require("path")
+const router = express.Router();
 const mongoose = require("mongoose");
 const port = process.env.PORT||3800;
 const authRoutes = require("./routes/userroutes")
@@ -11,7 +12,7 @@ const Blog = require("./model/blog")
 const UploadBlog = require("./model/topblog")
 const cors = require("cors")
 const session = require("express-session")
-
+const Comment = require("./model/usercomments");
 
 
 mongoose.connect(process.env.MONGODB_CONNECTION).then(()=>{console.log("Database Connected")}).catch((err)=>{console.log(err)});
@@ -38,13 +39,138 @@ app.use('/api/admin', adminRoutes)
 
 
 
-const cache = {}; // Example in-memory cache
-exports.handler = async () => {
-  if (cache.data) return cache.data;
-  const data = await fetchData();
-  cache.data = data;
-  return data;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+// Route: Fetch all blogs for home page
+app.get('/', async (req, res) => {
+  try {
+    const topblog = await UploadBlog.find().limit(5); // Replace with your logic for featured blogs
+    const blog = await Blog.find().sort({ createdAt: -1 }).limit(10); // Recent blogs
+    res.render('index', { topblog, blog }); // Adjust view name if needed
+  } catch (err) {
+    console.error('Error fetching blogs:', err.message);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
+
+
+app.use(express.json()); // For parsing JSON body
+
+
+// Route: Fetch comments for a blog
+app.get('/blogs/:id/comments', async (req, res) => {
+  try {
+    const comments = await Comment.find({ blogId: req.params.id });
+    res.status(200).json(comments);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Route: Add a comment to a blog
+app.post('/blogs/:id/comments', async (req, res) => {
+  try {
+    const {blogId,fullname, email, comments } = req.body
+    const comment = new Comment({
+      blogId,
+      fullname,
+      comments,
+      email
+
+    });
+    await comment.save();
+    res.redirect(`/blogs/${blogId}`)
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+
+// Route: Add a comment to a topblog
+app.post('/topblogs/:id/comments', async (req, res) => {
+    try {
+      const {blogId,fullname, email, comments } = req.body
+      const comment = new Comment({
+        blogId,
+        fullname,
+        comments,
+        email
+  
+      });
+      await comment.save();
+      res.redirect(`/topblogs/${blogId}`)
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+
+
+
+
+
+
+
+app.get('/blogs/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params; // Destructure userId
+        console.log(userId);
+
+        const blog = await Blog.findById(userId); // Fetch one blog by ID
+        console.log(blog);
+
+        if (!blog) {
+            return res.status(404).send('No blog found');
+        }
+
+        res.render('blogs/blog1', { blog }); // Pass a single blog
+    } catch (error) {
+        console.error('Error fetching blog:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// Route: Fetch a specific top blog by ID
+app.get('/topblogs/:topBlogId', async (req, res) => {
+    try {
+      const  {topBlogId}  = req.params; // Extract topBlogId from the URL
+      const topBlog = await UploadBlog.findById(topBlogId); // Find top blog by ID
+      console.log(topBlog)
+  
+      if (!topBlog) {
+        return res.status(404).send('No top blog found');
+      }
+  
+      res.render('topblogs/blog1', { topBlog }); // Render detailed page for top blog
+    } catch (err) {
+      console.error('Error fetching top blog:', err.message);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,7 +182,7 @@ app.get('/blog', async(req, res)=>{
     try {
         const blog = await Blog.find()
         const topblog = await UploadBlog.find()
-        console.log(blog)
+        //console.log(blog)
         res.render('blog',{blog, topblog})
     } catch (error) {
         
@@ -88,9 +214,49 @@ app.get('/invest/partnership', (req, res) => {
     res.render('invest/partnership'); // Render partnership.ejs
 });
 
-app.get('/blogs/blog1', (req, res) => {
-    res.render('blogs/blog1'); // Render invest.ejs
+
+app.get('/Quota/Purchase', (req, res) => {
+  res.render('Quota/Purchase'); // Render invest.ejs
 });
+
+app.get('/Quota/checkout', (req, res) => {
+  res.render('Quota/checkout'); // Render invest.ejs
+});
+
+// app.get('/blogs/blog1', async (req, res) => {
+//     try {
+//         const blogs = await Blog.find(); // Assuming BlogModel is your MongoDB model
+//         res.render('blogs/blog1', { Blog: blogs }); // Pass the data to your EJS template
+//     } catch (error) {
+//         console.error('Error fetching blogs:', error);
+//         res.status(500).send('Internal Server Error');
+//     }
+// });
+
+
+// app.get('/blogs/:userId', async(req, res) => {
+//     try {
+//         const { userId } = req.params; // Destructure userId from params
+//         console.log(userId);
+//         const blogs = await Blog.findById(userId);
+//        console.log(blogs)
+//         // Find blogs with the given userId
+
+//         if (!blogs) {
+//             return res.status(404).send('No blogs found');
+//         }
+
+//         res.render('blogs/blog1', { blogs }); // Render the blogs in the template
+//     } catch (error) {
+//         console.error('Error fetching blogs:', error);
+//         res.status(500).send('Internal Server Error');
+//     }
+// });
+
+
+
+
+
 
 
 app.get('/invest/investment/404', (req, res) => {

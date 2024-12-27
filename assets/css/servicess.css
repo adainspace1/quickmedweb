@@ -50,6 +50,10 @@ body{
     font-weight: 500;
     line-height: 25px;
 }
+.advert2 .d-add img{
+    width: 100%;
+    margin-left: 0px;
+}
 .d-add .d-addp span{
     font-size: 23px;
 }
@@ -78,6 +82,12 @@ body{
     margin-left: 20%;
     font-size: 14px;
     width: 70%;
+}
+.d-text .bodyy img{
+    width: 100%;
+    /* align-self: center;
+    justify-self: center;
+    margin-left: 25%; */
 }
 .d-text .bodyy a{
     color: var(--main-color);
@@ -141,6 +151,11 @@ body{
         font-size: 17px
     }
 
+    .advert2 .d-add img{
+        width: 100%;
+        margin-left: 0px;
+        display: none;
+    }
 
 
     .d-text{
@@ -213,6 +228,10 @@ body{
         transform: translateY(-100px);
     }
 
+    .headd{
+        padding-bottom: 50px;
+        /* display: none; */
+    }
     .advert2{
         margin-left: 0px;
         margin-top: 0px;
@@ -249,6 +268,30 @@ body{
         font-weight: 500;
         line-height: 20px;
     }
+
+    .advert2 .adtop{
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--main-color);
+        display: none;
+    }
+    .advert2 .d-add .d-addp{
+        margin-left: 5%;
+        padding-top: 20%;
+        margin-top: -1px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 20px;
+        display: none;
+    }
+
+    .advert2 .d-add img{
+        width: 100%;
+        margin-left: 0px;
+        display: block;
+    }
     .d-add .d-addp span{
         font-size: 13px;
     }
@@ -280,7 +323,7 @@ body{
     .d-text .bodyy{
         margin-top: -350px;
         margin-left: 20%;
-        font-size: 14px;
+        font-size: 17px;
         width: 65%;
     }
     .d-text .bodyy a{
@@ -385,6 +428,14 @@ body{
         margin-top: 200px;
         margin-bottom: 100px;
     }
+    .d-text .headimg {
+        width: 300px;
+        background-color: red;
+        /* height: 100px; */
+        align-content: center;
+        justify-content: center;
+        margin-left: 35%;
+    }
     .d-text .headd{
         width: 50%;
         margin-left: 0%;
@@ -405,7 +456,8 @@ body{
     .d-text .bodyy{
         margin-top: -350px;
         margin-left: 20%;
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 2.0;
         width: 70%;
     }
     .d-text .bodyy a{

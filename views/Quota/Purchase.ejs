@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMed</title>
+    <link rel="icon" href="/images/quickmedlogo.PNG">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/quota-purchase.css">
+</head>
+<body>
+
+
+    <!-- start NavBar -->
+    <div class="navbar">
+
+        <div class="logo">
+            <img src="/images/quickmedlogo.PNG" alt="QuickMed Logo" class="top">
+            <p class="top"><span>QUICK</span>MED</p>
+        </div>
+
+        <div class="ham">
+            <img id="open" src="/images/hamburger-svgrepo-com (1).png" alt="hamburger icon">
+            <img id="closee" src="/images/close-circle-svgrepo-com.png" alt="close icon">
+        </div>
+        <div class="navlinks">
+
+
+            <div class="navclose">
+                <p id="clop">X</p>
+            </div>
+          
+            <ul id="ul">
+                <li><a href="/">Home</a></li>
+                <li><a class="aboutl">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboimg"></a></li>
+                <div class="aboutdrop">
+                <li class="donts1"><a href="/about/aboutus">About Us</a></li>
+                <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
+            </div>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a class="joinl">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joinimg"></a></li>
+                <div class="joindrop">
+                <li class="donts2"><a href="/invest/investment">Investment</a></li>
+                <li class="donts2"><a href="/invest/partnership">Partnership</a></li>
+            </div>
+            </ul>
+
+            
+        </div>
+
+       
+
+        <div class="navpop">
+        <div class="aboutpop">
+            <ul>
+                <li><a href="/about/aboutus">About Us</a></li>
+                <li><a href="/about/aboutdteam">About the team</a></li>
+            </ul>
+        </div>
+        <div class="joinpop">
+            <ul>
+                <li><a href="/invest/investment">Investment</a></li>
+                <li><a href="/invest/partnership">Partnership</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+      
+
+    </div>
+    <!-- 08062812376 -->
+<!-- end navbar -->
+
+
+
+
+
+
+
+    <div class="qmain">
+
+        <video class="qvid" autoplay muted loop>
+            <source src="/images/Doctor Talking.mp4">
+        </video>
+        <div class="qoverl">
+
+            <div class="qfront">
+                <div class="threed"><p>Quota</p></div>
+                <p class="p">Secure Your QuickMed Assist Device Today and Stay Connected to Care.</p>
+
+                <button class="order">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="qform" class="qform">
+        <div class="qheadd">Order Form</div>
+
+        <div class="dqform">
+            <p class="mainheadd">QuickMed Quota</p>
+            <form action="http://localhost:3800/api/auth/Quota/checkout" method="post">
+
+                <div class="perinfo">
+
+                    <p class="miniheadd">Personal Info</p> 
+
+                    <div class="perinfod">
+
+                    
+
+                 <section class="name">
+                    <label for="fullname">Fullname</label> <br>
+                    <input type="text" name="fullname" id="" placeholder="Input your fullname">
+                </section>
+
+                <section class="email">
+                    <label for="email">Email</label> <br>
+                    <input type="email" name="email" id="" placeholder="Input your email">
+                </section>
+                
+                <section class="number">
+                    <label for="Phone-Number">Phone Number</label> <br>
+                    <input type="text" name="phoneNumber" id="" placeholder="Input your phone number">
+                </section>
+
+                <section class="number">
+                    <label for="Phone-Number">Phone Number</label> <br>
+                    <input type="text" name="altphoneNumber" id="" placeholder="Input an alternative phone number">
+                </section>
+
+                <section class="Address">
+                    <label for="Address">Address</label> <br>
+                    <input type="text" name="address" id="" placeholder="Input your address">
+                </section>
+
+                <section class="info">
+                    <label for="info">Additional Info</label> <br>
+                    <input type="text" name="info" id="" placeholder="Input your Information">
+                </section>
+
+                <section class="region">
+                    <label for="region">LGA</label> <br>
+                    <input type="text" name="region" id="" placeholder="Input your region">
+                </section>
+
+                <section class="city">
+                    <label for="city">City</label> <br>
+                    <input type="text" name="city" id="" placeholder="Input your city">
+                </section> 
+            </div>  
+                </div>
+
+
+                <div class="twoflex">
+                     <div class="hawe">
+                    <p class="miniheadd">Hardware</p>
+
+                    <section class="amount">
+                        <label for="amount">Amount</label> <br>
+                        <input type="text" name="amount" id="amount" placeholder="Input the device amount">
+
+                        <input type="text" name="amountcost" id="amountcost" placeholder="Input" hidden>
+                    </section>
+                </div>
+
+
+                <div class="subs">
+                    <p class="miniheadd">Subscription</p>
+
+                    <section class="month">
+                        <label for="month">Month</label> <br>
+                        <input type="text" name="month" id="month" placeholder="Input your Subscription month">
+
+
+                        <input type="text" name="monthcost" id="monthcost" hidden>
+                    </section>
+
+                    <div class="total">
+                        <input type="text" name="total" id="total" hidden>
+                    </div>
+                </div>
+                </div>
+
+               
+
+                <div class="btn">
+                    <button>Check Out</button>
+                </div>
+
+
+
+                <input type="hidden" name="deliveryCost" id="hiddenDeliveryCost" value="50">
+                <input type="hidden" name="vat" id="hiddenVAT" value="20">
+                <input type="hidden" name="serviceFees" id="hiddenServiceFees" value="10">
+                <input type="hidden" name="urgencyFees" id="hiddenUrgencyFees" value="15">
+                <input type="hidden" name="convenienceFees" id="hiddenConvenienceFees" value="5">
+                <input type="hidden" name="bookingFees" id="hiddenBookingFees" value="25">
+                <input type="hidden" name="insuranceFees" id="hiddenInsuranceFees" value="30">
+                
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="quifea">
+
+        <p class="headd">Quick Features</p>
+
+        <div class="qfdivs">
+
+            <section class="feat">
+                <p class="featheadd">Remote Monitoring</p>
+
+                <p class="featboddy"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem, amet in eaque illum deserunt facilis, dolores</p>
+            </section>
+
+            <section class="feat">
+                <p class="featheadd">Emergency Assistance</p>
+
+                <p class="featboddy"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem, amet in eaque illum deserunt facilis, dolores</p>
+            </section>
+
+            <section class="feat">
+                <p class="featheadd">24/7 Access to Care</p>
+
+                <p class="featboddy"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem, amet in eaque illum deserunt facilis, dolores</p>
+            </section>
+
+            <section class="feat">
+                <p class="featheadd">Real-Time Alerts</p>
+
+                <p class="featboddy"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem, amet in eaque illum deserunt facilis, dolores</p>
+            </section>
+
+            <section class="feat">
+                <p class="featheadd">Real-Time Data Analysis</p>
+
+                <p class="featboddy"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit exercitationem, amet in eaque illum deserunt facilis, dolores</p>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<div class="footer">
+
+    <div class="firstlogo">
+        <div class="logo">
+        <img src="/images/quickmedlogo.PNG" alt="">
+            <p class="logop">Quick<span>Med</span></p>
+    </div>
+
+        <p class="smallp">At QuickMed, we are at the forefront of revolutionizing healthcare through cutting-edge technology.</p>
+    
+
+    <div class="downlinks">
+        <a href="https://web.facebook.com/profile.php?id=61557942997138" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@QuickMedng" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/quickmed.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/Quick_Med1" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+</div>
+
+
+<div class="Quick-Links">
+
+    <p class="quicklinkheadp">Quick links</p>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a class="aboutll">About <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="aboiimg"></a></li>
+        <div class="aboutdropp">
+            <li class="donts1"><a href="/about/aboutus">About Us</a></li>
+            <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
+    </div>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/services">services</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a class="joinll">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joiniimg"></a></li>
+      <div class="joindropp">
+                <li class="donts2"><a href="/invest/investment">Investment</a></li>
+                <li class="donts2"><a href="/invest/partnership">Partnership</a></li>
+            </div>
+    
+
+</div>
+
+
+<div class="sevices">
+
+    <p class="serviceheadp">Services</p>
+
+    <ul>
+        <li><a href="/services/ambulance">Ambulance</a></li>
+        <li><a href="/services/hospital">Hospital</a></li>
+        <li><a href="/services/e-consult">E-Consult</a></li>
+        <li><a href="/services/quick-call">Quick-Call</a></li>
+    </ul>
+</div>
+
+
+<div class="support">
+
+    <p class="suportheadp">Help & Support</p>
+
+    <ul>
+        <li><a href="tel:09045585701">09045585701</a></li>
+        <li><a href="mailto:quickmed@gmail.com">quickmed@gmail.com</a></li>
+        <li><a href="/Terms">Terms and condition</a></li>
+    </ul>
+</div>
+
+
+<hr>
+
+<div class="under">
+    <p>&copy;copywright QuickMed</p>
+</div>
+
+ </div>
+
+
+ <script>
+    // Constants for costs
+    const hardwareCostPerUnit = 100; // Cost per hardware unit
+    const subscriptionCostPerMonth = 50; // Cost per month
+
+    // Getting input elements
+    const amountInput = document.getElementById("amount");
+    const amountCostInput = document.getElementById("amountcost");
+    const monthInput = document.getElementById("month");
+    const monthCostInput = document.getElementById("monthcost");
+    const totalCostInput = document.getElementById("total");
+
+    // Function to calculate costs
+    function calculateCosts() {
+        // Get values from inputs
+        const amount = parseInt(amountInput.value) || 0;
+        const months = parseInt(monthInput.value) || 0;
+
+        console.log(amount);
+        console.log(months);
+
+        // Calculate individual costs
+        const amountCost = amount * hardwareCostPerUnit;
+        const monthCost = months * subscriptionCostPerMonth;
+
+        // Update respective inputs
+        amountCostInput.value = amountCost.toFixed(2);
+        monthCostInput.value = monthCost.toFixed(2);
+
+        // Calculate total cost
+        const totalCost = amountCost + monthCost;
+        totalCostInput.value = totalCost.toFixed(2);
+    }
+
+    // Add event listeners to inputs
+    amountInput.addEventListener("input", calculateCosts);
+    monthInput.addEventListener("input", calculateCosts);
+</script>
+ 
+
+
+
+<script src="/js/general.js"></script>
+
+<script>
+    document.querySelector(".order").addEventListener("click", function (){
+        window.location = "/Quota/Purchase#qform"
+        // window.alert("kkk")
+    })
+</script>
+
+
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

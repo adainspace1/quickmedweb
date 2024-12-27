@@ -1,0 +1,83 @@
+body
+
+
+.navbar{
+    margin-top: -150px;
+}
+
+.summary{
+    margin-bottom: 70px;
+    width: 45%;
+    padding-left: 50px;
+    margin-top: 150px;
+}
+.summary .headd{
+    font-size: 30px;
+    font-weight: 600;
+}
+.summary .shipadd{
+
+}
+.miniheadd{
+    font-size: 20px;
+}
+.summary .shipadd .shipadddiv{
+    background-color: #ccc;
+    width: 500px;
+    height: 150px;
+    padding-left: 10px;
+}
+.summary .shipadd .shipadddiv .twop{
+    display: flex;
+}
+.summary .shipadd .shipadddiv .twop .umber{
+    margin-left: 150px;
+}
+.summary .orlis .dorlis{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between rows */
+}
+.summary .orlis .dorlis p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    font-size: 16px;
+    margin: 0;
+}
+.summary .orlis .dorlis p  span{
+    margin-left: 200px;
+    text-align: right;
+    min-width: 100px; /* Ensures consistent width for the cost column */
+    display: inline-block;
+}
+.summary .total{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Adds spacing between rows */
+}
+.summary .total .to{
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 0; */
+}
+.summary .total .to span{
+    margin-left: 150px;
+    text-align: right;
+    min-width: 100px; /* Ensures consistent width for the cost column */
+    display: inline-block;
+}
+.summary .btn{
+    align-self: center;
+    justify-self: center;
+}
+.summary .btn button{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+}

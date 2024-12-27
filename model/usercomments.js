@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    blogId: { type: mongoose.Schema.Types.ObjectId, ref: 'Blog', required: true },
     fullname: {
         type: String,
         required: true

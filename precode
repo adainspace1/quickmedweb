@@ -40,8 +40,8 @@
                 <li class="donts1"><a href="/about/aboutdteam">About the team</a></li>
             </div>
                 <li><a href="/blog">Blog</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="contact">Contact Us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact Us</a></li>
                 <li><a class="joinl">Join Us <img src="/images/arrow-prev-small-svgrepo-com black.png" alt="" class="joinimg"></a></li>
                 <div class="joindrop">
                 <li class="donts2"><a href="/invest/investment">Investment</a></li>

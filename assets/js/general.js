@@ -66,6 +66,10 @@ document.querySelector(".aboutl").addEventListener("click", function(){
     document.querySelector(".joiniimg").classList.toggle("active");
     document.querySelector(".joindropp").classList.toggle("active");
     
+
+    document.querySelector(".sevices").classList.toggle("active");
+
+    document.querySelector(".support").classList.toggle("active");
     })
 
 
