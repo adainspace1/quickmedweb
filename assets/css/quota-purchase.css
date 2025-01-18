@@ -168,6 +168,7 @@
     align-self: center;
     justify-self: center;
     margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .qform .dqform .btn button{
     width: 150px;

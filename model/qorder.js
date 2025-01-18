@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     altphoneNumber: {
         type: String,
-        required: true,
+        required: false,
     },
     address: {
         type: String,
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     },
     info: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -62,31 +62,31 @@ const userSchema = new mongoose.Schema({
 
     deliveryCost: {
         type: String,
-        required: true
+        required: false
     },
     vat: {
         type: String,
-        required: true
+        required: false
     },
     serviceFees: {
         type: String,
-        required: true
+        required: false
     },
     urgencyFees: {
         type: String,
-        required: true
+        required: false
     },
     convenienceFees: {
         type: String,
-        required: true
+        required: false
     },
     bookingFees: {
         type: String,
-        required: true
+        required: false
     },
     insuranceFees: {
         type: String,
-        required: true
+        required: false
     },
 }, {
     timestamps: true

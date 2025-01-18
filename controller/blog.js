@@ -1,6 +1,9 @@
 const Blog = require('../model/blog');
 const User = require("../model/usermodel");
 const TopBlog = require('../model/topblog');
+const cloudinary = require("../cloudinary");
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 // Create a new notification
 const createBlog = async (req, res) => {
     try {

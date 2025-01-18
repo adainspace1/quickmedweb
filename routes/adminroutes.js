@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require("multer")
+const app = express();
 //all my controller imports 
 const 
 {
@@ -18,8 +19,39 @@ const
 = require("../controller/admincontroller");
 
 
-const storage = multer.memoryStorage(); // Store files in memory
-const upload = multer({ storage: storage });
+const storage = multer.diskStorage({
+   destination: (req, file, cb) => {
+     cb(null, 'uploads/'); // Temporary upload folder
+   },
+   filename: (req, file, cb) => {
+     cb(null, Date.now() + '-' + file.originalname); // Unique file name
+   },
+ });
+ const upload = multer({ storage });
+
+ app.post('/upload', upload.fields([
+   { name: 'image', maxCount: 1 },  // Handle the 'image' field
+   { name: 'seimage', maxCount: 1 } // Handle the 'seimage' field
+ ]), (req, res) => {
+   try {
+     // Access the uploaded files
+     const imageFile = req.files['image'] ? req.files['image'][0] : null;
+     const seImageFile = req.files['seimage'] ? req.files['seimage'][0] : null;
+ 
+     if (!imageFile || !seImageFile) {
+       return res.status(400).json({ message: 'Both image and seimage are required.' });
+     }
+ 
+     res.status(200).json({
+       message: 'Files uploaded successfully!',
+       image: imageFile.filename,
+       seimage: seImageFile.filename,
+     });
+   } catch (err) {
+     console.error(err);
+     res.status(500).json({ message: 'File upload failed.', error: err.message });
+   }
+ });
 
 
 router.post('/login', logIn);
@@ -29,6 +61,8 @@ router.post('/remove/:id/delete', deleteUser);
 router.get('/search', search);
 router.post('/upload-blog', upload.single('image'), uploadToBlog);
 router.post('/blog', upload.single('image'), Topblog);
+
+
 
 
 

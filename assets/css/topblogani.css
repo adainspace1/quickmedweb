@@ -16,14 +16,14 @@
   .carousel-slide {
     display: flex;
     position: relative;
-    background-image: url(/images/microsoft-365-7mBictB_urk-unsplash.jpg);
     background-size: cover;
     background-position: center;
     height: 500px;
     align-items: center;
-    padding: 150px 20px;
+    padding: 0px 0px;
     border-radius: 10px;
     margin-left: 0px;
+    background-color: blue;
   }
   
   

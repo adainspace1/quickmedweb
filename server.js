@@ -26,6 +26,8 @@ app.use(cors())
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
+
+app.use(express.json()); // For parsing JSON body
 app.use(session({
     secret: 'Dien', // Replace with your own secret
     resave: false,
@@ -35,6 +37,7 @@ app.use(session({
 
 app.use('/api/auth', authRoutes)
 app.use('/api/admin', adminRoutes)
+
 
 
 
@@ -66,8 +69,6 @@ app.get('/', async (req, res) => {
 
 
 
-
-app.use(express.json()); // For parsing JSON body
 
 
 // Route: Fetch comments for a blog

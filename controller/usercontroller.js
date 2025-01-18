@@ -7,6 +7,9 @@ const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const jwt = require('jsonwebtoken');
+const cloudinary = require("../cloudinary");
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 
 
@@ -327,7 +330,7 @@ const order = async (req, res) => {
   try {
     const { fullname, phoneNumber, altphoneNumber, email, address, info, region, city, amountcost, amount, month, monthcost, total, deliveryCost, vat, serviceFees, urgencyFees, convenienceFees, bookingFees, insuranceFees} = req.body;
 
-    if (!fullname || !phoneNumber || !altphoneNumber || !email || !address || !info || !city || !amountcost || !amount || !region || !month || !monthcost || !total || !deliveryCost || !vat || !serviceFees || !urgencyFees || !convenienceFees || !bookingFees || !insuranceFees) {
+    if (!fullname || !phoneNumber || !email || !address || !city || !amountcost || !amount || !region || !total || !deliveryCost || !vat || !serviceFees || !urgencyFees || !convenienceFees || !bookingFees || !insuranceFees) {
 
       res.render("invest/partnership/200", {user: req.session.user})
 

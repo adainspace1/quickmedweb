@@ -9,7 +9,19 @@ const
 
    
 } = require("../controller/usercontroller")
+const multer = require('multer');
 
+// Multer configuration for handling file uploads
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // Temporary upload folder
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname); // Unique file name
+  },
+});
+const upload = multer({ storage });
 
 
 router.get("/invest/investment", (req, res)=>{
@@ -23,6 +35,6 @@ router.get("/invest/partnership", (req, res)=>{
 router.post('/blogs/blog1', comments);
 router.post('/invest/investment', invest);
 router.post('/invest/partnership', partnership);
-router.post('/Quota/checkout', order)
+router.post('/Quota/checkout', order )
 
 module.exports = router

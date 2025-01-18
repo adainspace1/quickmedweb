@@ -5,7 +5,11 @@ const Blog = require("../model/blog");
 const TOPBlog = require("../model/topblog");
 //const Tax = require("../model/tax");
 const cloudinary = require("../cloudinary");
+const multer = require('multer');
 const streamifier  = require("streamifier");
+
+
+
 
 require("dotenv").config();
 
@@ -108,141 +112,90 @@ const getAllUsers = async (req, res) => {
 
 
 
-const uploadToBlog = async(req, res)=>{
-  const { title, content, fullname } = req.body;
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); // Temporary upload folder
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname); // Unique file name
+  },
+});
+const upload = multer({ storage });
 
-  try{
-    const adminId = process.env.TEST_ADMIN_ID;
-    if(!adminId){
-      res.status(500).json({status:"failed", message: "invalid admin"})
-
-    }else{
-        if(!title || !content || !fullname){
-          return res.status(400).json({status: "failed", message: 'Title, content, and image are required.' });
-        }
-// Get the image URL from Cloudinary
-       const imageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
-         // If an image file is provided
-      if (req.file) {
-        // Wrap the Cloudinary upload in a promise
-       
-          const uploadStream = cloudinary.uploader.upload_stream({ resource_type: 'image' }, (error, result) => {
-            if (error) {
-                return res.status(500).send('Error uploading image to Cloudinary');
-            }
-            imageUrl = result.secure_url;
-            
-        
-            createuser()
-          
-
-          });
-          
-          streamifier.createReadStream(req.file.buffer).pipe(uploadStream);        
-      }else{
-        createuser()
-      }
-
-      async function createuser(){
-
-            // Get the image URL from Cloudinary
-           //const imageUrl = req.file.path;
-            // Create and save the blog post
-            const newBlog = new Blog({
-              title,
-              content,
-              fullname,
-              image: imageUrl, // Save Cloudinary URL in the database
-          });
-    
-          await newBlog.save();
-          return res.render('admin/html/blog', {user:req.session.user})
-        //   return res.status(201).json({
-        //     message: 'Blog post created successfully!',
-        //     blog: newBlog,
-        // });
-        }
-
-      }
-
-       
-
-  }catch(error){
-    console.error('Error uploading blog post:', error);
-    return res.status(500).json({ message: 'Internal server error.' });
+// Helper function to handle image uploads
+async function handleImageUpload(cameraImage, filePath) {
+  try {
+    if (cameraImage) {
+      const result = await cloudinary.uploader.upload(cameraImage, { upload_preset: "ml_default" });
+      return result.secure_url;
+    } else if (filePath) {
+      const result = await cloudinary.uploader.upload(filePath, { folder: "guests" });
+      return result.secure_url;
+    }
+    throw new Error("No image provided");
+  } catch (err) {
+    console.error("Cloudinary upload error:", err);
+    throw new Error("Error uploading image to Cloudinary");
   }
-
 }
 
+// Controller for `uploadToBlog`
+const uploadToBlog = async (req, res) => {
+  const { title, content, fullname, cameraImage } = req.body;
 
-
-const Topblog = async(req, res)=>{
-  const { setitle, secontent, sefullname } = req.body;
-  console.log(setitle, secontent, sefullname)
-
-  try{
+  try {
     const adminId = process.env.TEST_ADMIN_ID;
-    if(!adminId){
-      res.status(500).json({status:"failed", message: "invalid admin"})
+    if (!adminId) {
+      return res.status(500).json({ status: "failed", message: "Invalid admin" });
+    }
 
-    }else{
-        if(!setitle || !secontent || !sefullname){
-          return res.status(400).json({status: "failed", message: 'Title, content, and image are required.' });
-        }
-// Get the image URL from Cloudinary
-       const imageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
-         // If an image file is provided
-      if (req.file) {
-        // Wrap the Cloudinary upload in a promise
-       
-          const uploadStream = cloudinary.uploader.upload_stream({ resource_type: 'image' }, (error, result) => {
-            if (error) {
-                return res.status(500).send('Error uploading image to Cloudinary');
-            }
-            imageUrl = result.secure_url;
-            
-        
-            createuser()
-          
+    if (!title || !content || !fullname) {
+      return res.status(400).json({
+        status: "failed",
+        message: "Title, content, and fullname are required.",
+      });
+    }
 
-          });
-          
-          streamifier.createReadStream(req.file.buffer).pipe(uploadStream);        
-      }else{
-        createuser()
-      }
+    const imageUrl = await handleImageUpload(cameraImage, req.file?.path);
 
-      async function createuser(){
+    const newBlog = new Blog({ title, content, fullname, image: imageUrl });
+    await newBlog.save();
 
-            // Get the image URL from Cloudinary
-           //const imageUrl = req.file.path;
-            // Create and save the blog post
-            const blog = new TOPBlog({
-              setitle,
-              secontent,
-              sefullname,
-              seimage: imageUrl, // Save Cloudinary URL in the database
-          });
-    
-          await blog.save();
-          console.log(blog)
-          return res.render('admin/html/blog', {user:req.session.user})
-        //   return res.status(201).json({
-        //     message: 'Blog post created successfully!',
-        //     blog: newBlog,
-        // });
-        }
-
-      }
-
-       
-
-  }catch(error){
-    console.error('Error uploading blog post:', error);
-    return res.status(500).json({ message: 'Internal server error.' });
+    return res.render("admin/html/blog", { user: req.session.user });
+  } catch (error) {
+    console.error("Error in uploadToBlog:", error);
+    return res.status(500).json({ status: "failed", message: "Internal server error" });
   }
+};
 
-}
+// Controller for `Topblog`
+const Topblog = async (req, res) => {
+  const { setitle, secontent, sefullname, cameraImage } = req.body;
+
+  try {
+    const adminId = process.env.TEST_ADMIN_ID;
+    if (!adminId) {
+      return res.status(500).json({ status: "failed", message: "Invalid admin" });
+    }
+
+    if (!setitle || !secontent || !sefullname) {
+      return res.status(400).json({
+        status: "failed",
+        message: "Title, content, and fullname are required.",
+      });
+    }
+
+    const imageUrl = await handleImageUpload(cameraImage, req.file?.path);
+
+    const newTopBlog = new TOPBlog({ setitle, secontent, sefullname, image: imageUrl });
+    await newTopBlog.save();
+
+    return res.render("admin/html/blog", { user: req.session.user });
+  } catch (error) {
+    console.error("Error in Topblog:", error);
+    return res.status(500).json({ status: "failed", message: "Internal server error" });
+  }
+};
 
 
 

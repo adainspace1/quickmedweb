@@ -86,14 +86,16 @@
     <% topblog.forEach(function (upblog, admin) { %>
     <div class="carousel-container">
       <!-- Slides dynamically generated from the database -->
-        <div class="carousel-slide">
-          <a href="/topblogs/<%= upblog._id%>">
+        <div class="carousel-slide" style="background-image: url('<%= upblog.image %>');">
+            <div class="over">
+          <a href="/topblogs/<%= upblog._id%>" class="carousel-slide-link">
             <div class="carousel-content">
               <h3 class="featured"><%= upblog.sefullname %></h3>
               <h1><%= upblog.setitle %></h1>
               <p><%= upblog.secontent %></p>
             </div>
           </a>
+        </div>
         </div>
       <!-- Navigation Arrows -->
       <div class="carousel-arrow left-arrow">◀</div>
@@ -128,7 +130,7 @@
             <div class="blog">
 
                 <!-- <img src="<%= product.image %>" alt=""> -->
-                 <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="">
+                 <img src="<%= product.image %>" alt="">
 
                  <!-- <img src="<%= product.seimage %>" alt="" > -->
 
