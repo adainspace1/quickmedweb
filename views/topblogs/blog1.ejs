@@ -139,10 +139,28 @@
             </form>
         </div>
     </div>
+
+
+
+<div class="commenteduser">
+    <!-- <p class="headddp">Comments</p> -->
+
+    <% if (topcomments && topcomments.length > 0) { %>
+        <% topcomments.forEach(function(topcomment) { %>
+          <div class="user">
+            <div class="userp">
+              <img src="/images/microsoft-365-7mBictB_urk-unsplash.jpg" alt="Profile Picture">
+              <p class="username"><%= topcomment.fullname %></p>
+            </div>
+            <p class="usercomment"><%= topcomment.comments %></p>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No comments yet. Be the first to comment!</p>
+      <% } %>
 </div>
 
-
-    
+    </div>
   
 
 

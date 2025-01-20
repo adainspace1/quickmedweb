@@ -260,66 +260,54 @@ const partnership = async (req, res) => {
 
 };
 
-const comments = async (req, res) => {
+// Fetch Blog and Comments by Blog ID
+const getBlogAndComments = async (req, res) => {
   try {
-    const { fullname, comments, email} = req.body;
+    const { id } = req.params; // Blog ID from URL
+    console.log("Blog ID:", id);
 
-    if (!fullname || !email || !comments ) {
+    // Check if the blog exists
+    const blog = await Blog.findById(id);
+    if (!blog) {
+      console.log("No blog yet");
+      return res.status(404).send("No blog found");
+    }
+
+    console.log("Blog found:", blog);
+
+    // Fetch comments associated with this blog
+    const comments = await Comment.find({ blogId: id }).sort({ createdAt: -1 });
+    console.log("Comments:", comments);
+
+    // Render the blog page with the blog and comments data
+    res.render('blogs/blog1', { blog, comments });
+  } catch (error) {
+    console.error("Error fetching blog or comments:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+// Save a New Comment
+const saveComment = async (req, res) => {
+  try {
+    const { blogId, fullname, email, comments } = req.body;
+
+    if (!blogId || !fullname || !email || !comments) {
       return res.status(400).json({ status: "Failed", message: "Please fill out all fields." });
     }
 
-   
+    // Create and save the new comment
+    const comment = new Comments({ blogId, fullname, email, comments });
+    await comment.save();
 
-    
+    console.log("Comment saved successfully:", comment);
 
-       // Create a new user with the provided data and the image URL if available
-    const user = new Comments({
-      fullname,
-      comments,
-      email,
-    });
-
-
-      try {
-          await user.save();
-          // Generate a JWT token
-          const token = jwt.sign({ id: user._id}, 'Adain', { expiresIn: '1h' });
-
-          req.session.user = {
-              id: user._id,
-              comments: user.comments,
-              email: user.email,
-              fullname: user.fullname,
-             
-              
-              // Add other fields as needed
-          };
-          res.status(200).send("comment saved successfully")
-          
-          
-      } catch (error) {
-          console.error('Error saving product:', error);
-              res.status(500).send('Error saving product');
-      }
-    
-
-   
-
-    
-
-   
+    // Redirect to the blog page
+    res.redirect(`/blogs/${blogId}`, {user: req.session.user});
   } catch (error) {
-    console.error("Error during signup:", error);
-
-    // Handle errors and ensure only one response
-    if (!res.headersSent) {
-      res.status(500).json({ status: "Failed", message: error.message });
-    }
+    console.error("Error saving comment:", error);
+    res.status(500).json({ error: error.message });
   }
-
-  
-
-
 };
 
 
@@ -395,31 +383,30 @@ const order = async (req, res) => {
           const token = jwt.sign({ id: user._id}, 'Adain', { expiresIn: '1h' });
 
           req.session.user = {
-              id: user._id,
-              fullname: user.fullname, 
-              email: user.email,
-              phoneNumber: user.phoneNumber,
-              altphoneNumber: user.altphoneNumber,
-              address: user.address,
-              info: user.info,
-              region: user.region,
-              city: user.city,
-              amount: user.amount,
-              amountcost: user.amountcost,
-              month: user.month,
-              monthcost: user.monthcost,
-              deliveryCost: user.deliveryCost,
-              vat: user.vat,
-              serviceFees: user.serviceFees,
-              urgencyFees: user.urgencyFees,
-              convenienceFees: user.convenienceFees,
-              bookingFees: user.bookingFees,
-              insuranceFees: user.insuranceFees,
-             
-              
-              // Add other fields as needed
+            fullname: user.fullname,
+            phoneNumber: user.phoneNumber,
+            altphoneNumber: user.altphoneNumber,
+            email: user.email,
+            address: user.address,
+            info: user.info,
+            region: user.region,
+            city: user.city,
+            amount: user.amount,
+            amountcost: user.amountcost,
+            month: user.month,
+            monthcost: user.monthcost,
+            deliveryCost: user.deliveryCost,
+            vat: user.vat,
+            serviceFees: user.serviceFees,
+            urgencyFees: user.urgencyFees,
+            convenienceFees: user.convenienceFees,
+            bookingFees: user.bookingFees,
+            insuranceFees: user.insuranceFees,
+            total: user.total,
           };
-          res.render("Quota/checkout", {user: req.session.user})
+          
+          res.render("Quota/checkout", { user: req.session.user });
+
           // res.status(200).json({
           //     status: "Success",
           //     message: "Login successful",
@@ -474,7 +461,8 @@ module.exports =
 
   invest,
   partnership,
-  comments,
+  saveComment,
+  getBlogAndComments,
   order
  
 };

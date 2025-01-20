@@ -4,7 +4,8 @@ const
 {
   invest,
   partnership,
-  comments,
+  saveComment,
+  getBlogAndComments,
   order
 
    
@@ -31,8 +32,10 @@ router.get("/invest/investment", (req, res)=>{
 router.get("/invest/partnership", (req, res)=>{
   res.render('invest/partnership')
 })
+router.get('/blogs/:id', getBlogAndComments);
 
-router.post('/blogs/blog1', comments);
+// Route to save a new comment
+router.post('/blogs/:id/comments', saveComment);
 router.post('/invest/investment', invest);
 router.post('/invest/partnership', partnership);
 router.post('/Quota/checkout', order )

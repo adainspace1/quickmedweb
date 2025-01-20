@@ -137,6 +137,28 @@
         align-self: center;
     }
 
+
+
+    .commenteduser{
+        margin-top: 50px;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        max-height: 530px;
+        overflow-y: hidden;
+    }
+    .commenteduser .user{
+        border: 1px solid black;
+        padding: 5px 10px;
+        margin-bottom: 30px;
+    }
+    .commenteduser .user .userp{
+        display: flex;
+    }
+    .commenteduser .user .userp img{
+        margin-right: 20px;
+    }
+
     .footer{
         background-color: var(--white);
         border-top: 1px solid var(--black);

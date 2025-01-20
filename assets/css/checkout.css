@@ -23,12 +23,17 @@ body
 }
 .summary .shipadd .shipadddiv{
     background-color: #ccc;
-    width: 500px;
-    height: 150px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     padding-left: 10px;
 }
 .summary .shipadd .shipadddiv .twop{
     display: flex;
+}
+.summary .shipadd .shipadddiv .twop .high{
+    background-color: red;
+    width: 50%;
 }
 .summary .shipadd .shipadddiv .twop .umber{
     margin-left: 150px;

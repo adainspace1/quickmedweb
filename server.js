@@ -54,32 +54,16 @@ app.use('/api/admin', adminRoutes)
 
 
 
-// Route: Fetch all blogs for home page
-app.get('/', async (req, res) => {
-  try {
-    const topblog = await UploadBlog.find().limit(5); // Replace with your logic for featured blogs
-    const blog = await Blog.find().sort({ createdAt: -1 }).limit(10); // Recent blogs
-    res.render('index', { topblog, blog }); // Adjust view name if needed
-  } catch (err) {
-    console.error('Error fetching blogs:', err.message);
-    res.status(500).send('Internal Server Error');
-  }
-});
 
 
 
 
 
 
-// Route: Fetch comments for a blog
-app.get('/blogs/:id/comments', async (req, res) => {
-  try {
-    const comments = await Comment.find({ blogId: req.params.id });
-    res.status(200).json(comments);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+
+
+
+
 
 // Route: Add a comment to a blog
 app.post('/blogs/:id/comments', async (req, res) => {
@@ -125,6 +109,12 @@ app.post('/topblogs/:id/comments', async (req, res) => {
 
 
 
+ 
+
+
+
+
+
 
 app.get('/blogs/:userId', async (req, res) => {
     try {
@@ -134,16 +124,24 @@ app.get('/blogs/:userId', async (req, res) => {
         const blog = await Blog.findById(userId); // Fetch one blog by ID
         console.log(blog);
 
+        const comments = await Comment.find({ blogId: userId }).sort({ createdAt: -1 }); // Fetch comments for this blog
+
         if (!blog) {
             return res.status(404).send('No blog found');
         }
 
-        res.render('blogs/blog1', { blog }); // Pass a single blog
+        res.render('blogs/blog1', { blog, comments }); // Pass a single blog
     } catch (error) {
         console.error('Error fetching blog:', error);
         res.status(500).send('Internal Server Error');
     }
 });
+
+
+
+
+
+
 
 // Route: Fetch a specific top blog by ID
 app.get('/topblogs/:topBlogId', async (req, res) => {
@@ -151,12 +149,14 @@ app.get('/topblogs/:topBlogId', async (req, res) => {
       const  {topBlogId}  = req.params; // Extract topBlogId from the URL
       const topBlog = await UploadBlog.findById(topBlogId); // Find top blog by ID
       console.log(topBlog)
+
+      const topcomments = await Comment.find({ blogId: topBlogId }).sort({ createdAt: -1 }); // Fetch comments for this blog
   
       if (!topBlog) {
         return res.status(404).send('No top blog found');
       }
   
-      res.render('topblogs/blog1', { topBlog }); // Render detailed page for top blog
+      res.render('topblogs/blog1', { topBlog, topcomments }); // Render detailed page for top blog
     } catch (err) {
       console.error('Error fetching top blog:', err.message);
       res.status(500).send('Internal Server Error');
@@ -191,12 +191,18 @@ app.get('/blog', async(req, res)=>{
     
 });
 
+
+
 app.get('/services',(req,res)=>{
     res.render('services')
 });
 
 app.get('/contact',(req,res)=>{
     res.render('contact')
+});
+
+app.get('/success',(req,res)=>{
+  res.render('success', { user: req.session.user })
 });
 
 app.get('/Terms',(req,res)=>{
@@ -212,16 +218,20 @@ app.get('/invest/investment', (req, res) => {
 });
 
 app.get('/invest/partnership', (req, res) => {
-    res.render('invest/partnership'); // Render partnership.ejs
+    res.render('invest/partnership'); // RendeShare this to your stories my new ringtone   Follow @fav__lyrix for more such edits   Use #fav__lyrix  ..Tags   #musiclover #music #musically #musicinstagram #musicedits #songstatus #song #songs #songedits #songlove #desttynellyr partnership.ejs
 });
 
 
 app.get('/Quota/Purchase', (req, res) => {
-  res.render('Quota/Purchase'); // Render invest.ejs
+  res.render('Quota/Purchase', {user: req.session.user}); // Render invest.ejs
 });
 
 app.get('/Quota/checkout', (req, res) => {
   res.render('Quota/checkout'); // Render invest.ejs
+});
+
+app.get('/api/auth/Quota/checkout', (req, res) => {
+  res.render("Quota/checkout", {user: req.session.user})
 });
 
 // app.get('/blogs/blog1', async (req, res) => {

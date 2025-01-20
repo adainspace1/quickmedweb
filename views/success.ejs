@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayMent Successful</title>
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/success.css">
+</head>
+<body>
+    
+
+
+<div class="cent" style="align-items: center; justify-items: center;">
+    <H1 class="headd">Payment Successful</H1>
+    <p>your transction was done successfully, <a href="/">Go home</a></p>
+
+    
+    
+
+
+<div class="re-top" id="receipt">
+    <h3>Receipt Info</h3>
+    <p><strong>transction Status:</strong> Successful</p>
+    <p><strong>Customer Name:</strong> info  user.fullname %></p>
+    <p><strong>Phone Number:</strong> info  user.phoneNumber %></p>
+    <p><strong>Email:</strong> info  user.email %></p>
+    <p><strong>Items Number:</strong> info user.amount %> Pieces</p>
+    <p><strong>Items Cost:</strong> $info user.amountcost %></p>
+    <p><strong>Subscription Month/s:</strong> info user.month %> Month/s</p>
+    <p><strong>Subscription Plan Cost:</strong> info  user.monthcost %></p>
+    <p><strong>Total Amount:</strong> $info  user.total %></p>
+    <p class="full"><strong>Delivery Location:</strong> info  user.address %>, info  user.region %>, info  user.city %></p>
+    <p class="small">Total is including extra charges not listed</p>
+    <p class="here"></p>
+    <a href="" class="too-sure">www.quickmedng.com</a>
+</div>
+
+<div class="re-bot">
+    <button id="downloadReceipt">Download Receipt (PDF)</button>
+    <button id="downloadReceiptImage">Download Receipt (Image)</button>
+</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+<script>
+  
+
+//   document.getElementById('downloadReceipt').addEventListener('click', () => {
+//     const receiptElement = document.querySelector('.re-top'); // Select the receipt div
+    
+//     const options = {
+//         margin: 0.5, // Inches
+//         filename: 'receipt.pdf', // PDF file name
+//         image: { type: 'jpeg', quality: 0.98 }, // Image quality for PDF
+//         html2canvas: { scale: 2 }, // Scaling for better quality
+//         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } // PDF page setup
+//     };
+
+//     html2pdf().set(options).from(receiptElement).save();
+// });
+
+// Download as PDF
+document.getElementById('downloadReceipt').addEventListener('click', () => {
+   
+        const receipt = document.getElementById('receipt');
+        const options = {
+            margin: 1,
+            filename: 'receipt.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        };
+        html2pdf().set(options).from(receipt).save();
+    });
+
+
+
+
+    document.getElementById('downloadReceiptImage').addEventListener('click', async () => {
+        // Debugging step
+        window.alert("Starting image download");
+
+        try {
+            const receipt = document.getElementById('receipt'); // Target the receipt div
+            const canvas = await html2canvas(receipt, {
+                scale: 2, // Higher scale for better image quality
+                useCORS: true, // For external assets like fonts or images
+            });
+
+            const image = canvas.toDataURL('image/png'); // Generate PNG data URL
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = 'receipt.png'; // Set the file name
+            link.click(); // Programmatically click the link to start download
+        } catch (error) {
+            console.error('Error generating or downloading the image:', error);
+        }
+    });
+
+
+
+ // Function to display date and time
+ function displayDateTime() {
+        const hereElement = document.querySelector('.here'); // Select the "here" element
+        const now = new Date(); // Get current date and time
+
+        // Format the date and time
+        const formattedDateTime = now.toLocaleString('en-US', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+        });
+
+        // Insert the formatted date and time into the element
+        hereElement.textContent = `Transaction completed on: ${formattedDateTime}`;
+    }
+
+    // Call the function to display the date and time
+    displayDateTime();
+
+   
+</script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt</title>
+
+  <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/success.css">
+  
+</head>
+<body>
+
+    <div class="all">
+  <div class="receipt-container" id="receipt">
+    <div class="header">
+        <div class="headd">
+            
+      <img src="/images/quickmedlogo.PNG" alt="Logo">
+
+      <p> <strong>Quick</strong>Med</p>
+        </div>
+      <h1>Payment Receipt</h1>
+      <p>Transaction completed on: Jan 19, 2025, 1:42 PM</p>
+    </div>
+    <div class="content">
+      <h3>Receipt Info</h3>
+      <p><strong>Transaction Status:</strong> Successful</p>
+      <p><strong>Customer Name:</strong> Rejoice</p>
+      <p><strong>Phone Number:</strong> 0229202010101</p>
+      <p><strong>Email:</strong> rejoice@gmail.com</p>
+      <p><strong>Items Number:</strong> 3 Pieces</p>
+      <p><strong>Items Cost:</strong> $300</p>
+      <p><strong>Subscription Month/s:</strong> 5 Month/s</p>
+      <p><strong>Subscription Plan Cost:</strong> $250</p>
+      <p><strong>Total Amount:</strong> $550</p>
+      <p><strong>Delivery Location:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit., karu, nasarawa</p>
+      <p class="small">Total includes extra charges not listed.</p>
+    </div>
+    <div class="footer">
+      <p>www.quickmedng.com</p>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button id="downloadReceiptImage">Download as Image</button>
+    <button id="downloadReceiptPDF">Download as PDF</button>
+  </div>
+
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    // Download as Image
+    document.getElementById('downloadReceiptImage').addEventListener('click', async () => {
+      const receipt = document.getElementById('receipt');
+      const canvas = await html2canvas(receipt, { scale: 2 });
+      const image = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = image;
+      link.download = 'receipt.png';
+      link.click();
+    });
+
+    // Download as PDF
+    document.getElementById('downloadReceiptPDF').addEventListener('click', async () => {
+      const receipt = document.getElementById('receipt');
+      const canvas = await html2canvas(receipt, { scale: 2 });
+      const image = canvas.toDataURL('image/png');
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      pdf.addImage(image, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('receipt.pdf');
+    });
+  </script>
+</body>
+</html>

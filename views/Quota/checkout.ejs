@@ -79,59 +79,54 @@
 
 
     <div class="summary">
-        
-        <p class="headd">Order Summary</p>
+  <p class="headd">Order Summary</p>
 
+  <div class="shipadd">
+    <p class="miniheadd">Shipping Address</p>
+    <section class="shipadddiv">
+      <div class="twop">
+        <p><%= user.fullname %></p>
+        <p class="umber"><%= user.phoneNumber %></p>
+      </div>
+      <p><%= user.address %></p>
+      <p><%= user.region %>, <%= user.city %></p>
+    </section>
+  </div>
 
-        <div class="shipadd">
-            <p class="miniheadd">Shipping Address</p>
-
-            <section class="shipadddiv">
-                <div class="twop">
-                    <p><%= user.fullname %></p>
-                    <p class="umber"><%= user.phoneNumber %></p>
-                </div>
-
-                <p><%= user.address %></p>
-                <p><%= user.region %>. <%= user.city %></p>
-            </section>
-
-
-        </div>
-
-        <div class="orlis">
-            <p class="miniheadd">Order List</p>
-
-            <div class="dorlis">
-                <p>Items Cost:          <span id="icost">$<%= user.amountcost %></span></p>
-                <p>Subscription Cost:          <span id="subcost">$<%= user.monthcost %></span></p>
-                <p>Delivery Cost:         <span id="delicost">$<%= user.deliveryCost %></span></p>
-                <p>VAT:          <span id="vat">$<%= user.vat %></span></p>
-                <p>Service Fees:          <span id="serfee">$<%= user.serviceFees %></span></p>
-                <p>Urgency Fees:          <span id="urgfee">$<%= user.urgencyFees %></span></p>
-                <p>Convenience Fees:          <span id="convfee">$<%= user.convenienceFees %></span></p>
-                <p>Booking Fees:          <span id="boofee">$<%= user.bookingFees %></span></p>
-                <p>Insurance Fees:          <span id="insufee">$<%= user.insuranceFees %></span></p>
-            </div>
-
-            <div class="total">
-                <p class="to">Total:      <span id="ordtotal"> </span></p>
-            </div>
-        </div>
-
-
-        <div class="payment-methods">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <div class="btn">
-            <button>Submit Order</button>
-        </div>
+  <div class="orlis">
+    <p class="miniheadd">Order List</p>
+    <div class="dorlis">
+        <p>Items Number: <span id="icost"><%= user.amount %> Pieces</span></p>
+      <p>Items Cost: <span id="icost">$<%= user.amountcost %></span></p>
+      <p>Subscription Month/s: <span id="subcost"><%= user.month %> Month/s</span></p>
+      <p>Subscription Cost: <span id="subcost">$<%= user.monthcost %></span></p>
+      <p>Delivery Cost: <span id="delicost">$<%= user.deliveryCost %></span></p>
+      <p>VAT: <span id="vat">$<%= user.vat %></span></p>
+      <p>Service Fees: <span id="serfee">$<%= user.serviceFees %></span></p>
+      <p>Urgency Fees: <span id="urgfee">$<%= user.urgencyFees %></span></p>
+      <p>Convenience Fees: <span id="convfee">$<%= user.convenienceFees %></span></p>
+      <p>Booking Fees: <span id="boofee">$<%= user.bookingFees %></span></p>
+      <p>Insurance Fees: <span id="insufee">$<%= user.insuranceFees %></span></p>
     </div>
+
+    <div class="total">
+      <p class="to">Total: <span id="ordtotal">$<%= user.total %></span></p>
+    </div>
+  </div>
+
+  <div class="payment-methods">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="btn">
+    <button class="btnn">Submit Order</button>
+  </div>
+</div>
+
 
 
 
@@ -214,34 +209,80 @@
 
  </div>
 
+<!-- Include Flutterwave Script -->
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+
+<script>
+    // Function to calculate total cost
+    function calculateTotal() {
+        const itemsCost = parseFloat(document.getElementById("icost").textContent.replace("$", "")) || 0;
+        const subscriptionCost = parseFloat(document.getElementById("subcost").textContent.replace("$", "")) || 0;
+        const deliveryCost = parseFloat(document.getElementById("delicost").textContent.replace("$", "")) || 0;
+        const vat = parseFloat(document.getElementById("vat").textContent.replace("$", "")) || 0;
+        const serviceFees = parseFloat(document.getElementById("serfee").textContent.replace("$", "")) || 0;
+        const urgencyFees = parseFloat(document.getElementById("urgfee").textContent.replace("$", "")) || 0;
+        const convenienceFees = parseFloat(document.getElementById("convfee").textContent.replace("$", "")) || 0;
+        const bookingFees = parseFloat(document.getElementById("boofee").textContent.replace("$", "")) || 0;
+        const insuranceFees = parseFloat(document.getElementById("insufee").textContent.replace("$", "")) || 0;
+
+        const total = itemsCost + subscriptionCost + deliveryCost + vat + serviceFees + urgencyFees + convenienceFees + bookingFees + insuranceFees;
+
+        document.getElementById("ordtotal").textContent = `$${total.toFixed(2)}`;
+        return total;
+    }
+
+    // Function to initiate Flutterwave payment
+    function initiatePayment() {
+        const totalAmount = calculateTotal(); // Get total amount dynamically
+        const email = "<%= user.email %>"; // Replace with user's email dynamically if available
+        const phoneNumber = "<%= user.phoneNumber %>"; // Dynamically include user's phone number
+
+
+        if (!email) {
+            alert("Email address is required for payment.");
+            return;
+        }
+
+        if (typeof FlutterwaveCheckout !== "undefined") {
+            FlutterwaveCheckout({
+                public_key: 'FLWPUBK_TEST-07d94ae915f6bb4abbbd7a70a4757500-X', // Replace with your actual public key
+                tx_ref: 'TX-' + Date.now(),
+                amount: totalAmount,
+                currency: 'USD',
+                customer: {
+                    email: email,
+                    phone_number: phoneNumber, // Pass phone number to Flutterwave
+                },
+                redirect_url: "/success", // Redirect URL after payment
+                callback: function(response) {
+                    if (response.status === "success") {
+                        alert('Payment Successful!');
+                        window.location.href = "/success";
+                    } else {
+                        alert('Payment Failed!');
+                        window.location.href = "/failure";
+                    }
+                },
+                onclose: function() {
+                    console.log('Payment window closed.');
+                }
+            });
+        } else {
+            console.log("FlutterwaveCheckout script is not loaded.");
+        }
+    }
+
+    // Attach to payment button
+    document.querySelector(".btnn").addEventListener("click", function() {
+        initiatePayment();
+    });
+
+    // Calculate total on page load
+    calculateTotal();
+</script>
 
  
 
-<script>
-    // Function to calculate the total
-function calculateTotal() {
-    // Get all the span tags by their IDs
-    const itemsCost = parseFloat(document.getElementById("icost").textContent.replace("$", "")) || 0;
-    const subscriptionCost = parseFloat(document.getElementById("subcost").textContent.replace("$", "")) || 0;
-    const deliveryCost = parseFloat(document.getElementById("delicost").textContent.replace("$", "")) || 0;
-    const vat = parseFloat(document.getElementById("vat").textContent.replace("$", "")) || 0;
-    const serviceFees = parseFloat(document.getElementById("serfee").textContent.replace("$", "")) || 0;
-    const urgencyFees = parseFloat(document.getElementById("urgfee").textContent.replace("$", "")) || 0;
-    const convenienceFees = parseFloat(document.getElementById("convfee").textContent.replace("$", "")) || 0;
-    const bookingFees = parseFloat(document.getElementById("boofee").textContent.replace("$", "")) || 0;
-    const insuranceFees = parseFloat(document.getElementById("insufee").textContent.replace("$", "")) || 0;
-
-    // Calculate the total
-    const total = itemsCost + subscriptionCost + deliveryCost + vat + serviceFees + urgencyFees + convenienceFees + bookingFees + insuranceFees;
-
-    // Display the total in the "ordtotal" span tag
-    document.getElementById("ordtotal").textContent = `$${total.toFixed(2)}`;
-}
-
-// Call the function to calculate the total
-calculateTotal();
-
-</script>
 
 <script src="/js/general.js"></script>
 
