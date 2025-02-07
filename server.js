@@ -49,7 +49,9 @@ app.use('/api/admin', adminRoutes)
 
 
 
-
+app.get('/',(req,res)=>{
+    res.render('index')
+});
 
 
 
@@ -176,9 +178,7 @@ app.get('/topblogs/:topBlogId', async (req, res) => {
 
 
 
-app.get('/',(req,res)=>{
-    res.render('index')
-});
+
 
 app.get('/blog', async(req, res)=>{
     try {
