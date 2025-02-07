@@ -32,6 +32,7 @@ app.use(session({
     secret: 'Dien', // Replace with your own secret
     resave: false,
     saveUninitialized: true,
+    store: "",
     cookie: { secure: false } // Set to true if using HTTPS
   }));
 

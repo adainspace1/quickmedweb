@@ -92,7 +92,7 @@
             <div class="carousel-content">
               <h3 class="featured"><%= upblog.sefullname %></h3>
               <h1><%= upblog.setitle %></h1>
-              <p><%= upblog.secontent %></p>
+              <p class="secont"><%= upblog.secontent %></p>
             </div>
           </a>
         </div>
@@ -126,6 +126,7 @@
 
         <p class="minibp">Recent blog posts</p>
         <div class="d-blogs">
+            <% if (blog && blog.length > 0) { %>
             <% blog.forEach(function (product, admin) {%>
             <div class="blog">
 
@@ -137,8 +138,10 @@
                 <p class="blogtitle"><%= product.title %> 
                 </p>
 
-                <span><p class="blogdescrip"><%= product.content %></p>
-                </p><a href="/blogs/<%= product.id%>">.....See more</a></span>
+                <span>
+                <p id="true" class="blogdescrip"><%= product.content %></p>
+                <a href="/blogs/<%= product.id%>">.....See more</a>
+            </span>
 
                 <section class="blogabout">
                     <p class="bloggername"><%= product.fullname %></p>
@@ -148,7 +151,9 @@
 
             <% }); %>
 
-           
+            <% } else { %>
+                <p class="nob">No blog yet. </p>
+              <% } %>
 
 
            
@@ -255,6 +260,8 @@
 
 <script src="/js/general.js"></script>
 <script src="/js/blog.js"></script>
+
+
 
 
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>

@@ -284,3 +284,241 @@ const { setitle, secontent, sefullname } = req.body;
     console.error('Error uploading blog post:', error);
     return res.status(500).json({ message: 'Internal server error.' });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ""blog content arrangement special texts""
+
+  Explanation:
+Full Stops (.):
+
+Regular Expression: /\./g
+Replaces each . with . <br><br>.
+Bold Text (%text%):
+
+Regular Expression: /%([^%]+)%/g
+Matches text between % markers and wraps it in <b> tags.
+Colored Text ($text$):
+
+Regular Expression: /\$([^$]+)\$/g
+Matches text between $ markers and wraps it in <span> with the specified color.
+Subtitles (&text&):
+
+Regular Expression: /&([^&]+)&/g
+Matches text between & markers and wraps it in <ol><li>.
+Italic Text (^text^):
+
+Regular Expression: /\^([^^]+)\^/g
+Matches text between ^ markers and wraps it in <i>.
+
+
+
+
+
+    :INSTRUCTIONS:
+
+
+
+
+
+    1. Full Stop (.) for Line Breaks
+Every full stop (.) will be replaced with two <br> tags to create a double line break.
+Example:
+Input text in the database:
+
+kotlin
+Copy
+Edit
+Dogs are great companions. They help reduce stress. Exercise is fun with them.
+Result on Frontend:
+
+kotlin
+Copy
+Edit
+Dogs are great companions.<br><br>
+They help reduce stress.<br><br>
+Exercise is fun with them.
+2. Percentage (%) for Bold Text
+Text enclosed between % symbols will be displayed in bold.
+Example:
+Input text in the database:
+
+perl
+Copy
+Edit
+Dogs are %great companions% that bring joy.
+Result on Frontend:
+
+css
+Copy
+Edit
+Dogs are <b>great companions</b> that bring joy.
+3. Dollar Sign ($) for Colored Text
+Text enclosed between $ symbols will be displayed in orange (#ff9000).
+Example:
+Input text in the database:
+
+ruby
+Copy
+Edit
+Dogs are $loyal$ and $caring$ animals.
+Result on Frontend:
+
+css
+Copy
+Edit
+Dogs are <span style="color: #ff9000;">loyal</span> and <span style="color: #ff9000;">caring</span> animals.
+4. Ampersand (&) for Ordered Lists
+Text enclosed between & symbols will become a numbered list.
+Example:
+Input text in the database:
+
+sql
+Copy
+Edit
+&Dogs can reduce anxiety.&Dogs are great exercise partners.&They are loyal friends.&
+Result on Frontend:
+
+css
+Copy
+Edit
+<ol>
+  <li>Dogs can reduce anxiety.</li>
+  <li>Dogs are great exercise partners.</li>
+  <li>They are loyal friends.</li>
+</ol>
+5. Caret (^) for Italicized Text
+Text enclosed between ^ symbols will be displayed in italic.
+Example:
+Input text in the database:
+
+rust
+Copy
+Edit
+Dogs are known for their ^unwavering loyalty^ and ^affection.^
+Result on Frontend:
+
+css
+Copy
+Edit
+Dogs are known for their <i>unwavering loyalty</i> and <i>affection.</i>
+Example Combining Multiple Markers
+Input Text in Database:
+
+perl
+Copy
+Edit
+Dogs are %great companions%. They provide $unconditional love$.  
+&They reduce stress.&They improve heart health.&  
+They are ^truly amazing animals^.
+Result on Frontend:
+
+php
+Copy
+Edit
+Dogs are <b>great companions</b>.<br><br>
+They provide <span style="color: #ff9000;">unconditional love</span>.<br><br>
+
+<ol>
+  <li>They reduce stress.</li>
+  <li>They improve heart health.</li>
+</ol>
+
+They are <i>truly amazing animals</i>.

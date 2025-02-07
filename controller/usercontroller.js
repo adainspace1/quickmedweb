@@ -269,15 +269,12 @@ const getBlogAndComments = async (req, res) => {
     // Check if the blog exists
     const blog = await Blog.findById(id);
     if (!blog) {
-      console.log("No blog yet");
       return res.status(404).send("No blog found");
     }
 
-    console.log("Blog found:", blog);
 
     // Fetch comments associated with this blog
     const comments = await Comment.find({ blogId: id }).sort({ createdAt: -1 });
-    console.log("Comments:", comments);
 
     // Render the blog page with the blog and comments data
     res.render('blogs/blog1', { blog, comments });
@@ -300,7 +297,6 @@ const saveComment = async (req, res) => {
     const comment = new Comments({ blogId, fullname, email, comments });
     await comment.save();
 
-    console.log("Comment saved successfully:", comment);
 
     // Redirect to the blog page
     res.redirect(`/blogs/${blogId}`, {user: req.session.user});

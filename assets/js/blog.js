@@ -270,3 +270,51 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlide();
   });
   
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to process the text
+  const processText = (text) => {
+    // Replace %...% with nothing (remove any bold style)
+    text = text.replace(/%([^%]+)%/g, "<b>$1</b>");
+
+    // Replace $...$ with nothing (remove any orange color)
+    text = text.replace(/\$([^$]+)\$/g, "");
+
+    // Replace &...& with nothing (remove any list items)
+    text = text.replace(/&([^&]+)&/g, "");
+
+    // Replace ^...^ with nothing (remove underlined text)
+    text = text.replace(/\^([^^]+)\^/g, "");
+
+    // Remove full stops and replace with nothing (no <br> added)
+    text = text.replace(/\.(?=\s|$)/g, ".<br>");
+
+    // New special text for 2 <br> tags, remove them completely
+    text = text.replace(/\~(?=\s|$)/g, '<span style="color: #ff9000;">$1</span>');
+
+    return text;
+  };
+  
+  // Process part1 (with class 'secont')
+  const part2Element = document.querySelector(".blogdescrip");
+  const part2Text = part2Element.innerText;
+  part2Element.innerHTML = processText(part2Text);
+
+  // Process part1 (with class 'secont')
+  const part1Element = document.querySelector(".secont");
+  const part1Text = part1Element.innerText;
+  part1Element.innerHTML = processText(part1Text);
+
+  document.querySelector(".blogdescrip").addEventListener("click", function(){
+    window.alert("jjj")
+  })
+
+  
+
+  // // Process part2 (with class 'second')
+  // const part2Element = document.querySelector(".blogdescrip");
+  // const part2Text = part2Element.innerText;
+  // part2Element.innerHTML = processText(part2Text);
+});
