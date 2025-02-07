@@ -9,7 +9,7 @@ require("dotenv").config();
 const jwt = require('jsonwebtoken');
 const cloudinary = require("../cloudinary");
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+// const upload = multer({ dest: 'uploads/' });
 
 
 

@@ -115,19 +115,19 @@ const getAllUsers = async (req, res) => {
 
 // Helper function to handle image uploads
 async function handleImageUpload(cameraImage, filePath) {
-  try {
-    if (cameraImage) {
-      const result = await cloudinary.uploader.upload(cameraImage, { upload_preset: "ml_default" });
-      return result.secure_url;
-    } else if (filePath) {
-      const result = await cloudinary.uploader.upload(filePath, { folder: "guests" });
-      return result.secure_url;
-    }
-    throw new Error("No image provided");
-  } catch (err) {
-    console.error("Cloudinary upload error:", err);
-    throw new Error("Error uploading image to Cloudinary");
-  }
+  // try {
+  //   if (cameraImage) {
+  //     const result = await cloudinary.uploader.upload(cameraImage, { upload_preset: "ml_default" });
+  //     return result.secure_url;
+  //   } else if (filePath) {
+  //     const result = await cloudinary.uploader.upload(filePath, { folder: "guests" });
+  //     return result.secure_url;
+  //   }
+  //   throw new Error("No image provided");
+  // } catch (err) {
+  //   console.error("Cloudinary upload error:", err);
+  //   throw new Error("Error uploading image to Cloudinary");
+  // }
 }
 
 // Controller for `uploadToBlog`
