@@ -4,7 +4,8 @@
   "description": "Emergency Response Web",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+     "build": "server.js"
   },
   "author": "",
   "license": "ISC",

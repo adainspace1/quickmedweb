@@ -16,17 +16,6 @@ const Comment = require("./model/usercomments");
 
 
 mongoose.connect(process.env.MONGODB_CONNECTION).then(()=>{console.log("Database Connected")}).catch((err)=>{console.log(err)});
-
-
-// middle ware
-app.set('view engine', 'ejs');
-app.use (express.static(path.join(__dirname, "assets")));//host  express static files
-app.set("views", path.join(__dirname, 'views'))
-app.use(cors())
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
-
-
 app.use(express.json()); // For parsing JSON body
 app.use(session({
     secret: 'Dien', // Replace with your own secret
@@ -35,6 +24,16 @@ app.use(session({
     store: "",
     cookie: { secure: false } // Set to true if using HTTPS
   }));
+// middle ware
+
+app.use (express.static(path.join(__dirname, "assets")));//host  express static files
+app.use(cors())
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
+app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, 'views'))
+
+
 
 app.use('/api/auth', authRoutes)
 app.use('/api/admin', adminRoutes)
