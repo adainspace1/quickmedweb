@@ -12,17 +12,7 @@ const
 } = require("../controller/usercontroller")
 const multer = require('multer');
 
-// Multer configuration for handling file uploads
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Temporary upload folder
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname); // Unique file name
-  },
-});
-const upload = multer({ storage });
 
 
 router.get("/invest/investment", (req, res)=>{

@@ -112,15 +112,6 @@ const getAllUsers = async (req, res) => {
 
 
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/"); // Temporary upload folder
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname); // Unique file name
-  },
-});
-const upload = multer({ storage });
 
 // Helper function to handle image uploads
 async function handleImageUpload(cameraImage, filePath) {
