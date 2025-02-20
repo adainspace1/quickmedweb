@@ -52,9 +52,6 @@
     <script src="/js/config.js"></script>
     <link rel="stylesheet" href="/css/try.css">
     <style>
-      body{
-        padding-top: 100px;
-      }
     .five-depo-coren{
     /* background-color: red; */
     width: 95%;
@@ -123,6 +120,10 @@
   <body >
     <!-- Layout wrapper -->
 
+    <div id="preloader">
+      <div class="spinner"></div>
+  </div>
+  
 
     <div class="overb">
 
@@ -140,29 +141,39 @@
                         
                         <div class="mb-3">
                             <label for="username" class="form-label">Tittle</label>
-                            <input type="text"  name="title" class="form-control" id="title" >
+                            <input type="text"  name="title" class="form-control" id="title"  required>
                         </div>
                        
       
                         <div class="mb-3">
                             <label for="content" class="form-label">Content</label>
-                            <input type="text" name="content" class="form-control" id="content" >
+                            <input type="text" name="content" class="form-control" id="content" required>
                         </div>
       
                         <div class="mb-3">
                           <label for="content" class="form-label">Full Name</label>
-                          <input type="text" name="fullname" class="form-control" id="content" >
+                          <input type="text" name="fullname" class="form-control" id="content" required>
                       </div>
       
-                        <div class="mb-3">
-                          <label for="pic_file" class="form-label">Blog Image</label>
-                          <input type="file" name="image" class="form-control" id="image" >
-                      </div>
+                      <div class="mb-3">
+                        <label for="image1" class="form-label">Blog Image 1</label>
+                        <input type="file" name="image1" class="form-control" id="image1" required>
+                    </div>
+                  
+                    <div class="mb-3">
+                        <label for="image2" class="form-label">Blog Image 2</label>
+                        <input type="file" name="image2" class="form-control" id="image2" required>
+                    </div>
+                  
+                    <div class="mb-3">
+                        <label for="image3" class="form-label">Blog Image 3</label>
+                        <input type="file" name="image3" class="form-control" id="image3" required>
+                    </div>
 
 
             
                         <div class="modal-footer">
-                            <button type="submit" class="btnn ">Upload</button>
+                            <button type="submit" id="sub" class="btnn ">Upload</button>
                         </div>
                     </form>
                 </div>
@@ -179,24 +190,35 @@
                       
                       <div class="mb-3">
                           <label for="username" class="form-label">Tittle</label>
-                          <input type="text"  name="setitle" class="form-control" id="title" >
+                          <input type="text"  name="setitle" class="form-control" id="title" required>
                       </div>
                      
       
                       <div class="mb-3">
                           <label for="content" class="form-label">Content</label>
-                          <input type="text" name="secontent" class="form-control" id="content" >
+                          <input type="text" name="secontent" class="form-control" id="content" required>
                       </div>
       
                       <div class="mb-3">
                         <label for="content" class="form-label">Full Name</label>
-                        <input type="text" name="sefullname" class="form-control" id="content" >
+                        <input type="text" name="sefullname" class="form-control" id="content" required>
                     </div>
       
-                      <div class="mb-3">
-                        <label for="pic_file" class="form-label">Blog Image</label>
-                        <input type="file" name="image" class="form-control" id="image" >
-                    </div>
+                     <!-- Separate Inputs for Each Image -->
+    <div class="mb-3">
+      <label for="image1" class="form-label">Blog Image 1</label>
+      <input type="file" name="image1" class="form-control" id="image1" required>
+  </div>
+
+  <div class="mb-3">
+      <label for="image2" class="form-label">Blog Image 2</label>
+      <input type="file" name="image2" class="form-control" id="image2" required>
+  </div>
+
+  <div class="mb-3">
+      <label for="image3" class="form-label">Blog Image 3</label>
+      <input type="file" name="image3" class="form-control" id="image3" required>
+  </div>
 
               
       
@@ -205,7 +227,7 @@
                      
       
                       <div class="modal-footer">
-                          <button type="submit" class="btnn btnn-primary">Upload</button>
+                          <button type="submit" id="sub" class="btnn btnn-primary">Upload</button>
                       </div>
                   </form>
               </div>
@@ -213,7 +235,7 @@
 
   </div>
 
-  <span class="app-brand-text demo menu-text fw-semibold ms-2" style="padding-top: 100px;">QuickMed</span>
+  <span class="app-brand-text demo menu-text fw-semibold ms-2" id="name" style="padding-top: 100px;">QuickMed</span>
 
     
 
@@ -268,6 +290,20 @@
     </div>
     <!-- / Layout wrapper -->
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const forms = document.querySelectorAll("form"); // Select all forms
+
+    forms.forEach(form => {
+        form.addEventListener("submit", function () {
+            // Show preloader only after form validation passes
+            document.getElementById("preloader").style.display = "flex";
+        });
+    });
+});
+
+
+    </script>
  
 
     <!-- Core JS -->

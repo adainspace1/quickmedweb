@@ -15,9 +15,17 @@ const blogSchema = new mongoose.Schema({
        
         required: true
     },
-    image:{
-        type:String,
-        required: true
+    imageI:{
+        type: String,
+        required: false
+    },
+    imageII:{
+        type: String,
+        required: false
+    },
+    imageIII:{
+        type: String,
+        required: false
     },
     
    

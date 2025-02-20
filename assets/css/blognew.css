@@ -99,7 +99,6 @@
 
     .fbi{
         margin-top: 50px;
-        background-color: red;
         width: 100%;
         max-width: 850px;
         height: 600px;
@@ -116,6 +115,7 @@
         font-size: 20px;
     }
 
+  
 
     .commentsec{
         margin-left: 30px;

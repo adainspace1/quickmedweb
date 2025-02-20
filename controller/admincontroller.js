@@ -113,80 +113,137 @@ const getAllUsers = async (req, res) => {
 
 
 
-// Helper function to handle image uploads
-async function handleImageUpload(cameraImage, filePath) {
-  // try {
-  //   if (cameraImage) {
-  //     const result = await cloudinary.uploader.upload(cameraImage, { upload_preset: "ml_default" });
-  //     return result.secure_url;
-  //   } else if (filePath) {
-  //     const result = await cloudinary.uploader.upload(filePath, { folder: "guests" });
-  //     return result.secure_url;
-  //   }
-  //   throw new Error("No image provided");
-  // } catch (err) {
-  //   console.error("Cloudinary upload error:", err);
-  //   throw new Error("Error uploading image to Cloudinary");
-  // }
-}
+const handleImageUpload = (file) => {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        resource_type: 'auto',
+        folder: 'your_folder_name',
+      },
+      (error, result) => {
+        if (error) {
+          console.error("Cloudinary Upload Error:", error);
+          reject(new Error('Error uploading image to Cloudinary: ' + error.message));
+        } else {
+          console.log("Cloudinary Upload Result:", result);
+          resolve(result);
+        }
+      }
+    );
+
+    streamifier.createReadStream(file.buffer).pipe(stream);
+  });
+};
+
+
 
 // Controller for `uploadToBlog`
+// Controller for `uploadToBlog`
 const uploadToBlog = async (req, res) => {
-  const { title, content, fullname, cameraImage } = req.body;
+  const { title, content, fullname } = req.body;
+  const image1 = req.files['image1'] ? req.files['image1'][0] : null; // Access the first image
+  const image2 = req.files['image2'] ? req.files['image2'][0] : null; // Access the second image
+  const image3 = req.files['image3'] ? req.files['image3'][0] : null; // Access the third image
+
+  console.log("Request Body:", req.body); // Log the request body
+  console.log("Request Files:", req.files); // Log the files received by Multer
 
   try {
-    const adminId = process.env.TEST_ADMIN_ID;
-    if (!adminId) {
-      return res.status(500).json({ status: "failed", message: "Invalid admin" });
+    // Validate required fields and images
+    if (!title || !content || !fullname || !image1 || !image2 || !image3) {
+      return res.status(400).json({ message: "All fields and all images are required." });
     }
 
-    if (!title || !content || !fullname) {
-      return res.status(400).json({
-        status: "failed",
-        message: "Title, content, and fullname are required.",
-      });
-    }
+    
+    // Upload each image to Cloudinary and get their secure URLs
+    const image1Url = await handleImageUpload(image1);
+    const image2Url = await handleImageUpload(image2);
+    const image3Url = await handleImageUpload(image3);
 
-    const imageUrl = await handleImageUpload(cameraImage, req.file?.path);
+    console.log("Image 1 URL:", image1Url.secure_url);
+    console.log("Image 2 URL:", image2Url.secure_url);
+    console.log("Image 3 URL:", image3Url.secure_url);
 
-    const newBlog = new Blog({ title, content, fullname, image: imageUrl });
+    // Create a new blog entry with the image URLs
+    const newBlog = new Blog({
+      title,
+      content,
+      fullname,
+      // images: [image1Url.secure_url, image2Url.secure_url, image3Url.secure_url], // Store only the secure URLs
+      imageI: image1Url?.secure_url, 
+      imageII: image2Url?.secure_url, 
+      imageIII: image3Url?.secure_url
+    });
+
+    console.log("New Blog Object:", newBlog);
+
+    // Save the blog entry to the database
     await newBlog.save();
+    console.log("Blog saved successfully:", newBlog);
 
-    return res.render("admin/html/blog", { user: req.session.user });
+    // Render the admin blog page
+    res.render("admin/html/blog", { user: req.session.user });
   } catch (error) {
     console.error("Error in uploadToBlog:", error);
-    return res.status(500).json({ status: "failed", message: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
-// Controller for `Topblog`
 const Topblog = async (req, res) => {
-  const { setitle, secontent, sefullname, cameraImage } = req.body;
+  const { setitle, secontent, sefullname } = req.body;
+  const image1 = req.files['image1'] ? req.files['image1'][0] : null;
+  const image2 = req.files['image2'] ? req.files['image2'][0] : null;
+  const image3 = req.files['image3'] ? req.files['image3'][0] : null;
+
+  console.log("Request Files:", req.files); // Log the entire `req.files` object
 
   try {
-    const adminId = process.env.TEST_ADMIN_ID;
-    if (!adminId) {
-      return res.status(500).json({ status: "failed", message: "Invalid admin" });
+    // Validate required fields and images
+    if (!setitle || !secontent || !sefullname || !image1 || !image2 || !image3) {
+      return res.status(400).json({ message: "All fields and all images are required." });
     }
 
-    if (!setitle || !secontent || !sefullname) {
-      return res.status(400).json({
-        status: "failed",
-        message: "Title, content, and fullname are required.",
-      });
-    }
+    // Upload each image to Cloudinary and get their secure URLs
+    const image1Url = await handleImageUpload(image1);
+    const image2Url = await handleImageUpload(image2);
+    const image3Url = await handleImageUpload(image3);
 
-    const imageUrl = await handleImageUpload(cameraImage, req.file?.path);
+    console.log("Image 1 URL:", image1Url.secure_url);
+    console.log("Image 2 URL:", image2Url.secure_url);
+    console.log("Image 3 URL:", image3Url.secure_url);
 
-    const newTopBlog = new TOPBlog({ setitle, secontent, sefullname, image: imageUrl });
+// Ensure we only store the secure URL, not the entire response object
+const newTopBlog = new TOPBlog({
+  setitle,
+  secontent,
+  sefullname,
+  // images: [
+  //   image1Url?.secure_url, 
+  //   image2Url?.secure_url, 
+  //   image3Url?.secure_url
+  // ], 
+  imageI: image1Url?.secure_url, 
+  imageII: image2Url?.secure_url, 
+  imageIII: image3Url?.secure_url
+    });
+
+    console.log("New Top Blog Object:", newTopBlog);
+
+    // Save the blog entry to the database
     await newTopBlog.save();
+    console.log("Blog saved successfully:", newTopBlog);
 
-    return res.render("admin/html/blog", { user: req.session.user });
+    // Render the admin blog page
+    res.render("admin/html/blog", { user: req.session.user });
   } catch (error) {
     console.error("Error in Topblog:", error);
-    return res.status(500).json({ status: "failed", message: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
+
+
 
 
 

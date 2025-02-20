@@ -94,7 +94,7 @@
     </div>
 
     <div class="fbi">
-        <img src="<%= blog.image %>" alt="">
+        <img src="<%= blog.imageI %>" alt="">
     </div>
 
     <p class="head-text"><%= blog.title %></p>
@@ -106,17 +106,21 @@
         const part2Text = words.slice(300).join(' ');
     %>
 
-    <p class="little-pees" id="part1"><%= part1Text %></p>
+    <p class="little-pees" id="part1"><%= part1Text %></p> 
 
     <div class="advert">
         <p class="adp">ADVERTISEMENT</p>
     </div>
 
     <div class="fbi">
-        <img src="<%= blog.image %>" alt="">
+        <img src="<%= blog.imageII %>" alt="">
     </div>
 
-    <p class="little-pees" id="part2"><%= part2Text %></p>
+    <p class="little-pees" id="part2"><%= part2Text %></p> 
+
+    <div class="fbi" id="fbi2">
+        <img src="<%= blog.imageIII %>" alt="">
+    </div>
 
     <div id="add2" class="advert2">
         <p class="adtop">ADVERTISEMENT</p>
@@ -214,7 +218,7 @@
 
 
 
-
+ 
 
 
 
@@ -329,48 +333,27 @@
    <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Function to process the text
-  const processText = (text) => {
-    // Replace %...% with bold
-    text = text.replace(/%([^%]+)%/g, "<b>$1</b>");
+    function renderHTMLContent(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            // Decode and render the inner text as actual HTML
+            element.innerHTML = element.textContent;
+        }
+    }
 
-    // Replace $...$ with orange-colored text
-    text = text.replace(/\$([^$]+)\$/g, '<span style="color: #ff9000;">$1</span>');
-
-    // Replace &...& with ordered list items
-    text = text.replace(/&([^&]+)&/g, "<li>$1</li>");
-    text = text.replace(/(<li>.*<\/li>)+/g, "<ol>$&</ol>");
-
-    // Replace ^...^ with underlined text
-    text = text.replace(/\^([^^]+)\^/g, "<u>$1</u>");
-
-    // Add <br><br> after each full stop
-    text = text.replace(/\.(?=\s|$)/g, ".<br>");
-
-
-    // New special text for 2 <br> tags
-    text = text.replace(/\~(?=\s|$)/g, "<br><br>");
-
-    return text;
-  };
-
-  // Process part1
-  const part1Element = document.getElementById("part1");
-  const part1Text = part1Element.innerText;
-  part1Element.innerHTML = processText(part1Text);
-
-  // Process part2
-  const part2Element = document.getElementById("part2");
-  const part2Text = part2Element.innerText;
-  part2Element.innerHTML = processText(part2Text);
+    // Apply to #part1
+    renderHTMLContent("part1");
+    renderHTMLContent("part2");
 });
+
+
 
 
    </script>
     
     
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-    <div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-df35016c-bd3b-4ff1-b25c-8bd8912d937e" data-elfsight-app-lazy></div>
     
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

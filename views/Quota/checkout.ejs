@@ -210,7 +210,8 @@
  </div>
 
 <!-- Include Flutterwave Script -->
-<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
 
 <script>
     // Function to calculate total cost
@@ -231,45 +232,42 @@
         return total;
     }
 
-    // Function to initiate Flutterwave payment
+    // Function to initiate Paystack payment
     function initiatePayment() {
-        const totalAmount = calculateTotal(); // Get total amount dynamically
-        const email = "<%= user.email %>"; // Replace with user's email dynamically if available
+        const totalAmount = calculateTotal() * 100; // Paystack expects amount in kobo (multiply by 100)
+        const email = "<%= user.email %>"; // Replace with user's email dynamically
         const phoneNumber = "<%= user.phoneNumber %>"; // Dynamically include user's phone number
-
 
         if (!email) {
             alert("Email address is required for payment.");
             return;
         }
 
-        if (typeof FlutterwaveCheckout !== "undefined") {
-            FlutterwaveCheckout({
-                public_key: 'FLWPUBK_TEST-07d94ae915f6bb4abbbd7a70a4757500-X', // Replace with your actual public key
-                tx_ref: 'TX-' + Date.now(),
-                amount: totalAmount,
-                currency: 'USD',
-                customer: {
-                    email: email,
-                    phone_number: phoneNumber, // Pass phone number to Flutterwave
-                },
-                redirect_url: "/success", // Redirect URL after payment
-                callback: function(response) {
-                    if (response.status === "success") {
-                        alert('Payment Successful!');
-                        window.location.href = "/success";
-                    } else {
-                        alert('Payment Failed!');
-                        window.location.href = "/failure";
+        let handler = PaystackPop.setup({
+            key: 'pk_test_a174f4bbd7c96ddafef3066dc671345cbd14c0f4', // Replace with your Paystack public key
+            email: email,
+            amount: totalAmount,
+            currency: "NGN", // Change currency if necessary
+            ref: 'TX-' + Date.now(),
+            metadata: {
+                custom_fields: [
+                    {
+                        display_name: "Phone Number",
+                        variable_name: "phone_number",
+                        value: phoneNumber
                     }
-                },
-                onclose: function() {
-                    console.log('Payment window closed.');
-                }
-            });
-        } else {
-            console.log("FlutterwaveCheckout script is not loaded.");
-        }
+                ]
+            },
+            callback: function(response) {
+                alert('Payment Successful! Reference: ' + response.reference);
+                window.location.href = "/success"; // Redirect to success page
+            },
+            onClose: function() {
+                alert('Transaction was not completed.');
+            }
+        });
+
+        handler.openIframe();
     }
 
     // Attach to payment button
@@ -287,8 +285,8 @@
 <script src="/js/general.js"></script>
 
 
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-90565f88-5697-4e97-8601-ed372141efe8" data-elfsight-app-lazy></div>
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-df35016c-bd3b-4ff1-b25c-8bd8912d937e" data-elfsight-app-lazy></div>
 
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

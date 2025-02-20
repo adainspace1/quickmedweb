@@ -184,7 +184,7 @@ app.get('/blog', async(req, res)=>{
         const blog = await Blog.find()
         const topblog = await UploadBlog.find()
         //console.log(blog)
-        res.render('blog',{blog, topblog})
+        res.render('blog',{blog, topblog })
     } catch (error) {
         
     }
@@ -223,15 +223,18 @@ app.get('/invest/partnership', (req, res) => {
 
 
 app.get('/Quota/Purchase', (req, res) => {
-  res.render('Quota/Purchase', {user: req.session.user}); // Render invest.ejs
+//   res.render('Quota/Purchase', {user: req.session.user}); // Render invest.ejs
+    res.render('Quota/404')
 });
 
 app.get('/Quota/checkout', (req, res) => {
-  res.render('Quota/checkout'); // Render invest.ejs
+//   res.render('Quota/checkout', {user: req.session.user}); // Render invest.ejs
+    res.render('Quota/404')
 });
 
 app.get('/api/auth/Quota/checkout', (req, res) => {
-  res.render("Quota/checkout", {user: req.session.user})
+//   res.render("Quota/checkout", {user: req.session.user})
+    res.render('Quota/404')
 });
 
 // app.get('/blogs/blog1', async (req, res) => {
@@ -301,6 +304,11 @@ app.get('/admin/html/blog', (req, res) => {
 });
 
 app.get('/admin/html/adminsignin', (req, res) => {
+    res.render('admin/html/adminsignin'); // Render investment.ejs
+});
+
+
+app.get('/login', (req, res) => {
     res.render('admin/html/adminsignin'); // Render investment.ejs
 });
 

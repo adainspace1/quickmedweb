@@ -20,28 +20,17 @@ const
 
 
 
- const upload = multer();
+// Configure Multer to use memory storage (so images are not saved locally)
+const storage = multer.memoryStorage(); // Using memory storage for easier handling
+const upload = multer({ storage: storage }).fields([
+    { name: 'image1', maxCount: 1 },
+    { name: 'image2', maxCount: 1 },
+    { name: 'image3', maxCount: 1 }
+]);
 
- app.post('/upload', upload.single('image')), (req, res) => {
-   try {
-     // Access the uploaded files
-     const imageFile = req.files['image'] ? req.files['image'][0] : null;
-    //  const seImageFile = req.files['seimage'] ? req.files['seimage'][0] : null;
- 
-     if (!imageFile) {
-       return res.status(400).json({ message: 'Both image and seimage are required.' });
-     }
- 
-     res.status(200).json({
-       message: 'Files uploaded successfully!',
-       image: imageFile.filename,
-     });
-   } catch (err) {
-     console.error(err);
-     res.status(500).json({ message: 'File upload failed.', error: err.message });
-   }
-  
-  }
+
+
+
   
 
 
@@ -50,8 +39,8 @@ router.post('/registeradmin', registerAdmin);
 router.get('/getall', getAllUsers);
 router.post('/remove/:id/delete', deleteUser); 
 router.get('/search', search);
-router.post('/upload-blog', upload.single('image'), uploadToBlog);
-router.post('/blog', upload.single('image'), Topblog);
+router.post('/upload-blog', upload, uploadToBlog);
+router.post('/blog', upload, Topblog);
 
 
 
