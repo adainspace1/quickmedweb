@@ -224,7 +224,7 @@ app.get('/invest/partnership', (req, res) => {
 
 app.get('/Quota/Purchase', (req, res) => {
 //   res.render('Quota/Purchase', {user: req.session.user}); // Render invest.ejs
-    res.render('Quota/404')
+    res.render('Quota/purchase')
 });
 
 app.get('/Quota/checkout', (req, res) => {

@@ -146,7 +146,7 @@ let menu, animate;
   // Nav tabs animation
   window.Helpers.navTabsAnimation();
 
-  // Manage menu expanded/collapsed with templateCustomizer & local storage
+  // Manage menu expanded/collapsed with templateCustomizer & local 
   //------------------------------------------------------------------
 
   // If current layout is horizontal OR current window screen is small (overlay menu) than return from here
