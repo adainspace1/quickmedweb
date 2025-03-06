@@ -181,8 +181,8 @@ const uploadToBlog = async (req, res) => {
     await newBlog.save();
     console.log("Blog saved successfully:", newBlog);
 
-    // Render the admin blog page
-    res.render("admin/html/blog", { user: req.session.user });
+    const returnUrl = req.headers.referer || "/"; // Fallback to home if no referrer
+        return res.redirect(returnUrl);
   } catch (error) {
     console.error("Error in uploadToBlog:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -234,7 +234,8 @@ const newTopBlog = new TOPBlog({
     console.log("Blog saved successfully:", newTopBlog);
 
     // Render the admin blog page
-    res.render("admin/html/blog", { user: req.session.user });
+    const returnUrl = req.headers.referer || "/"; // Fallback to home if no referrer
+        return res.redirect(returnUrl);
   } catch (error) {
     console.error("Error in Topblog:", error);
     res.status(500).json({ message: "Internal server error" });
