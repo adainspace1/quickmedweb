@@ -46,6 +46,9 @@
 
 @media (min-width: 200px){
 
+    .aboutall{
+        margin-top: 200px;
+    }
     .aboutall img{
         justify-self: center;
         margin-left: 10%;
